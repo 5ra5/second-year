@@ -1,3 +1,5 @@
+87.5%
+
 Q1.  Monk and Howard wrote a paper on:
 - Rich pictures
 
