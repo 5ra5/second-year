@@ -1,0 +1,22 @@
+1. What is linear algebra?
+2. Why linear algebra?
+3.  Introducing vectors
+4. Linear combinations and bases
+5. Introducing higher-dimensional linear functions
+	-  5.1 General linear functions
+	- 5.2 Examples: 2D Scalings and Rotations
+6. Matrix arithmetic
+	- 6.1 Scalar multiplication and matrix addition
+	- 6.2 Matrix multiplication
+	- 6.3 Inner products
+	- 6.4 Transposes
+	- 6.5 Outer products and inner products (again)
+	- 6.6 Projections
+
+
+# Tutorial topics
+
+1. Linearity, Vectors
+2.  Bases and linear independence, Matrices and linear functions
+3. Matrix arithmetic, Geometry and linear transformations, more with matrix multiplication
+4. Inner products, Projections
