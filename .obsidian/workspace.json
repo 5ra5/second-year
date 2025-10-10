@@ -39,14 +39,10 @@
             "id": "f49a15de29f96399",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "semester 1/CSC1038/Topics.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Topics"
+              "title": "New tab"
             }
           }
         ],
@@ -200,6 +196,7 @@
   },
   "active": "f49a15de29f96399",
   "lastOpenFiles": [
+    "mouse",
     "test",
     "README.md",
     "semester 1/CSC1020/week 5.md",
