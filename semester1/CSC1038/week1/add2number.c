@@ -1,0 +1,1 @@
+printf("Number of argument: %d", argc) /*should be a second print statememnt that prints the number of numbers given in the input*/
