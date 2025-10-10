@@ -13,9 +13,3 @@
 
 10.  Pointers in use - Function
 11.  Struct Introduction
-
-
-
-
-acer-laptop
-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
