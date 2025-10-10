@@ -27,26 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "semester 1/CSC1030/Topics.md",
+                "file": "semester1/CSC1030/week 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Topics"
-            }
-          },
-          {
-            "id": "f49a15de29f96399",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "title": "week 4"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -194,10 +184,23 @@
       "bases:Create new base": false
     }
   },
-  "active": "f49a15de29f96399",
+  "active": "90eea92552e760ae",
   "lastOpenFiles": [
-    "mouse",
-    "test",
+    "semester1/CSC1030/Lecture Quizzes.md",
+    "semester1/CSC1030/week 4.md",
+    "semester1/CSC1030/week 5.md",
+    "semester1/CSC1038/week5/week 5.md",
+    "semester1/CSC1038/week5/lectures.md",
+    "semester1/CSC1038/week4/lab4-search-sub-string.c",
+    "semester1/CSC1038/week4/lab4-search-sub-string",
+    "semester1/CSC1038/week4/lab4-matrix-diagonal-sum.c",
+    "semester1/CSC1038/week4/lab4-matrix-diagonal-sum",
+    "semester1/CSC1038/week4/lab4-find-most-character.c",
+    "semester1/CSC1038/week4/lab4-find-most-character",
+    "semester1/CSC1038/week4/lab4-count-character.c",
+    "semester1/CSC1038/week4/lab4-count-character",
+    "semester1/CSC1038/week4",
+    "semester1/CSC1038/week3/stringInput.c",
     "README.md",
     "semester 1/CSC1020/week 5.md",
     "semester 1/CSC1028/Topics.md",
@@ -209,14 +212,6 @@
     "semester 1/MTH1034/Topics.md",
     "semester 1/CSC1038/Topics.md",
     "semester 1/CSC1038/week 5.md",
-    "semester 1",
-    "semester 1/CSC1028",
-    "semester 1/MTH1034",
-    "semester 1/CSC1020",
-    "semester 1/CSC1037",
-    "week 5.md",
-    "Planning",
-    "semester 1/CSC1038",
-    "semester 1/CSC1030"
+    "week 5.md"
   ]
 }
