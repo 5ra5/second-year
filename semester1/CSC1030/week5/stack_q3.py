@@ -18,11 +18,13 @@ class Stack(object):
         print(self.lst)
 
     def push_pop(self, str):
+        pops = []
         for c in str:
             if c == '*':
-                self.pop()
+                pops.append(self.pop())
             else:
                 self.push(c)
+        return pops
 
 
 stack = Stack()

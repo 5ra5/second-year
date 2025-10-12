@@ -214,3 +214,32 @@ def sum_digits(n):
     else:
         return n % 10 + sum_digits(n//10)
 ```
+
+# pseudo code
+
+-  Using the Stack class write an algorithm that will reverse the following string: "bus"
+```
+CLASS Stack():
+	DEFINE __init__(self):
+		initialise empty list self.lst
+		
+	DEFINE push(self, value):
+		append the value at the end of the list
+		
+	DEFINE pop(self):
+		return and remove the value at the end of the list
+		
+	DEFINE top(self):
+		return the value at the end of the list without removing it
+		
+	DEFINE is_empty(self):
+		return True if the length of self.lst is 0, otherwise return False
+		
+	DEFINE reverse(self):
+		initialise an empty string reversed
+		if self.is_empty is true:
+			return none
+		else pop the last element in the list and add it to the reversed string
+		return reversed string
+		
+```
