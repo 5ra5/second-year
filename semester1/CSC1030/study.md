@@ -243,3 +243,31 @@ CLASS Stack():
 		return reversed string
 		
 ```
+
+- Reverse a string using recursion
+```
+METHOD reverse_string(string):
+	IF the string is "":
+		RETURN ""
+	RETURN reverse_string(all characters from index 1 to end) + first character of the string
+	
+```
+
+- Check for palindrome using a deque
+```
+METHOD is_palindrome_deque(string):
+	WHILE the length of the string is not 1:
+		INITIALISE variable first = deque.delete_first()
+		INITIALISE variable last = deque.delete_last()
+		IF first != last:
+			RETURN FALSE
+		RETURN TRUE
+```
+
+- Sum of elements in a list using recursion
+```
+METHOD sum_list(list):
+	IF list is empty:
+		RETURN 0
+	RETURN first element of list + sum_list(elements from second to last)
+```
