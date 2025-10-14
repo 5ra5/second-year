@@ -20,3 +20,4 @@
 2.  Bases and linear independence, Matrices and linear functions
 3. Matrix arithmetic, Geometry and linear transformations, more with matrix multiplication
 4. Inner products, Projections
+5.  Outer products, Transposes
