@@ -134,3 +134,65 @@ struct Player //Structure type definition
 
 - Why do we need to use this method?
 -  We need it if we want the structure Name and DOB only be accessible by the Player variables
+
+**Struct and Function**
+
+- A function to calculate the total goal scored by two players
+```
+typedef struct Player Player;
+typedef struct Date Date;
+typedef struct Name Name;
+typedef struct DOB DOB;
+
+struct DOB
+{
+	int day;
+	int month;
+	int year;
+};
+
+struct Name
+{
+	char firstName[30];
+	char lastName[30];
+};
+
+
+struct Player //Structure type definition
+{
+  Name name;   //the member name is an instance of the structure Name
+  int goal_scored;
+  char position[5];
+  float price;
+  DOB date_of_birth;  //the member date_of_birth is an instance of the structure DOB
+};
+
+/*function prototype*/
+int countGoal(Player p1, Player p2);
+
+int main()
+{
+	Player p1, p2;
+	int goals = 0;
+
+	/* fill data for p1 */
+	strcpy(p1.name.firstName, "Cristiano");
+	strcpy(p1.name.lastName, "Ronaldo");
+	p1.goal_scored = 500;
+
+	/*fill data for p2 */
+	strcpy(p2.name.firstName, "Lionel");
+	strcpy(p2.name.lastName, "Messi");
+	p2.goal_scored = 500;
+
+	/* call the function to calculate the total of goals */
+	goals = countGoal(p1, p2);
+
+	return 0;
+}
+
+int countGoal(Player p1, Player p2)
+{
+	return p1.goal_scored + p2.goal_scored;
+}
+```
