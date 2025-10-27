@@ -38,13 +38,56 @@ class SinglyLinkedList:
         return node.get_val()
 
     def insert_end(self, val):
-        pass
+        node = Node(val)
+        if not self.head:
+            self.head = node
+            self.tail = node
+        else:
+            self.tail.next = node
+            self.tail = node
+        self.size += 1
+        return node.get_val()
 
     def insert_sorted(self, val):
-        pass
+        node = Node(val)
+        if not self.head:
+            self.head = node
+            self.tail = node
+            self.size += 1
+            return node
+
+        if val <= self.head.val:
+            node.next = self.head
+            self.head = node
+            self.size += 1
+            return node
+
+        current = self.head
+        while current.next and current.next.val < val:
+            current = current.next
+
+        node.next = current.next
+        current.next = node
+
+        if node.next is None:
+            self.tail = node
+
+        self.size += 1
+        return node
+
 
     def remove_start(self):
-        pass
+        if self.size == 0:
+            return None
+
+        node = self.head
+        self.head = self.head.next
+        self.size -= 1
+
+        if self.size == 0:
+            self.tail = None
+
+        return node.val
 
     def remove_end(self):
         if self.size == 0:
@@ -55,7 +98,7 @@ class SinglyLinkedList:
             self.head = None
             self.tail = None
             self.size -= 1
-            return node
+            return node.val
 
         current = self.head
         while current.next.next:
@@ -66,7 +109,7 @@ class SinglyLinkedList:
         self.tail = current
         self.size -= 1
 
-        return node
+        return node.val
 
 
     def find(self, val):
@@ -86,7 +129,12 @@ class SinglyLinkedList:
         return self.size
 
     def display(self):
-        pass
+        vals = []
+        current = self.head
+        while current:
+            vals.append(str(current.val))
+            current = current.next
+        return " -> ".join(vals)
 
 
 class TestSinglyLinkedList(unittest.TestCase):
