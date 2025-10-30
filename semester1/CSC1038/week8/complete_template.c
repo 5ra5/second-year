@@ -54,11 +54,11 @@ int sumCal(int grades[], int length)
 
 double averageCal(int grades[], int length)
 {
-	int sum = 0
-	return (double)sum/length; /* converst sum from an interger to double */
+	int sum = sumCal(grades, length);
+	return (double)sum/length; /* converts sum from an interger to double */
 }
 
-double sdCal(int grades[], int length){
+double sdCal(int grades[], int length)
 {
 	double sd = 0.0;
 	double average = 0.0;
@@ -66,7 +66,7 @@ double sdCal(int grades[], int length){
 	average = averageCal(grades, length);
 	for(int i = 0; i < length; ++i)
 	{
-		sd += pow(grades[i] - average), 2); /* The pow function is in the math library,
+		sd += pow(grades[i] - average, 2); /* The pow function is in the math library,
 		the first number is the number we're trying to multiply, and the second to the power of n */
 	}
 	sd = sqrt(sd/length); /* The sqrt function is in the math library */
