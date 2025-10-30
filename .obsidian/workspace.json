@@ -171,6 +171,8 @@
   },
   "active": "daa6481e47d2ed25",
   "lastOpenFiles": [
+    "semester1/CSC1038/week8/template.c",
+    "semester1/CSC1038/week8/complete_template.c",
     "semester1/CSC1038/week7/Dynamic Allocation 1 - Malloc and Free.md",
     "semester1/CSC1020/week8/Non-Functional Requirements (NFRs).md",
     "semester1/CSC1038/week8/ex1-largest-smallest.c",
@@ -189,7 +191,6 @@
     "README.md",
     "semester1/CSC1020/week7/Domain models.md",
     "semester1/CSC1038/week7/Dynamic Allocation 2 - Calloc and Realloc.md",
-    "semester1/CSC1020/week7",
     "semester1/CSC1038/topics.md",
     "semester1/CSC1028/topics.md",
     "semester1/CSC1020/week6/Usage models, use case overview & sequence diagram.md",
