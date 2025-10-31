@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "daa6481e47d2ed25",
+            "id": "131b2822102d071f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "semester1/CSC1038/week6/lectures.md",
+                "file": "semester1/CSC1020/week8/Quality models.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lectures"
+              "title": "Quality models"
             }
           }
         ]
@@ -169,24 +169,25 @@
       "bases:Create new base": false
     }
   },
-  "active": "daa6481e47d2ed25",
+  "active": "131b2822102d071f",
   "lastOpenFiles": [
+    "semester1/CSC1020/week8/Non-Functional Requirements (NFRs).md",
+    "semester1/CSC1020/week8/Quality models.md",
+    "semester1/CSC1038/week8/WEEKLY LAB TASKS.md",
+    "semester1/CSC1038/week6/lectures.md",
     "semester1/CSC1038/week8/template.c",
     "semester1/CSC1038/week8/complete_template.c",
     "semester1/CSC1038/week7/Dynamic Allocation 1 - Malloc and Free.md",
-    "semester1/CSC1020/week8/Non-Functional Requirements (NFRs).md",
     "semester1/CSC1038/week8/ex1-largest-smallest.c",
     "semester1/CSC1038/week8/ex1-largest-smallest",
     "semester1/CSC1038/week8/ex1-is-symmetric.c",
     "semester1/CSC1038/week8/ex1-is-symmetric",
-    "semester1/CSC1038/week8/WEEKLY LAB TASKS.md",
     "semester1/CSC1038/week8",
     "semester1/CSC1038/practice/lab5-get-a-country.c",
     "semester1/CSC1038/practice/lab5-get-a-country",
     "semester1/MTH1034/additional resources.md",
     "semester1/CSC1020/week8",
     "semester1/CSC1020/group_project/SRS project notes.md",
-    "semester1/CSC1020/group_project/specifications.pdf",
     "semester1/CSC1038/practice/notes.md",
     "README.md",
     "semester1/CSC1020/week7/Domain models.md",
@@ -196,7 +197,6 @@
     "semester1/CSC1020/week6/Usage models, use case overview & sequence diagram.md",
     "semester1/CSC1028/Lab exam 1 exercise.md",
     "semester1/MTH1034/topics.md",
-    "semester1/CSC1038/week6/lectures.md",
     "semester1/CSC1037/week6/Git merge rebase and bisect.md",
     "semester1/CSC1037/week5/remotes.md",
     "semester1/CSC1037/week4/lectures.md",
