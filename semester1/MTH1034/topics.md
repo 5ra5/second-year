@@ -12,6 +12,12 @@
 	- 6.4 Transposes
 	- 6.5 Outer products and inner products (again)
 	- 6.6 Projections
+7. Systems of linear equations
+	- 7.1 A 2D example
+	- Gaussian elimination
+	- Cases without unique solutions
+	- Inverse matrices
+8. Curve fitting and least-squares regression
 
 
 # Tutorial topics
@@ -21,3 +27,6 @@
 3. Matrix arithmetic, Geometry and linear transformations, more with matrix multiplication
 4. Inner products, Projections
 5.  Outer products, Transposes
+6.  Gaussian elimination, When do solutions not exist?, Linear combinations, Chemical equations, Orthogonality constraints
+7.  Inverses
+8.  Curve fitting
