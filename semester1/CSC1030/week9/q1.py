@@ -21,6 +21,7 @@ class BinarySearchTree:
     def upsert(self, key, val):
         temp = Position(key, val)
 
+        # checking if the root exists, if not add that number as a root
         if self.root is None:
             self.root = temp
             return temp
@@ -41,9 +42,7 @@ class BinarySearchTree:
 
         return self.root
 
-    def in_order(self):
-        temp = Position()
-
+    def first(self):
 
 
 
@@ -58,10 +57,10 @@ class BSTTest(unittest.TestCase):
 
         self.assertEqual(50, tree.root.key)
 
-    def test_in_order(self):
+    def test_first(self):
 
         tree = BinarySearchTree()
         for node in [50, 20, 60, 19, 25, 51, 62]:
             tree.upsert(node, f"{node}_val")
 
-        self.assertEqual([19, 20, 25, 50, 51, 60, 62], tree.in_order())
+        self.assertEqual(19, tree.first().key)
