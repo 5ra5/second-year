@@ -11,10 +11,14 @@
             "id": "4594f103a31dbf35",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Linked lists.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Linked lists"
             }
           }
         ]
@@ -167,6 +171,7 @@
   },
   "active": "e10fd722d8b37441",
   "lastOpenFiles": [
+    "Linked lists.md",
     "semester1/CSC1038/week9/Linked Lists.md",
     "semester1/MTH1034/topics.md",
     "semester1/CSC1038/week9/Struct and Linked List.md",
@@ -189,7 +194,7 @@
     "semester1/CSC1038/week8",
     "semester1/CSC1020/group_project/SRS project notes.md",
     "semester1/CSC1038/practice/notes.md",
-    "README.md",
+    "semester1/CSC1038/week9/README.md",
     "semester1/CSC1020/week7/Domain models.md",
     "semester1/CSC1038/week7/Dynamic Allocation 2 - Calloc and Realloc.md",
     "semester1/CSC1038/topics.md",
@@ -202,7 +207,6 @@
     "semester1/CSC1030/study.md",
     "semester1/CSC1020/week2/revision_quiz.md",
     "semester1/CSC1020/week5/revision_quiz.md",
-    "semester1/CSC1020/week4/revision_quiz.md",
     "semester1/CSC1020/week4/vml.png",
     "semester1/CSC1020/vml.png",
     "semester1/vml.png",
