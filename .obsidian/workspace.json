@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linked lists.md",
+                "file": "semester1/CSC1037/week9/Docker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Linked lists"
+              "title": "Docker"
             }
           }
         ]
@@ -169,8 +169,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "e10fd722d8b37441",
+  "active": "4594f103a31dbf35",
   "lastOpenFiles": [
+    "semester1/CSC1037/week9",
+    "semester1/CSC1037/week9/Docker.md",
     "Linked lists.md",
     "semester1/CSC1038/week9/Linked Lists.md",
     "semester1/MTH1034/topics.md",
@@ -205,8 +207,6 @@
     "semester1/CSC1037/week5/remotes.md",
     "semester1/CSC1037/week4/lectures.md",
     "semester1/CSC1030/study.md",
-    "semester1/CSC1020/week2/revision_quiz.md",
-    "semester1/CSC1020/week5/revision_quiz.md",
     "semester1/CSC1020/week4/vml.png",
     "semester1/CSC1020/vml.png",
     "semester1/vml.png",
