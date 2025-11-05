@@ -96,16 +96,17 @@ services:
 
 Dockerfile
 ```shell
-FROM node:latest
-RUN mkdir /app
-WORKDIR /app
-RUN npm install express
-CMD ["node", "app.js"]
-EXPOSE 80
+FROM node:latest # use this image as the starting point
+RUN mkdir /app # create a directory /app
+WORKDIR /app # everything we do is in this directory
+RUN npm install express # install the nodejs/express prerequsites into the container
+CMD ["node", "app.js"] # entry point
+EXPOSE 80 # expose this port
 
 # We put this *last*, because this is the element of this configuration
 # most likely to change.  And when that happens, rebuilding the image
 # requires fewer new layes.
+# we are just copying nodejs/express app into the constainer
 COPY app.js .
 
 ```
