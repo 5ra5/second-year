@@ -11,13 +11,32 @@
             "id": "f93a3aecd6a77698",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "semester1/CSC1028/Lab 10 tasks no solutions.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Lab 10 tasks no solutions"
+            }
+          },
+          {
+            "id": "db62bb91aec50410",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "semester1/CSC1028/Lab 10 tasks no solutions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lab 10 tasks no solutions"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -165,8 +184,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "e10fd722d8b37441",
+  "active": "db62bb91aec50410",
   "lastOpenFiles": [
+    "semester1/CSC1028/R practice/geometric_distribution_simulation.R",
+    "semester1/CSC1028/R practice",
+    "semester1/CSC1028/Lab exam 1 exercise.md",
     "password-susi.md",
     "semester1/CSC1038/week9/lab9-integer-singly-linked-list.c",
     "semester1/CSC1038/week9/Linked lists.md",
@@ -192,17 +214,14 @@
     "semester1/CSC1038/week8/template.c",
     "semester1/CSC1038/week8/complete_template.c",
     "semester1/CSC1038/week7/Dynamic Allocation 1 - Malloc and Free.md",
-    "semester1/CSC1038/week8/ex1-largest-smallest.c",
     "semester1/CSC1020/group_project/SRS project notes.md",
     "semester1/CSC1038/practice/notes.md",
     "semester1/CSC1038/week9/README.md",
     "semester1/CSC1020/week7/Domain models.md",
     "semester1/CSC1038/week7/Dynamic Allocation 2 - Calloc and Realloc.md",
     "semester1/CSC1038/topics.md",
-    "semester1/CSC1028/topics.md",
+    "semester1/CSC1028/Lab 10 tasks no solutions.md",
     "semester1/CSC1020/week6/Usage models, use case overview & sequence diagram.md",
-    "semester1/CSC1028/Lab exam 1 exercise.md",
-    "semester1/CSC1037/week6/Git merge rebase and bisect.md",
     "semester1/CSC1020/week4/vml.png",
     "semester1/CSC1020/vml.png",
     "semester1/vml.png",
