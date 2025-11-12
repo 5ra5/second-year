@@ -68,9 +68,50 @@ class SinglyLinkedList:
         return newest
 
     def remove_start(self):
-        if self.size == 1:
+        if not self.head:
+            return None
+        temp = self.head
+        self.head = self.head.next
+        self.size = self.size - 1
+
+        if not self.head:
+            self.tail = None
+        return temp.val
+
+    def remove_end(self):
+        if not self.head:
+            return None
+
+        if self.head == self.tail:
+            temp = self.head
             self.head = None
-            self.tail = Non
+            self.tail = None
+            self.size = self.size - 1
+            return temp.val
+
+        current = self.head
+        while current.next.next:
+            current = current.next
+
+        temp = current.next
+        current.next = None
+        self.tail = current
+        self.size = self.size - 1
+        if not self.head:
+            self.tail = None
+        return temp.val
+
+
+
+    def find(self, val):
+        if not self.head:
+            return None
+        current = self.head
+        while current:
+            if current.val == val:
+                return current
+            current = current.next
+        return None
 
     def is_empty(self):
         if not self.head:
@@ -87,7 +128,6 @@ class SinglyLinkedList:
             output.append(str(current.val))
             current = current.next
         return " -> ".join(output)
-
 
 class TestSinglyLinkedList(unittest.TestCase):
 
@@ -128,6 +168,10 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.assertEqual(self.a.tail.val, 20)
         self.assertEqual(len(self.a), 6)
 
+    def test_remove_start_empty(self):
+        self.assertIsNone(self.a.remove_start())
+        self.assertEqual(len(self.a), 0)
+
     def test_remove_start_single(self):
         self.a.insert_end(7)
         v = self.a.remove_start()
@@ -135,3 +179,71 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.assertTrue(self.a.is_empty())
         self.assertIsNone(self.a.head)
         self.assertIsNone(self.a.tail)
+
+    def test_remove_start_multiple(self):
+        for v in [1, 2, 3]:
+            self.a.insert_end(v)
+        v = self.a.remove_start()
+        self.assertEqual(v, 1)
+        self.assertEqual(self.a.display(), "2 -> 3")
+        self.assertEqual(self.a.head.val, 2)
+        self.assertEqual(self.a.tail.val, 3)
+        self.assertEqual(len(self.a), 2)
+
+    def test_remove_end_empty(self):
+        self.assertIsNone(self.a.remove_end())
+        self.assertEqual(len(self.a), 0)
+
+    def test_remove_end_single(self):
+        self.a.insert_start(9)
+        v = self.a.remove_end()
+        self.assertEqual(v, 9)
+        self.assertTrue(self.a.is_empty())
+        self.assertIsNone(self.a.head)
+        self.assertIsNone(self.a.tail)
+
+    def test_remove_end_multiple(self):
+        for v in [1, 2, 3]:
+            self.a.insert_end(v)
+        v = self.a.remove_end()
+        self.assertEqual(v, 3)
+        self.assertEqual(self.a.display(), "1 -> 2")
+        self.assertEqual(self.a.head.val, 1)
+        self.assertEqual(self.a.tail.val, 2)
+        self.assertEqual(len(self.a), 2)
+
+    def test_find_found(self):
+        for v in [4, 5, 6]:
+            self.a.insert_end(v)
+        n = self.a.find(5)
+        self.assertIsNotNone(n)
+        self.assertEqual(n.val, 5)
+
+    def test_find_not_found(self):
+        for v in [1, 2, 3]:
+            self.a.insert_end(v)
+        self.assertIsNone(self.a.find(99))
+
+    def test_is_empty(self):
+        self.assertTrue(self.a.is_empty())
+        self.a.insert_end(1)
+        self.assertFalse(self.a.is_empty())
+        self.a.remove_start()
+        self.assertTrue(self.a.is_empty())
+
+    def test_len(self):
+        self.assertEqual(len(self.a), 0)
+        for v in [1, 2, 3, 4]:
+            self.a.insert_end(v)
+        self.assertEqual(len(self.a), 4)
+        self.a.remove_end()
+        self.assertEqual(len(self.a), 3)
+
+    def test_display(self):
+        self.assertEqual(self.a.display(), "")
+        for v in [1, 3, 2]:
+            self.a.insert_end(v)
+        self.assertEqual(self.a.display(), "1 -> 3 -> 2")
+
+if __name__ == "__main__":
+    unittest.main()
