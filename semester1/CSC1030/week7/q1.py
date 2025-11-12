@@ -50,6 +50,7 @@ class SinglyLinkedList:
 
     def insert_sorted(self, val):
         node = Node(val)
+        # inserting head
         if not self.head:
             self.head = node
             self.tail = node

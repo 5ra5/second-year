@@ -130,6 +130,106 @@ Q10. Which of the following is a disadvantage of linked lists compared to arrays
 Q11. Which of the following correctly describes the size attribute in a linked list?
 - It tracks the current number of nodes in the list.
 
+# Quiz 4
+
+Q1. What is a tree in data structures? - A hierarchical structure consisting of nodes connected by edges.
+
+Q2. What do we call the topmost node of a tree? - The root.
+
+Q3. Nodes with no children are called: Leaves (external nodes).T
+
+Q4. Two nodes that share the same parent are: Siblings.
+
+Q5. What is an edge in a tree? - The connection (relationship) between 
+a parent and a child node.
+
+Q6. The depth of a node p is defined as: The number of ancestors of p (root has depth 0).
+
+Q7. The height of a node p is: The length (in edges) of the longest path from p down to a leaf in its subtree.
+
+Q8. The height of a tree T equals: The height of its root (longest root-to-leaf path in edges).
+
+Q9. The subtree rooted at a node v contains: v and all of v's descendants.
+
+Q10. A path in a tree is: A sequence of nodes where consecutive nodes are connected by an edge.
+
+Q11. A binary tree is an ordered tree in which: Each node has at most two children (left and right)
+
+Q12. A proper (full) binary tree is one where: Every internal node has exactly two children.
+
+Q13. In any binary tree, the maximum number of nodes at level d is: 2^d.
+
+Q14. In a binary tree of height h, the maximum total number of nodes is: 2^(h + 1) - 1.
+
+Q15. The minimum height of a binary tree with n nodes (using edges) is: ceil(log2(n+1)) - 1.
+
+Q16. Preorder traversal of a (general) tree visits nodes in the order: Root -> children subtrees (left-to-right), recursively.
+
+Q17. Inorder traversal is defined for: Binary trees (visit Left -> Root -> Right).
+
+Q18. Breadth-first traversal of a tree is also known as: Level-order traversal.
+
+Q19. The time complexity to traverse all nodes of a tree (any DFS/BFS) is: O(n) where n is the number of nodes.
+
+
+# Quiz 5
+
+Q1. In a Binary Search Tree (BST), which property must always hold true for every node? - Left child's key < parent's key < right child's key.
+
+Q2. Which traversal of a BST visits the nodes in ascending order of their keys? - Inorder.
+
+Q3, If nodes are inserted into a BST in strictly increasing order, the tree becomes: A degenerate tree (linked list).
+
+Q4. The first() node in a BST can be found by: Traversing to the leftmost node.
+
+Q5. When deleting a node with two children in a BST, it is typically replaced by: Its inorder predecessor.
+
+Q6. The after(p) function in a BST returns: The next higher node in the inorder traversal.
+
+Q7. Searching for a key in a BST of height h runs in: O(h).
+
+Q8. In the BST deletion case where the node has one child, the deleted node is: Replaced directly by its single child.
+
+Q9. The correctness of BST operations depends on maintaining: Inorder key ordering.
+
+Q10. In recursive insertion into a BST, the unlinking (descent) phase occurs when: The recursion descends down the tree following comparisons.
+
+Q11. The base case in a recursive BST insertion is reached when: A None (empty) child reference is encountered.
+
+Q12. During the relinking (ascent) phase of recursive insertion: Each ancestor reassigns its left or right child to the returned subtree.
+
+Q13. If relinking is omitted in recursive BST insertion: The new node will not be connected into the original tree.
+
+Q14. Recursive insertion returns the (sub)tree at each step primarily to: Update parent links correctly as recursion unwinds.
+
+Q15. An AVL tree satisfies the height-balance property, which requires: The height difference between left and right subtrees of any node is at most 1.
+
+Q16. After inserting a node into an AVL tree, which positions can become unbalanced? - Only ancestors of the inserted node on the path to the root.
+
+Q17. Trinode restructuring for AVL rebalancing accounts for how many rotation patterns? - 4
+
+Q18. A right-heavy imbalance in an AVL tree (due to insertion in the right subtree) is corrected using: A single left rotation or a right-left double rotation.
+
+Q19. The AVL height-balance property guarantees worst-case time for search, insert, and delete of: O(log n).
+
+Q20. Following a deletion in an AVL tree, rebalancing: May require checking and fixing multiple nodes up to the root.
+
+Q21. The built-in Python dict is an implementation of which abstract data type? - Map.
+
+Q22. For a well-designed hash table under typical conditions, lookup, insert, and delete run in: O(1) on average.
+
+Q23. In a hash table, a collision occurs when: Two keys are mapped to the same bucket index.
+
+Q24. A good hash function for a map should be: Deterministic and distribute keys to minimize collisions.
+
+Q25. Using the division method, a hash code i is mapped into a table of size N by: i mod N.
+
+Q26. Choosing a prime number for the table size N in the division method primarily helps to: Reduce systematic collisions from patterns in hash codes.
+
+Q27. Compared to simply summing character nodes, a polynomial hash for strings: Accounts for both characters values and their positions.
+
+Q28. In a hash table, the compression function is responsible for: Mapping an arbitrary integer hash code into a valid bucket index range.
+
 
 
 
