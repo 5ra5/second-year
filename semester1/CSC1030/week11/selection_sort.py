@@ -1,3 +1,7 @@
+# in place: yes
+# stable: no
+# best and worst time complexity: O(n^2)
+
 def selection_sort(lst):
     length = len(lst)
 

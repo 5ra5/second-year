@@ -1,3 +1,8 @@
+# in place: yes
+# stable: yes
+# best time complexity: O(n)
+# worst time complexity: O(n^2)
+
 def insertion_sort(lst):
     length = len(lst)
 

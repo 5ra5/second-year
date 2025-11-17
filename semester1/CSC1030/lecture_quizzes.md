@@ -230,6 +230,38 @@ Q27. Compared to simply summing character nodes, a polynomial hash for strings: 
 
 Q28. In a hash table, the compression function is responsible for: Mapping an arbitrary integer hash code into a valid bucket index range.
 
+# Quiz 6
+
+Q1. A sorting algorithm is described as in-place if: It sorts data using only a constant amount of extra space
+
+Q2. A stable algorithm ensures that: Equal keys preserve their original relative order.
+
+Q3. Which sorting algorithm is stable but not in-place in its typical implementation: Merge sort.
+
+Q4. Merge-sort follows which algorithmic paradigm? - Divide-and-conquer.
+
+Q5. During the divide step of merge-sort, the sequence is split: Into two halves of roughly equal parts.
+
+Q6. The combine step in merge-sort requires: O(n).
+
+Q7. The height of the merge-sort recursion tree is approximately: log(n).
+
+Q8. The total running time of merge-sort is: O(n log n).
+
+Q9. In quick-sort, the pivot is usually chosen as: The last element.
+
+Q10. In the worst case, quick-sort runs in:  O(n^2).
+
+Q11.  The best case for quick-sort occurs when: The pivot divides the array evenly at each step.
+
+Q12. Insertion sort's worst case arises when: The list is in descending order.
+
+Q13. Selection sort repeatedly: Selects the smallest unsorted element and places it at the front.
+
+Q14. Bubble sort works by: Swapping adjacent elements that are out of order repeatedly.
+
+Q15. Which of the following algorithms does NOT use divide-and-conquer? - Selection sort.
+
 
 
 
