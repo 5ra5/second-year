@@ -13,12 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
+<<<<<<< HEAD
                 "file": "semester1/MTH1034/topics.md",
+=======
+                "file": "semester1/CSC1020/notes for SRS project.md",
+>>>>>>> cec2073 (Nov 18)
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
+<<<<<<< HEAD
               "title": "topics"
+=======
+              "title": "notes for SRS project"
+>>>>>>> cec2073 (Nov 18)
             }
           }
         ]
@@ -171,7 +179,10 @@
   },
   "active": "db4322fca282a5fb",
   "lastOpenFiles": [
+<<<<<<< HEAD
     "semester1/CSC1030/week11/practice.py~",
+=======
+>>>>>>> cec2073 (Nov 18)
     "semester1/CSC1030/lecture_quizzes.md",
     "semester1/CSC1038/week11/Bitwise operators.md",
     "semester1/CSC1038/week11",
