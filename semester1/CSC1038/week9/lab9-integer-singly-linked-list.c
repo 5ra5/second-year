@@ -2,11 +2,9 @@
 // Author: Petra Sartori
 // Date: 6 November 2025
 
-// Necessary libraries for this task
 #include <stdio.h>
 #include <stdlib.h>
 
-// Declaring a structure of Node
 typedef struct Node Node;
 
 struct Node{
@@ -18,43 +16,42 @@ struct Node{
 Node* get_numbers(int argc, char *argv[], Node *start);
 void print_numbers(Node *start);
 
-// main function just calls functions I wrote to read and print values for a linked list
 int main(int argc, char *argv[])
 {
-    Node *start = NULL; // initialising a pointer to the Node struct
+    Node *start = NULL;
 
     start = get_numbers(argc, argv, start);
     print_numbers(start);
     return 0;
 }
 
-
-/*Function get_numbers builds a linked list using pointers and dynamic memory allocation.*/
 Node* get_numbers(int argc, char *argv[], Node *start)
 {
-    Node *current, *first; // declaring pointers that track nodes of interest
-    int length = atoi(argv[1]); // the length of input is given as the first number in input
+    Node *current, *first;
 
-    first = (Node*)calloc(1, sizeof(Node)); // first node, dynamic memory allocation
-    current = first; // at the start the current node is also the first one
-    current->value = atoi(argv[2]); // the first node is given as the second number in input
+    first = (Node*)calloc(1, sizeof(Node));
+    current = first;
 
-    // processing the rest of the nodes, starting from index 3
-    for(int i = 2; i <= length; i++)
+    while(current->next != NULL)
     {
-        current->next = (Node*)calloc(1, sizeof(Node)); // dynamic memory allocation for each
         current = current->next;
-        current->value = atoi(argv[i + 1]);
     }
-    current->next = NULL; // last node
-    return first; // returning the address of the first node
+
+    current->next = (Node*)calloc(1, sizeof(Node));
+    current = current->next;
+    current->value = value;
+
+    current->next = NULL;
+    return first;
 }
 
 void print_numbers(Node *start)
 {
+    int count = 0;
     Node* p = NULL;
     for(p = start; p != NULL; p = p->next)
     {
+        ++count;
         printf("%d\n", p->value);
     }
 }

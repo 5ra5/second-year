@@ -1,81 +1,68 @@
-#include<stdio.h>
+#include <stdio.h>
+
 #include<stdlib.h>
 
-/*Declare a structure of Student */
-typedef struct Student Student;
+struct node{
 
-struct Student {
-	char name[20];
-	char programme[20];
-	float grade;
-	Student *next;
+	int data;
+	struct node *next;
+
 };
 
-/*Functional prototype */
-Student* get_students(); /* You may notice that the function get_students return the type Student*, implying that the function will return a pointer that points to a Student */
-void printStudentList(Student *start); /*to print the student list */
+struct node* insertAtLast(struct node * head,int d){
+
+struct node *new=(struct node*)malloc(sizeof(struct node));
+
+new->data=d;
+
+new->next=NULL;
+
+if(head==NULL){
+
+head=new;
+
+}else{
+
+struct node *temp=head;
+
+while(temp->next!=NULL){
+
+temp=temp->next;
+
+}
+
+temp->next=new;
+
+}
+
+return head;
+
+}
 
 int main()
-{
-	Student *start = NULL;
 
-	start = get_students();
-	printStudentList(start);
-	return 0;
+{
+
+struct node *head=NULL;
+
+head=insertAtLast(head,10);
+
+head=insertAtLast(head,20);
+
+head=insertAtLast(head,30);
+
+head=insertAtLast(head,40);
+
+struct node* temp=head;
+
+while(temp!=NULL){
+
+printf("%d\n",temp->data);
+
+temp=temp->next;
+
 }
 
-Student* get_students() /* This mean that the function will return a pointer that points to the structure Student */
-{
-	Student *current, *first; /*declare two pointers */
-	int selection; /* to ask if the user keep entering new student data or stop */
+return 0;
 
-
-	first = (Student*)calloc(1,sizeof(Student)); /*create the first node */
-	current = first; /*Now the current node is also the first node */
-
-	/*fill data for the first node */
-	printf("Student name: \n");
-	scanf("%s", current->name);
-	printf("Programme: \n");
-	scanf("%s", current->programme);
-	printf("Grade: \n");
-	scanf("%f",  &current->grade);
-
-	printf("Add more student? (1=Y, 0 = N): \n");
-	scanf("%d", &selection);
-
-	/*create the following nodes until the user select No */
-	while(selection) //while selection is 1 (Yes)
-	{
-		/* allocate node and change the current point */
-		current->next = (Student*)calloc(1, sizeof(Student));
-		current = current->next;
-
-		/*fill the new node */
-		printf("Student name: \n");
-		scanf("%s", current->name);
-		printf("Programme: \n");
-		scanf("%s", current->programme);
-		printf("Grade: \n");
-		scanf("%f",  &current->grade);
-
-		printf("Add more student? (1=Y, 0 = N): \n");
-		scanf("%d", &selection);
-	}
-	current->next = NULL; /* in case the last node */
-	return first; /* return the address of the first node */
-}
-
-/* This is the function to display the list of the students. Pay attention on how we can iterate over all nodes in the linked list */
-
-void printStudentList(Student *start)
-{
-	int count = 0;
-	Student* p = NULL;
-	for(p = start; p != NULL; p = p->next)
-	{
-		++count;
-		printf("Student #%d: ", count);
-		printf("%s, %s, %.2f\n", p->name, p->programme, p->grade);
-	}
 }

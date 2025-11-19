@@ -1,32 +1,20 @@
 {
   "main": {
-    "id": "33d6559923919559",
+    "id": "f190092be78ef3c1",
     "type": "split",
     "children": [
       {
-        "id": "79971913f27afefc",
+        "id": "69d27818c43fe219",
         "type": "tabs",
         "children": [
           {
-            "id": "db4322fca282a5fb",
+            "id": "8e2a91943e5eb741",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-<<<<<<< HEAD
-                "file": "semester1/MTH1034/topics.md",
-=======
-                "file": "semester1/CSC1020/notes for SRS project.md",
->>>>>>> cec2073 (Nov 18)
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-<<<<<<< HEAD
-              "title": "topics"
-=======
-              "title": "notes for SRS project"
->>>>>>> cec2073 (Nov 18)
+              "title": "New tab"
             }
           }
         ]
@@ -35,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "ca15ee5e53c8344b",
+    "id": "571bbd79aca81b47",
     "type": "split",
     "children": [
       {
-        "id": "98cada5f83cf3b32",
+        "id": "525f74b5b15b541f",
         "type": "tabs",
         "children": [
           {
-            "id": "e10fd722d8b37441",
+            "id": "640305f64121116e",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -56,7 +44,7 @@
             }
           },
           {
-            "id": "d7670eaa8611f5c4",
+            "id": "75108b0a23517571",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -73,7 +61,7 @@
             }
           },
           {
-            "id": "6a8558ddb6cead2d",
+            "id": "30ef201ed10e68e7",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -86,23 +74,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 207.5
+    "width": 300
   },
   "right": {
-    "id": "899a6e2b71b525dc",
+    "id": "46630f5692fa873d",
     "type": "split",
     "children": [
       {
-        "id": "2365b8d9ab7e62cf",
+        "id": "c83fa5fe94819218",
         "type": "tabs",
         "children": [
           {
-            "id": "791b4c10d82d1afa",
+            "id": "cad6b9a67d5d4233",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,25 +99,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Welcome"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "519cf05172f78c53",
+            "id": "3f4e5eafecebc99c",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Welcome"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "62ef4bcc2cd1e21d",
+            "id": "af0762ee40a74d5b",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -145,18 +131,17 @@
             }
           },
           {
-            "id": "30b38fb8e4c4f91d",
+            "id": "2b186bb7f7d1d102",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
+              "title": "Outline"
             }
           }
         ]
@@ -177,51 +162,6 @@
       "bases:Create new base": false
     }
   },
-  "active": "db4322fca282a5fb",
-  "lastOpenFiles": [
-<<<<<<< HEAD
-    "semester1/CSC1030/week11/practice.py~",
-=======
->>>>>>> cec2073 (Nov 18)
-    "semester1/CSC1030/lecture_quizzes.md",
-    "semester1/CSC1038/week11/Bitwise operators.md",
-    "semester1/CSC1038/week11",
-    "semester1/CSC1020/notes for SRS project.md",
-    "semester1/CSC1028/Lab 10 tasks no solutions.md",
-    "semester1/CSC1028/R practice/geometric_distribution_simulation.R",
-    "semester1/CSC1028/R practice",
-    "semester1/CSC1028/Lab exam 1 exercise.md",
-    "password-susi.md",
-    "semester1/CSC1038/week9/lab9-integer-singly-linked-list.c",
-    "semester1/CSC1038/week9/Linked lists.md",
-    "semester1/CSC1020/week9/Scaling and refining RE.md",
-    "semester1/CSC1037/week9/Docker.md",
-    "semester1/CSC1020/week9",
-    "Linked lists.md",
-    "semester1/CSC1037/week9",
-    "semester1/CSC1030/week9/__pycache__/q1.cpython-311.pyc",
-    "README.md",
-    "semester1/CSC1038/week9/Linked Lists.md",
-    "semester1/MTH1034/topics.md",
-    "semester1/CSC1038/week9/Struct and Linked List.md",
-    "semester1/CSC1038/week9",
-    "semester1/MTH1034/YouTube playlists.md",
-    "semester1/MTH1034/past-exams/2024.pdf",
-    "semester1/MTH1034/past-exams",
-    "semester1/MTH1034/additional resources.md",
-    "semester1/CSC1020/week8/Quality models.md",
-    "semester1/CSC1020/week8/Non-Functional Requirements (NFRs).md",
-    "semester1/CSC1038/week8/WEEKLY LAB TASKS.md",
-    "semester1/CSC1038/week6/lectures.md",
-    "semester1/CSC1038/week7/Dynamic Allocation 1 - Malloc and Free.md",
-    "semester1/CSC1020/group_project/SRS project notes.md",
-    "semester1/CSC1038/practice/notes.md",
-    "semester1/CSC1038/week9/README.md",
-    "semester1/CSC1020/week7/Domain models.md",
-    "semester1/CSC1020/week4/vml.png",
-    "semester1/CSC1020/vml.png",
-    "semester1/vml.png",
-    "vml.png",
-    "Screenshot 2025-10-10 at 20-35-46 SA2025-W5-print - SA2025-W5-print.pdf.png"
-  ]
+  "active": "8e2a91943e5eb741",
+  "lastOpenFiles": []
 }
