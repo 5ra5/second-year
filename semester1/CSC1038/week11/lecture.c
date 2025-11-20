@@ -1,26 +1,26 @@
-//Static versus automatic variables
 #include <stdio.h>
+int count = 0;                         // Declare a global variable
 // Function prototypes
 void test1(void);
 void test2(void);
 int main(void)
 {
-  for(int i = 0 ; i < 5 ; ++i)
+  int count = 0;                      // This hides the global count
+  for( ; count < 5 ; ++count)
   {
     test1();
     test2();
   }
   return 0;
 }
-// Function test1 with an automatic variable
+// Function test1 using the global variable
 void test1(void)
 {
-  int count = 0;
-  printf("test1   count = %d\n", ++count );
+  printf("test1   count = %d\n", ++count);
 }
-// Function test2 with a static variable
+// Function test2 using a static variable
 void test2(void)
 {
-  static int count = 0;
-  printf("test2   count = %d\n", ++count );
+  static int count;                   // This hides the global count
+  printf("test2   count = %d\n", ++count);
 }
