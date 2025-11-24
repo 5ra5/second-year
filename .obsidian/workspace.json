@@ -48,9 +48,23 @@
               "icon": "lucide-file",
               "title": "Binary Search Trees"
             }
+          },
+          {
+            "id": "f903230cac0cbc07",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "semester1/CSC1028/Simulations.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Simulations"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -195,13 +209,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "0b96efb10ade2f8d",
+  "active": "f903230cac0cbc07",
   "lastOpenFiles": [
+    "semester1/CSC1030/practice/Binary Search Trees.md",
+    "semester1/CSC1028/Simulations.md",
     "semester1/CSC1030/week11/merge_sort.py~",
     "semester1/CSC1030/week11/merge_sort.py",
     "semester1/CSC1030/merge_sort.py",
     "semester1/CSC1030/practice/study.md",
-    "semester1/CSC1030/practice/Binary Search Trees.md",
     "semester1/CSC1030/practice/Study 2.md",
     "semester1/CSC1030/practice/lecture_quizzes.md",
     "semester1/MTH1034/topics.md",
