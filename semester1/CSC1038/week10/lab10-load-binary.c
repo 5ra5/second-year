@@ -1,79 +1,172 @@
-// lab10-load-binary.c
-// Author: Petra Sartori
-// Date: 14/11/2025
+// Load Binary Data
 
-/* This program reads the information about students from a binary file and
-displays it. */
-
-// Libraries I need for this task
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-// Defining the Student struct that contains 4 elements
-// Name, College, Age and Grade
-typedef struct Student Student;
-
-struct Student{
-    int name_length;
-    char name[50];
-    int college_length;
-    char college[50];
-    int age;
+// Student struct using dynamic strings
+// all of these values fit into one node of a linked list
+typedef struct Student {
+    char *name;
+    char *college;
+    char age;
     float grade;
-};
+    struct Student *next; // pointer to next student in linked list
+} Student;
 
-// Function prototype
-void read_data(FILE *pfile, char *filename, Student s);
+// Function prototypes
+Student* readStudentsFromBinary(const char *filename);
+void printStudents(Student *head);
+int writeStudentsToBinary(Student *head, const char *filename);
+int writeStudentsToTextFile(Student *head, const char *filename);
+void freeStudents(Student *head);
 
-// Main function initialises the pointer to a file we're reading from
-// It also calls the read_data function
-int main()
-{
-    FILE *pfile = NULL; // Pointer to a file we're working with
-    char *filename = "studentBinary.bin";
+int main(){
 
-    Student s;
+    // initialising files
+    const char *inputFile = "studentBinary.bin";
+    const char *binaryOutputFile = "studentBinaryOut.bin";
+    const char *textOutputFile = "studentTextOut.txt";
 
-    read_data(pfile, filename, s);
+    // read students from binary file into a linked list
+    Student *head = readStudentsFromBinary(inputFile);
+
+    // print all students
+    printStudents(head);
+
+    // write the data into files
+    writeStudentsToBinary(head, binaryOutputFile);
+    writeStudentsToTextFile(head, textOutputFile);
+
+    freeStudents(head);
 
     return 0;
+
 }
 
-// read_data function takes the pointer to the file, it's name and the Student struct
-// It reads the data from the binary file
-// It prints the data
-void read_data(FILE *pfile, char *filename, Student s)
-{
-    // Opening the binary file in read binary mode - "rb"
-    pfile = fopen(filename, "rb");
+// read students from a binary file into a linked list
 
-    // Handling the case where the file doesn't exist
-    if(!pfile)
-    {
-        printf("Failed to open %s.\n", filename);
-        return;
+Student* readStudentsFromBinary(const char *filename){
+    FILE *pfile = fopen(filename, "rb");
+    if (!pfile) return NULL;
+
+    Student *head = NULL;
+    Student *tail = NULL;
+
+    while (!feof(pfile)){
+        int name_len = 0, college_len = 0;
+
+        // read name length, allocate memory for name, read name
+        if (fread(&name_len, sizeof(int), 1, pfile) != 1) break;
+        char *name = malloc(name_len + 1);
+        fread(name, 1, name_len, pfile);
+        name[name_len] = '\0'; // turning the character array into a proper string
+
+        // read college length, allocate memory for college, read college
+        fread(&college_len, sizeof(int), 1, pfile);
+        char *college = malloc(college_len + 1);
+        fread(college, 1, college_len, pfile);
+        college[college_len] = '\0';
+
+        // read age and grade
+        int age;
+        float grade;
+        fread(&age, sizeof(int), 1, pfile);
+        fread(&grade, sizeof(float), 1, pfile);
+
+        // allocate memory for a new student node and fill the node with struct elements
+        Student *newNode = malloc(sizeof(Student));
+        newNode->name = name;
+        newNode->college = college;
+        newNode->age = age;
+        newNode->grade = grade;
+        newNode->next = NULL;
+
+        // fill a linked list
+        if (!head){
+            head = tail = newNode;
+        }else{
+            tail->next = newNode;
+            tail = newNode;
+        }
     }
-
-    // Reading the data one by one
-    // First I'm reading the length of the name
-    int count1 = fread(&s.name_length, sizeof(int), 1, pfile);
-    // Now the length of the name is used as the number of array elements instead of 1
-    int count2 = fread(s.name, sizeof(char), s.name_length, pfile);
-    
-    // Doing the same for college since it's a string as well
-    int count3 = fread(&s.college_length, sizeof(int), 1, pfile);
-    int count4 = fread(s.college, sizeof(char), s.college_length, pfile);
-    
-    // Reading the age and grade normally
-    int count5 = fread(&s.age, sizeof(int), 1, pfile);
-    int count6 = fread(&s.grade, sizeof(float), 1, pfile);
-
-    // Closing the pfile after I'm done
     fclose(pfile);
+    return head;
+}
 
-    // Printing the information
-    printf("Name: %s\n", s.name);
-    printf("College: %s\n", s.college);
-    printf("Age: %d\n", s.age);
-    printf("Grade: %.2f\n", s.grade);
+// print all students
+void printStudents(Student *head){
+    
+    // iterate through the linked list and print information
+    Student *current = head;
+    while (current) {
+        printf("Name: %s\n", current->name);
+        printf("College: %s\n", current->college);
+        printf("Age: %d\n", current->age);
+        printf("Grade: %.2f\n\n", current->grade);
+        current = current->next;
+    }
+}
+
+// write linked list of students into a binary file
+int writeStudentsToBinary(Student *head, const char *filename) {
+    
+    // open a binary file in write mode
+    FILE *bfile = fopen(filename, "wb");
+
+    // start from head and iterate through the linked list
+    Student *current = head;
+    while (current) {
+
+        // determine the length of name and college using strlen, no need to read it in now
+        int name_len = strlen(current->name);
+        int college_len = strlen(current->college);
+
+        // write name_len and name
+        fwrite(&name_len, sizeof(int), 1, bfile);
+        fwrite(current->name, 1, name_len, bfile);
+        
+        // write college_len and college
+        fwrite(&college_len, sizeof(int), 1, bfile);
+        fwrite(current->college, 1, college_len, bfile);
+
+        // write age and grade
+        fwrite(&current->age, sizeof(int), 1, bfile);
+        fwrite(&current->grade, sizeof(float),1, bfile);
+
+        current = current->next;
+    }
+    fclose(bfile);
+    return 1;
+}
+
+// write linked list of students into a text file
+int writeStudentsToTextFile(Student *head, const char *filename){
+    
+    // open the file in write mode
+    FILE *tfile = fopen(filename, "w");
+
+    // start from head and iterate through the linked list
+    Student *current = head;
+    while (current) {
+        fprintf(tfile, "Name: %s\n", current->name);
+        fprintf(tfile, "College: %s\n", current->college);
+        fprintf(tfile, "Age: %d\n", current->age);
+        fprintf(tfile, "Grade: %.2f\n\n", current->grade);
+        current = current->next;
+    }
+    fclose(tfile);
+    return 1;
+}
+
+// free all allocated memory in linked list
+void freeStudents(Student *head){
+    Student *current = head;
+    while (current){
+        Student *temp = current->next;
+        free(current->name);
+        free(current->college);
+        free(current);
+        current = temp;
+    }
 }
