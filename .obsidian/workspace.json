@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Simulations"
             }
+          },
+          {
+            "id": "c1c935be9401b6b9",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.6"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -166,7 +179,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "f903230cac0cbc07",
+  "active": "c1c935be9401b6b9",
   "lastOpenFiles": [
     "semester1/CSC1028/R practice/geometric2.R",
     "semester1/CSC1028/R practice/binomial_hypergeometric.R",
