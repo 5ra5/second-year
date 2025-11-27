@@ -1,6 +1,8 @@
 // lab7-student.c
 // Petra Sartori
 
+// struct and dynamic memory allocation
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

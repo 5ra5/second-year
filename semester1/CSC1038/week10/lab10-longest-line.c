@@ -9,45 +9,83 @@
 // Assuming the maximum length of each sentence to be 200
 #define MAX 200
 
+int findLongestLine(FILE *pfile, char longest[]);
+int writeTextFile(int max, char longest[], const char *filename);
+int writeBinFile(int max, char longest[], const char *filename);
+
 int main()
 {
-    char line[MAX]; // Initializing line
-    int length; // A variable to store a length of a certain line
-    int max = 0; // A variable to store a maximum length
-    char longest[MAX]; // A variable to store the line with the max length
-
-    // Opening a text file
+    int max; 
+    char longest[MAX] = "";
     FILE *pfile = NULL;
-    char *filename = "paragraph.txt";
+    char *filename = "test.txt";
+    const char *outputFile = "output.txt";
+    const char *binOutputFile = "binOutput.bin";
+
     pfile = fopen(filename, "r");
 
-    // Handling a case where the file doesn't exist
+
     if (!pfile)
     {
         printf("Failed to open %s.\n", filename);
+        return 1;
     }
 
-    // Iterating through the file and reading each line
-    while(fgets(line, sizeof(line), pfile))
-    {
-        // Checking the length of the current line
-        length = strlen(line);
-
-        // If the length of the current line is greater than the max one
-        if(length > max)
-        {
-            // Max becomes the current length
-            max = length;
-
-            // Current line is copied into the longest variable
-            strcpy(longest, line);
-        }
-    }
+    max = findLongestLine(pfile, longest);
 
     fclose(pfile);
 
     printf("%d\n", max);
     printf("%s\n", longest);
 
+    writeTextFile(max, longest, outputFile);
+    writeBinFile(max, longest, binOutputFile);
+
     return 0;
+}
+
+
+int findLongestLine(FILE *pfile, char longest[]){
+    char line[MAX];
+    int max = 0;
+    int length;
+
+    while(fgets(line, sizeof(line), pfile)){
+        length = strlen(line);
+
+        if (length > max){
+            max = length;
+            strcpy(longest, line);
+        }
+    }
+
+    return max;
+}
+
+int writeTextFile(int max, char longest[], const char *filename){
+
+    FILE *tfile = fopen(filename, "w");
+
+    if (!tfile){
+        printf("Failed to open the file.\n");
+        return 0;
+    }
+
+    fprintf(tfile, "%d\n", max);
+    fprintf(tfile, "%s\n", longest);
+
+    fclose(tfile);
+    return 1;
+}
+
+int writeBinFile(int max, char longest[], const char *filename){
+
+    FILE *bfile = fopen(filename, "wb");
+
+    fwrite(&max, sizeof(int), 1, bfile);
+
+    fwrite(longest, 1, max, bfile);
+
+    fclose(bfile);
+    return 1;
 }
