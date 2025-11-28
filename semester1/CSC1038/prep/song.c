@@ -7,8 +7,6 @@ typedef struct Node{
     struct Node *next;
 }Node;
 
-// singly linked list (with strings) & dynamic memory allocation
-
 Node* buildList(int length, char*argv[]);
 void printList(Node *head);
 void freeSongs(Node *head);
@@ -38,10 +36,11 @@ Node* buildList(int length, char*argv[])
             printf("Calloc failed!\n");
         }
 
-        // allocate memory for the song string
+        // allocate memory for the name
         newNode->song = malloc(strlen(argv[i]) + 1);
         strcpy(newNode->song, argv[i]);
 
+        newNode->id = 
         newNode->next = NULL;
 
         // append to list
@@ -60,13 +59,13 @@ Node* buildList(int length, char*argv[])
 void printList(Node *head){
     Node *current = head;
     while (current) {
-        printf("%s\n", current->song);
+        printf("ID: %d, Name: %s, Priority: %d\n", current->id, current->name, current->priority);
         current = current->next;
     }
 }
 
 // free the memory after using
-void freeSongs(Node *head){
+void freeList(Node *head){
     Node *current = head;
     while(current){
         Node *temp = current;
