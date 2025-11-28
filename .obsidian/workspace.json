@@ -25,12 +25,12 @@
             "id": "c1c935be9401b6b9",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "pdf",
               "state": {
-                "currentVersion": "1.10.6"
+                "file": "semester1/CSC1020/individual project/23324986-SRS-Individual.pdf"
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.10.6"
+              "icon": "lucide-file-text",
+              "title": "23324986-SRS-Individual"
             }
           }
         ],
@@ -181,6 +181,8 @@
   },
   "active": "c1c935be9401b6b9",
   "lastOpenFiles": [
+    "semester1/CSC1020/individual project/Notes & Script.md",
+    "semester1/CSC1020/individual project",
     "semester1/CSC1028/R practice/geometric2.R",
     "semester1/CSC1028/R practice/binomial_hypergeometric.R",
     "semester1/CSC1030/practice/Binary Search Trees.md",
