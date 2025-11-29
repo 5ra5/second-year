@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "f190092be78ef3c1",
+    "id": "7ca9c8c34590235b",
     "type": "split",
     "children": [
       {
-        "id": "c584f7ba34c18368",
+        "id": "720401eb72da1d83",
         "type": "tabs",
         "children": [
           {
-            "id": "8ebb883c5a7e1af3",
+            "id": "520ad4bd86868605",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "571bbd79aca81b47",
+    "id": "e02bcce771fe9114",
     "type": "split",
     "children": [
       {
-        "id": "525f74b5b15b541f",
+        "id": "85134d23f4f3af1e",
         "type": "tabs",
         "children": [
           {
-            "id": "640305f64121116e",
+            "id": "92b7b9194bd88ebf",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "75108b0a23517571",
+            "id": "44e28a385348b1cf",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "30ef201ed10e68e7",
+            "id": "fd38c4e9930398d2",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,19 +81,20 @@
     "width": 300
   },
   "right": {
-    "id": "46630f5692fa873d",
+    "id": "dfc7084715d4ce63",
     "type": "split",
     "children": [
       {
-        "id": "c83fa5fe94819218",
+        "id": "d87849832839ea36",
         "type": "tabs",
         "children": [
           {
-            "id": "cad6b9a67d5d4233",
+            "id": "774bd0ed7b3367c5",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "semester1/Study plan.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,24 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Study plan"
             }
           },
           {
-            "id": "3f4e5eafecebc99c",
+            "id": "e815a19d5f2cdb1c",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "semester1/Study plan.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from Study plan"
             }
           },
           {
-            "id": "af0762ee40a74d5b",
+            "id": "1371c3834c52d602",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -135,17 +137,18 @@
             }
           },
           {
-            "id": "2b186bb7f7d1d102",
+            "id": "df612c06f966a4ab",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "semester1/Study plan.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Study plan"
             }
           }
         ]
@@ -166,22 +169,6 @@
       "bases:Create new base": false
     }
   },
-  "active": "640305f64121116e",
-  "lastOpenFiles": [
-    "README.md",
-    "semester1/Study plan.md",
-    "semester1/CSC1028/Simulations.md",
-    "semester1/CSC1028/R practice/geometric2.R",
-    "semester1/CSC1028/R practice/binomial_hypergeometric.R",
-    "semester1/CSC1030/practice/Binary Search Trees.md",
-    "semester1/CSC1030/week11/merge_sort.py~",
-    "semester1/CSC1030/week11/merge_sort.py",
-    "semester1/CSC1030/merge_sort.py",
-    "semester1/CSC1030/practice/study.md",
-    "semester1/CSC1030/practice/Study 2.md",
-    "semester1/CSC1030/practice/lecture_quizzes.md",
-    "semester1/MTH1034/topics.md",
-    "semester1/MTH1034/practice/tut8Soln.pdf",
-    "semester1/MTH1034/practice/tut8.pdf"
-  ]
+  "active": "520ad4bd86868605",
+  "lastOpenFiles": []
 }
