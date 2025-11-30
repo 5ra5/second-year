@@ -1,5 +1,5 @@
 
-**sunday:** Lab 1 and 2 -- Tutorial 1 and 2
+~~**sunday:** Lab 1 and 2 -- Tutorial 1 and 2~~
 **monday:** Lab 3 and 4 -- Tutorial 3 and 4
 **tuesday:** Lab 5 and 6 -- Tutorial 5 and 6
 **wednesday:** Lab 7 and 8 -- Tutorial 7 and 8
