@@ -9,7 +9,7 @@
 **sunday:** programming 3 revision
 
 **monday:** Exam 2022-1 -- Exam 2023 and 2023 resit
-**tuesday:** C revision
+**tuesday:** C Further practice tasks
 **wednesday**: Exam 2021
 **thursday:** Quiz 1 and 2 (sample and lecture)
 **friday:** Exam 2025 resit and 2024
