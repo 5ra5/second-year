@@ -10,15 +10,17 @@ struct Node
 };
 
 Node* get_numbers(int argc, char *argv[]);
-void print_numbers(Node *start);
+int sum_evens(Node *start);
 void free_list(Node *start);
 
 int main(int argc, char *argv[])
 {
     Node *start = NULL;
     start = get_numbers(argc, argv);
-    print_numbers(start);
+    int sum = sum_evens(start);
     free_list(start);
+
+    printf("%d\n", sum);
     return 0;
 }
 
@@ -29,7 +31,6 @@ Node* get_numbers(int argc, char *argv[])
 
     for (int i = 1; i < argc; i++) {
         Node *new_node = calloc(1, sizeof(Node));
-        if (!new_node) exit(1);
 
         new_node->value = atoi(argv[i]);
         new_node->next = NULL;
@@ -46,14 +47,20 @@ Node* get_numbers(int argc, char *argv[])
     return first;
 }
 
-void print_numbers(Node *start)
+int sum_evens(Node *start)
 {
+    int sum = 0;
+
     Node *p = NULL;
     for(p = start; p != NULL; p = p->next)
     {
-        printf("%d\n", p->value);
-
+        if(p->value % 2 == 0)
+        {
+            sum += p->value;
+        }
     }
+
+    return sum;
 }
 
 void free_list(Node *start)
