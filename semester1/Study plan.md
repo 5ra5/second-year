@@ -1,5 +1,3 @@
-**wednesday:** Lab 7 and 8 -- Tutorial 7
-**thursday**: Lab 9 and 12 -- Tutorial 9 and 10
 **friday:** Exam 2024 resit and 2023-4 -- Tutorial 11
 **saturday:** Exam 2023-3 and 2023-2 -- Exam 2024 and 2024 resit
 **sunday:** programming 3 revision

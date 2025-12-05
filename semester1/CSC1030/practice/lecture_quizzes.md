@@ -369,3 +369,171 @@ Q14. Radix sort processes digits:
 
 Q15. If counting sort is O(n) and is applied to k digit positions, radix sort runs in: 
 - O(n * k)
+
+# Lab Exam 2
+
+What is required to ensure that items are placed within the range of a bucket array?
+- A compression function
+
+What will the following code print?
+```python
+def evaluate_postfix(str='423*+5-'):
+	
+	stack = Stack()
+	
+	for s in str:
+	
+	if s in '^*+-':
+	
+		b = float(stack.pop())
+		a = float(stack.pop())
+		
+		stack.push({'^': a**b, '*': a*b, '-': a-b}[s])
+		
+	else:
+		stack.push(s)
+		
+	return stack.pop()
+	
+print(evaluate_postfix())
+```
+
+- 5.0
+
+What is expected to be the average search and update time complexity for a skip list?
+- O(log n)
+
+How many rotations are required if a BST is left-right imbalanced?
+- 2
+
+Assuming that you have access to the node before the insertion point, what is the worst case time complexity to insert a new node between two nodes in a linked list?
+- O(1)
+
+In the context of implementing a sorted map using a sorted search table, what is the principal benefit of keeping the elements in sorted order compared to a standard unsorted map?
+- It enables the use of binary search, providing logarithmic time for key lookups.
+
+What does the code below print:
+```python
+def bin(n=5):
+
+	queue = Queue()
+	queue.enqueue('A')
+	
+	res = []
+	
+	for _ in range(n):
+		
+		curr = queue.dequeue()
+		res.append(curr)
+		
+		queue.enqueue(curr + 'B')
+		queue.enqueue(curr + 'A')
+		
+	return res
+	
+print(','.join(bin()))
+```
+
+- A,AB,AA,ABB,ABA
+
+# Missing code questions
+
+1. Insertion sort
+```python
+########## Insertion Sort ##########
+A = [10, 25, 2, 16, 12, 9]
+n = len(A)
+
+for i in range(1, n):
+	key = A[i]
+	j = i - 1
+	
+	MISSING_CODE
+	
+	A[j + 1] = key
+	
+print(A)
+
+assert A == [2, 9, 10, 12, 16, 25]
+```
+
+missing code:
+```python
+  while j >= 0 and A[j] > key: A[j + 1] = A[j]; j -= 1
+  ```
+
+
+2. Bubble sort
+```python
+def bubble_sort(lst):
+
+	n = len(lst)
+	for i in range(n):
+		swapped = False
+		for j in range(0 , n - i - 1):
+			if MISSING_CODE:
+				lst[j], lst[j+1] = lst[j+1], lst[j]
+				swapped = True
+				
+		if not swapped:
+			break
+```
+
+missing code:
+```python
+lst[j] > lst[j+1]
+```
+
+3. AVL before method
+```python
+def before(self, node):
+
+	if not node:
+		return None
+		
+	if node.left:
+		return self.last(node.left)
+		
+	def _before(node):
+		
+		if not node or not node.parent:
+			return None
+			
+		MISSING_CODE
+		
+		return _before(node.parent)
+		
+	return _before(node)
+```
+
+missing code:
+```python
+if node.parent.right == node: return node
+```
+
+4. Remove from the end of a linked list method
+```python
+def remove_end(self):
+	if not self.head:
+		return None
+	if self.head == self.tail:
+		val = self.head.val
+		self.head = None
+		self.tail = None
+		self.size -= 1
+		return val
+	cur = self.head
+	
+	MISSING_CODE
+	
+	val = self.tail.val
+	cur.next = None 
+	self.tail = cur
+	self.size -= 1
+	return val
+```
+
+missing code:
+```python
+while cur.next != self.tail: cur = cur.next
+```
