@@ -27,33 +27,6 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-Patient* get_patients(int argc, char *argv[])
-{
-    int size = (argc - 1) / 4;
-    Patient *current, *head;
-
-    head = calloc(1, sizeof(Patient));
-    current = head;
-    strcpy(current->firstName, argv[1]);
-    strcpy(current->lastName, argv[2]);
-    current->weight = atoi(argv[3]);
-    current->height = atof(argv[4]);
-
-    int index = 0;
-
-    for (int i = 1; i < size; i++)
-    {
-        current->next = calloc(1, sizeof(Patient));
-        current = current->next;
-        strcpy(current->firstName, argv[index+5]);
-        strcpy(current->lastName, argv[index+6]);
-        current->weight = atoi(argv[index+7]);
-        current->height = atof(argv[index+8]);
-        index += 4;
-    }
-    current->next = NULL;
-    return head;
-}
 
 void calculate_bmi(Patient *head)
 {
@@ -62,6 +35,35 @@ void calculate_bmi(Patient *head)
     {
         p->bmi = p->weight / (p->height * p->height);
     }
+}
+
+Patient* get_patients(int argc, char *argv[])
+{
+    int numPatients = (argc - 1) / 4;
+    Patient *head = NULL;
+    Patient *current = NULL;
+
+    for (int i = 0; i < numPatients; i++) {
+        Patient *new_patient = calloc(1, sizeof(Patient));
+        if (!new_patient) exit(1);
+
+        int base = 1 + i*4;  // starting index for this patient's argv
+        strcpy(new_patient->firstName, argv[base]);
+        strcpy(new_patient->lastName, argv[base+1]);
+        new_patient->weight = atoi(argv[base+2]);
+        new_patient->height = atof(argv[base+3]);
+        new_patient->next = NULL;
+
+        if (!head) {
+            head = new_patient;
+            current = new_patient;
+        } else {
+            current->next = new_patient;
+            current = new_patient;
+        }
+    }
+
+    return head;
 }
 
 void print_patient(Patient *head)

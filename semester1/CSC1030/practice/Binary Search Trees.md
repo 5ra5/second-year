@@ -121,3 +121,29 @@ FUNCTION merge(left, right):
 	APPEND all remaining elements of left[i:] to result
 	APPEND all remaining elements of right[j:] to result
 ```
+
+# Quick sort
+```python
+DEFINE parition(list, low, high):
+	pivot = list[high]
+	i = low - 1
+	
+	for j in the range(low, high):
+		INCREMENT i
+		if list[j] <= pivot:
+			REVERSE list[i] AND list[j]
+	REVERSE list[i+1] AND list[high]
+	RETURN i + 1
+	
+DEFINE quicksort(list, low=0, high=None):
+	IF high is None:
+		high = length of list - 1
+		
+	if low < high:
+		pivot = partition(list, low, high)
+		quicksort(list, low, pivot - 1)
+		quicksort(list, pivot + 1, high)
+		
+	RETURN list
+```
+
