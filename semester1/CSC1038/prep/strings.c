@@ -8,15 +8,16 @@ char** resizeStringArray(char **arr, int newCount);
 void freeStringArray(char **arr, int count);
 void toUppercase(char **arr, int count);
 void printStrings(char **arr, int count);
+void findLongestString(char **arr, int count);
+void reverseStrings(char **arr, int count);
+void sortStrings(char **arr, int count);
+int totalCharacters(char **arr, int count);
+int countContainingChar(char **arr, int count, char c);
+void findShortestString(char **arr, int count);
 
 
 int main(int argc, char *argv[])
 {
-    if (argc < 2) {
-        printf("Usage: %s <words>\n", argv[0]);
-        return 0;
-    }
-
     int count = 0;
 
     // create and copy argv strings
@@ -42,7 +43,7 @@ char** createStringArray(int argc, char *argv[], int *outCount)
 
     char **arr = calloc(count, sizeof(char*));
     if (!arr) {
-        fprintf(stderr, "Array allocation failed.\n");
+        printf("Array allocation failed.\n");
         exit(1);
     }
 
@@ -52,7 +53,7 @@ char** createStringArray(int argc, char *argv[], int *outCount)
         // allocate each string directly here
         arr[i] = calloc(len + 1, sizeof(char));   // +1 for '\0'
         if (!arr[i]) {
-            fprintf(stderr, "String allocation failed.\n");
+            printf("String allocation failed.\n");
             exit(1);
         }
 
@@ -67,7 +68,7 @@ char** resizeStringArray(char **arr, int newCount)
 {
     char **newArr = realloc(arr, newCount * sizeof(char*));
     if (!newArr) {
-        fprintf(stderr, "String array reallocation failed.\n");
+        printf("String array reallocation failed.\n");
         exit(1);
     }
     return newArr;
@@ -94,4 +95,93 @@ void printStrings(char **arr, int count)
 {
     for (int i = 0; i < count; i++)
         printf("%s\n", arr[i]);
+}
+
+void findLongestString(char **arr, int count)
+{
+    if (count == 0)
+        return;
+
+    int maxIndex = 0;
+    size_t maxLen = strlen(arr[0]);
+
+    for (int i = 1; i < count; i++) {
+        size_t len = strlen(arr[i]);
+        if (len > maxLen) {
+            maxLen = len;
+            maxIndex = i;
+        }
+    }
+
+    printf("Longest string: %s (length %zu)\n", arr[maxIndex], maxLen);
+}
+
+void reverseStrings(char **arr, int count)
+{
+    for (int i = 0; i < count; i++) {
+        char *s = arr[i];
+        int left = 0;
+        int right = strlen(s) - 1;
+
+        while (left < right) {
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+            left++;
+            right--;
+        }
+    }
+}
+
+// sort strings alphabetically
+void sortStrings(char **arr, int count)
+{
+    for (int i = 1; i < count; i++) {
+        char *key = arr[i];
+        int j = i - 1;
+
+        while (j >= 0 && strcmp(arr[j], key) > 0) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+// count total characters across all strings
+int totalCharacters(char **arr, int count)
+{
+    int total = 0;
+    for (int i = 0; i < count; i++)
+        total += strlen(arr[i]);
+    return total;
+}
+
+// count how many strings contain a given character
+int countContainingChar(char **arr, int count, char c)
+{
+    int hits = 0;
+    for (int i = 0; i < count; i++)
+        if (strchr(arr[i], c) != NULL)
+            hits++;
+    return hits;
+}
+
+// find shortest string
+void findShortestString(char **arr, int count)
+{
+    if (count == 0) return;
+
+    int minIndex = 0;
+    size_t minLen = strlen(arr[0]);
+
+    for (int i = 1; i < count; i++) {
+        size_t len = strlen(arr[i]);
+        if (len < minLen) {
+            minLen = len;
+            minIndex = i;
+        }
+    }
+
+    printf("Shortest string: %s (length %zu)\n", arr[minIndex], minLen);
 }

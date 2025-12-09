@@ -10,15 +10,14 @@ struct Node
 };
 
 Node* get_numbers(int argc, char *argv[]);
-void remove_duplicates(Node *head);
+void remove_all_duplicates(Node **head);
 void print_numbers(Node *head);
 void free_numbers(Node *head);
 
 int main(int argc, char *argv[])
 {
-    Node *head = NULL;
-    head = get_numbers(argc, argv);
-    remove_duplicates(head);
+    Node *head = get_numbers(argc, argv);
+    remove_all_duplicates(&head);
 
     print_numbers(head);
     free_numbers(head);
@@ -53,16 +52,51 @@ Node* get_numbers(int argc, char *argv[])
     return first;
 }
 
-void remove_duplicates(Node *head)
+// Delete all nodes whose value occurs more than once
+void remove_all_duplicates(Node **head)
 {
-    Node *current = head;
-    while(current && current->next)
+    Node *current = *head;
+
+    while(current)
     {
-        if(current->value == current->next->value)
+        int count = 0;
+        Node *p = *head;
+        // Count occurrences of current->value
+        while(p)
         {
-            Node *temp = current->next;
-            current->next = current->next->next;
-            free(temp);
+            if(p->value == current->value)
+                count++;
+            p = p->next;
+        }
+
+        if(count > 1)
+        {
+            // Delete all nodes with this value
+            Node *tmp = *head;
+            Node *prev = NULL;
+
+            while(tmp)
+            {
+                if(tmp->value == current->value)
+                {
+                    Node *to_delete = tmp;
+                    if(prev)
+                        prev->next = tmp->next;
+                    else
+                        *head = tmp->next;
+
+                    tmp = tmp->next;
+                    free(to_delete);
+                }
+                else
+                {
+                    prev = tmp;
+                    tmp = tmp->next;
+                }
+            }
+
+            // Restart from head after deletion
+            current = *head;
         }
         else
         {
@@ -73,10 +107,11 @@ void remove_duplicates(Node *head)
 
 void print_numbers(Node *head)
 {
-    Node *p = NULL;
-    for(p = head; p != NULL; p = p->next)
+    Node *p = head;
+    while(p)
     {
         printf("%d\n", p->value);
+        p = p->next;
     }
 }
 
