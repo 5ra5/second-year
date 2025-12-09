@@ -87,14 +87,33 @@ void delete_node(Node **head, int val) {
     }
 }
 
+// Returns a dynamically allocated array filled with values from a linked list
+// length_out will be set to the number of elements in the list
+int* fillArrayFromList(Node *head, int *length_out)
+{
+    // First, count the nodes
+    int count = 0;
+    for (Node *p = head; p != NULL; p = p->next)
+        count++;
+
+    // Allocate the array
+    int *arr = createIntArray(count);
+
+    // Fill the array
+    int i = 0;
+    for (Node *p = head; p != NULL; p = p->next)
+        arr[i++] = p->value;
+
+    if (length_out)
+        *length_out = count;
+
+    return arr;
+}
+
+
 
 // PARTITIONING - use when you are not sorting by value
 // in place and stable
-
-typedef struct Node {
-    int value;
-    struct Node *next;
-} Node;
 
 Node* partition_list(Node *head, int (*predicate)(int)) 
 {

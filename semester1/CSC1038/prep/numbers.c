@@ -1,34 +1,46 @@
-// DYNAMICALLY ALLOCATING AN ARRAY OF NUMBERS
+#include <stdio.h>
+#include <stdlib.h>
 
-// create new array
+// -------------------- Function prototypes --------------------
+int* createIntArray(int length);
+int* resizeIntArray(int *arr, int newLength);
+void freeIntArray(int *arr);
+void printNumbers(int *arr, int length);
+int* fillArrayFromArgs(int *arr, int argc, char *argv[], int *length);
+int* fillArrayFromArgsOneByOne(int *arr, int argc, char *argv[], int *length);
+void bubbleSort(int *arr, int length);
+
+// -------------------- Function implementations --------------------
+
+// Create a new array
 int* createIntArray(int length)
 {
-    int *arr = calloc(length, sizeof(int));  // initializes all to 0
+    int *arr = calloc(length, sizeof(int));
     if (!arr) {
-        fprintf(stderr, "Memory allocation failed.\n");
+        printf("Memory allocation failed.\n");
         exit(1);
     }
     return arr;
 }
 
-// resize array
+// Resize array
 int* resizeIntArray(int *arr, int newLength)
 {
     int *newArr = realloc(arr, newLength * sizeof(int));
     if (!newArr) {
-        fprintf(stderr, "Reallocation failed.\n");
+        printf("Reallocation failed.\n");
         exit(1);
     }
     return newArr;
 }
 
-// free
+// Free array
 void freeIntArray(int *arr)
 {
     free(arr);
 }
 
-// PASSING ARRAYS TO FUNCTIONS
+// Print array
 void printNumbers(int *arr, int length)
 {
     for (int i = 0; i < length; i++)
@@ -36,3 +48,76 @@ void printNumbers(int *arr, int length)
     printf("\n");
 }
 
+// Fill array from command line, resize all at once
+int* fillArrayFromArgs(int *arr, int argc, char *argv[], int *length)
+{
+    int requiredLength = argc - 1; // number of arguments excluding program name
+
+    arr = resizeIntArray(arr, requiredLength);
+
+    for (int i = 0; i < requiredLength; i++)
+        arr[i] = atoi(argv[i + 1]);
+
+    if (length)
+        *length = requiredLength;
+
+    return arr;
+}
+
+// Fill array from command line, realloc one by one
+int* fillArrayFromArgsOneByOne(int *arr, int argc, char *argv[], int *length)
+{
+    int len = 0;  // current length
+
+    for (int i = 1; i < argc; i++)
+    {
+        arr = resizeIntArray(arr, len + 1);
+        arr[len] = atoi(argv[i]);
+        len++;
+    }
+
+    if (length)
+        *length = len;
+
+    return arr;
+}
+
+// -------------------- Simple Bubble Sort --------------------
+void bubbleSort(int *arr, int length)
+{
+    for (int i = 0; i < length - 1; i++)
+    {
+        for (int j = 0; j < length - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                // swap
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+// -------------------- Example main --------------------
+int main(int argc, char *argv[])
+{
+    int length = 0;
+    int *arr = createIntArray(1);  // start with a small array
+
+    // Fill array from command line, resize if needed
+    arr = fillArrayFromArgs(arr, argc, argv, &length);
+
+    printf("Original array:\n");
+    printNumbers(arr, length);
+
+    // Sort the array
+    bubbleSort(arr, length);
+
+    printf("Sorted array:\n");
+    printNumbers(arr, length);
+
+    freeIntArray(arr);
+    return 0;
+}
