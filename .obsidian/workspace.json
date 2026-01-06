@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "720401eb72da1d83",
+        "id": "4fca373b7c1caaab",
         "type": "tabs",
         "children": [
           {
-            "id": "520ad4bd86868605",
+            "id": "34904e0d2ae62988",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "semester1/CSC1030/practice/lecture_quizzes.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "lecture_quizzes"
+              "title": "New tab"
             }
           }
         ]
@@ -169,7 +165,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "520ad4bd86868605",
+  "active": "92b7b9194bd88ebf",
   "lastOpenFiles": [
     "semester1/CSC1030/practice/Binary Search Trees.md",
     "semester1/CSC1030/practice/lecture_quizzes.md",
