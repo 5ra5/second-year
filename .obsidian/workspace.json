@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4fca373b7c1caaab",
+        "id": "32b132c28c62bb31",
         "type": "tabs",
         "children": [
           {
-            "id": "34904e0d2ae62988",
+            "id": "10b8198803dae939",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -167,8 +167,14 @@
   },
   "active": "92b7b9194bd88ebf",
   "lastOpenFiles": [
-    "semester1/CSC1030/practice/Binary Search Trees.md",
+    "semester2/CSC1040/notes",
+    "semester2/CSC1031/notes",
+    "semester2/CSC1029/notes",
+    "semester2/CSC1022/notes",
+    "semester2/CSC1021/notes",
+    "semester2/CSC1018/notes",
     "semester1/CSC1030/practice/lecture_quizzes.md",
+    "semester1/CSC1030/practice/Binary Search Trees.md",
     "semester1/Study plan.md",
     "semester1/CSC1030/practice/study.md",
     "semester1/CSC1030/topics.md",
