@@ -11,10 +11,14 @@
             "id": "10b8198803dae939",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "semester2/CSC1021/notes/intro.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "intro"
             }
           }
         ]
@@ -165,8 +169,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "92b7b9194bd88ebf",
+  "active": "10b8198803dae939",
   "lastOpenFiles": [
+    "semester2/CSC1021/operating-systems-concepts.pdf",
+    "semester2/CSC1021/notes/intro.md",
     "semester2/CSC1040/notes",
     "semester2/CSC1031/notes",
     "semester2/CSC1029/notes",

@@ -1,0 +1,3 @@
+-  CA - 30%
+-  final exam - 70%
+-  graham.healy@dcu.ie
