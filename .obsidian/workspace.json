@@ -11,14 +11,10 @@
             "id": "10b8198803dae939",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "semester2/CSC1021/notes/intro.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "intro"
+              "title": "New tab"
             }
           }
         ]
@@ -171,23 +167,42 @@
   },
   "active": "10b8198803dae939",
   "lastOpenFiles": [
-    "semester2/CSC1021/operating-systems-concepts.pdf",
-    "semester2/CSC1021/notes/intro.md",
-    "semester2/CSC1040/notes",
-    "semester2/CSC1031/notes",
-    "semester2/CSC1029/notes",
-    "semester2/CSC1022/notes",
-    "semester2/CSC1021/notes",
-    "semester2/CSC1018/notes",
-    "semester1/CSC1030/practice/lecture_quizzes.md",
-    "semester1/CSC1030/practice/Binary Search Trees.md",
-    "semester1/Study plan.md",
-    "semester1/CSC1030/practice/study.md",
-    "semester1/CSC1030/topics.md",
-    "semester1/CSC1038/week7/Dynamic Allocation 1 - Malloc and Free.md",
-    "semester1/CSC1038/EXAMHELP",
-    "semester1/CSC1038/EXAMHELP/Notes.md",
-    "semester1/CSC1038/week2/Variables.md",
-    "semester1/CSC1038/week1/Getting Started!.md"
+    "semester2/operating-systems/notes/1 intro.md",
+    "semester4/operating-systems/past-exams/2025.pdf",
+    "semester4/operating-systems/past-exams/2025-resit.pdf",
+    "semester4/operating-systems/past-exams/2024.pdf",
+    "semester4/operating-systems/past-exams/2023.pdf",
+    "semester4/operating-systems/past-exams/2023-resit.pdf",
+    "semester4/operating-systems/notes/1 intro.md",
+    "semester4/full-stack-development/notes/1 intro.md",
+    "semester4/full-stack-development/lectures/intro.pptx",
+    "semester4/software-testing/notes",
+    "semester4/software-testing/labs",
+    "semester4/operating-systems/past-exams",
+    "semester4/operating-systems/operating-systems-concepts.pdf",
+    "semester3/systems-analysis/week9/Scaling and refining RE.md",
+    "semester3/systems-analysis/week8/Quality models.md",
+    "semester3/systems-analysis/week8/Non-Functional Requirements (NFRs).md",
+    "semester3/systems-analysis/week7/Domain models.md",
+    "semester3/systems-analysis/week6/Usage models, use case overview & sequence diagram.md",
+    "semester3/systems-analysis/week5/vision_statement.md",
+    "semester3/systems-analysis/week5/revision_quiz.md",
+    "semester3/systems-analysis/week4/vml.png",
+    "semester3/systems-analysis/week4/revision_quiz.md",
+    "semester3/systems-analysis/week3/revision_quiz.md",
+    "semester3/systems-analysis/week2/revision_quiz.md",
+    "semester3/systems-analysis/group_project/SRS project notes.md",
+    "semester3/programming3/week5/lectures.md",
+    "semester3/programming3/week4/lectures.md",
+    "semester3/programming3/practice/study.md",
+    "semester3/programming3/practice/lecture_quizzes.md",
+    "semester3/programming3/practice/Binary Search Trees.md",
+    "semester3/probability-statistics/R practice/Simulations.md",
+    "semester3/probability-statistics/R practice/Lab exam 1 exercise.md",
+    "semester3/devops/week9/Docker.md",
+    "semester3/devops/week6/Git merge rebase and bisect.md",
+    "semester3/devops/week4/lectures.md",
+    "semester3/devops/week5/remotes.md",
+    "semester3/linear-algebra/topics.md"
   ]
 }

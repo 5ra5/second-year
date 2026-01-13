@@ -1,0 +1,14 @@
+-  100% CA
+-  3 loop exams
+-  Django + REST/APIs (40%) - **week 6**
+-  JavaScript (20%) - **week 9**
+-  React (40%) - **week 13**
+
+-  VSCode
+-  Docker
+-  Python 3.10+ Django
+-  Git + School of Computing Gitlab - gitlab.computing.dcu.ie – Store Code
+-  Create repo 
+-  Repo (not project) must match pattern 2026-csc1040-* (where * can be anything you like).
+-  TLDR your repo name must start with 2026-csc1040
+-  Database - SQLite
