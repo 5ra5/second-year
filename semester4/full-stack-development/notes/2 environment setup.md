@@ -60,4 +60,3 @@ pip freeze > requirements.txt
 git add requirements.txt
 git commit -m "Add some-new-package dependency"
 ```
-
