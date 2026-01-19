@@ -11,10 +11,12 @@
             "id": "0517727c568da196",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "pdf",
+              "state": {
+                "file": "semester4/operating-systems/notes/intro-services-calls-api-abi.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "intro-services-calls-api-abi"
             }
           }
         ]
@@ -165,8 +167,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "92b7b9194bd88ebf",
+  "active": "0517727c568da196",
   "lastOpenFiles": [
+    "semester4/operating-systems/notes/processes-threads.pdf",
+    "semester4/operating-systems/notes/intro-services-calls-api-abi.pdf",
     "semester4/intro-to-databases/labs/Lab 1.md",
     "semester4/operating-systems/notes/2 processes and threads.md",
     "semester4/intro-to-databases/notes/1 intro and history of databases.md",
@@ -185,7 +189,6 @@
     "semester4/full-stack-development/lectures/week_1_code/pages/migrations/__init__.py",
     "semester4/full-stack-development/lectures/week_1_code/pages/__pycache__/views.cpython-310.pyc",
     "semester4/full-stack-development/lectures/week_1_code/pages/__pycache__/urls.cpython-310.pyc",
-    "semester4/full-stack-development/lectures/week_1_code/pages/__pycache__/models.cpython-310.pyc",
     "semester4/software-testing/notes/1 intro.md",
     "semester4/software-testing/notes/1 Fundamentals of Testing.md",
     "README.md",
@@ -202,7 +205,6 @@
     "semester3/systems-analysis/week3/revision_quiz.md",
     "semester3/systems-analysis/week2/revision_quiz.md",
     "semester3/systems-analysis/group_project/SRS project notes.md",
-    "semester3/programming3/week5/lectures.md",
-    "semester3/programming3/week4/lectures.md"
+    "semester3/programming3/week5/lectures.md"
   ]
 }
