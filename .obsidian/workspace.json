@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5ad9a8081bfc0ca4",
+        "id": "597abbe6d956d2c2",
         "type": "tabs",
         "children": [
           {
-            "id": "de1a232a74762553",
+            "id": "0517727c568da196",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "semester4/operating-systems/notes/2 processes and threads.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2 processes and threads"
+              "title": "New tab"
             }
           }
         ]
@@ -169,15 +165,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "de1a232a74762553",
+  "active": "92b7b9194bd88ebf",
   "lastOpenFiles": [
-    "semester4/intro-to-databases/notes/1 intro and history of databases.md",
+    "semester4/intro-to-databases/labs/Lab 1.md",
     "semester4/operating-systems/notes/2 processes and threads.md",
+    "semester4/intro-to-databases/notes/1 intro and history of databases.md",
     "semester4/operating-systems/notes/1 system calls.md",
     "semester4/operating-systems/notes/1 intro.md",
     "semester4/OOP/notes/1 intro to OOP.md",
     "semester4/full-stack-development/notes/1 intro.md",
-    "semester4/intro-to-databases/labs/Lab 1.md",
     "semester4/intro-to-databases/labs",
     "semester4/full-stack-development/notes/2 environment setup.md",
     "semester4/full-stack-development/notes/2 introduction to Django.md",
