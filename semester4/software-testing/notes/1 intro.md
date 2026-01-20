@@ -1,5 +1,8 @@
 -  100% CA
 -  3 lab exams: 30% (week 4), 40% (week 8), 30% (week 12)
+-  **WEEK 4 FEB 4th** = 30% - weeks 1, 2 and 3 - 45 minutes duration
+-  **WEEK 8 MARCH 11th** = 40% - weeks 4, 5, 6 and 7 - 60 minutes duration
+-  **WEEK 12 APRIL 8th** = 30% - weeks 8, 10 and 11 - 45 minutes duration 
 -  CA267 - previous module code
 
 ### Books
