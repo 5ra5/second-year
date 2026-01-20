@@ -12,7 +12,11 @@ def addTwoPar():
     q = Queue()
     p1 = Process(target=addTwoNumbers, args=(x, y, q))
     p1.start()
-    print("Calculating...")
+    print("(parent process) get the result")
+    result = q.get()
 
     p1.join()
+    print(result)
     print("Done!")
+
+addTwoPar()
