@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "95dfbb2e15e3ae92",
+        "id": "15e19313394eb3d2",
         "type": "tabs",
         "children": [
           {
-            "id": "bb75f713d2fd512b",
+            "id": "b507547e0ebe6aa0",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "semester4/operating-systems/notes/intro-services-calls-api-abi.pdf"
+                "file": "semester4/OOP/notes/2 java ecosystem.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "intro-services-calls-api-abi"
+              "icon": "lucide-file",
+              "title": "2 java ecosystem"
             }
           }
         ]
@@ -167,33 +169,73 @@
       "bases:Create new base": false
     }
   },
-  "active": "bb75f713d2fd512b",
+  "floating": {
+    "id": "4f250adff578fea7",
+    "type": "floating",
+    "children": [
+      {
+        "id": "c983221cd224fff1",
+        "type": "window",
+        "children": [
+          {
+            "id": "4eabb2f7f4476f82",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "1bc552fcd6ffe045",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "semester4/OOP/slides/2-java-ecosystem.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "2-java-ecosystem"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 66,
+        "y": 29,
+        "width": 927,
+        "height": 1051,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "b507547e0ebe6aa0",
   "lastOpenFiles": [
+    "semester4/OOP/slides/2-java-ecosystem.pdf",
+    "semester4/OOP/labs/2.1 notes.md",
+    "semester4/OOP/notes/2 java ecosystem.md",
+    "semester4/OOP/notes/1 intro to OOP.md",
+    "semester4/OOP/labs/2.1/Dot3D.py",
+    "semester4/OOP/labs/2.1",
+    "semester4/OOP/labs/Dot3D.py",
+    "semester4/full-stack-development/notes/2 Django model intro.md",
+    "semester4/full-stack-development/notes/2 Django templates.md",
+    "semester4/OOP/slides",
+    "semester4/operating-systems/notes/2 processes.md",
+    "semester4/operating-systems/notes/processes-threads.pdf",
+    "semester4/operating-systems/labs/parallel-processes/solutions and notes.md",
+    "semester4/operating-systems/notes/intro-services-calls-api-abi.pdf",
+    "semester4/full-stack-development/notes/1 introduction to Django.md",
+    "semester4/full-stack-development/notes/1 intro.md",
     "semester4/logic/notes/prolog.md",
     "semester4/software-testing/notes/2 Test organisation, planning and estimation.md",
     "semester4/software-testing/lectures/ISO 29119.pdf",
-    "semester4/operating-systems/notes/intro-services-calls-api-abi.pdf",
     "semester4/software-testing/notes/1 intro.md",
     "semester4/software-testing/past-exams/2022.pdf",
     "semester4/software-testing/past-exams/2022-resit.pdf",
-    "semester4/software-testing/past-exams/2019.pdf",
-    "semester4/software-testing/past-exams",
     "semester4/software-testing/notes/1 Fundamentals of Testing.md",
-    "semester4/operating-systems/labs/parallel-processes/solutions and notes.md",
-    "semester4/full-stack-development/notes/1 intro.md",
-    "semester4/full-stack-development/notes/2 Django templates.md",
-    "semester4/full-stack-development/notes/1 introduction to Django.md",
     "semester4/full-stack-development/notes/1 environment setup.md",
-    "semester4/operating-systems/labs/parallel-processes/digging-holes.py",
-    "semester4/operating-systems/labs/parallel-processes/manyGreetings4.py",
-    "semester4/operating-systems/notes/2 processes and threads.md",
-    "semester4/operating-systems/labs/parallel-processes/manyGreetings2.py",
-    "semester4/operating-systems/labs/parallel-processes/manyGreetings.py",
     "semester4/intro-to-databases/labs/Lab 1.md",
     "semester4/intro-to-databases/notes/1 intro and history of databases.md",
     "semester4/operating-systems/notes/1 system calls.md",
     "semester4/operating-systems/notes/1 intro.md",
-    "semester4/OOP/notes/1 intro to OOP.md",
     "README.md",
     "semester2/operating-systems/notes/1 intro.md",
     "semester3/systems-analysis/week9/Scaling and refining RE.md",
@@ -201,10 +243,6 @@
     "semester3/systems-analysis/week8/Non-Functional Requirements (NFRs).md",
     "semester3/systems-analysis/week7/Domain models.md",
     "semester3/systems-analysis/week6/Usage models, use case overview & sequence diagram.md",
-    "semester3/systems-analysis/week5/vision_statement.md",
-    "semester3/systems-analysis/week5/revision_quiz.md",
-    "semester3/systems-analysis/week4/vml.png",
-    "semester3/systems-analysis/week4/revision_quiz.md",
-    "semester3/systems-analysis/week3/revision_quiz.md"
+    "semester3/systems-analysis/week4/vml.png"
   ]
 }
