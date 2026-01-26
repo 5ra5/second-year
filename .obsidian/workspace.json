@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "04d5b3001852a2a7",
+        "id": "c6e416e823fb4877",
         "type": "tabs",
         "children": [
           {
-            "id": "778081924f79e9cd",
+            "id": "5076e0a4e34f7d27",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "semester4/intro-to-databases/notes/2 relational model.md",
+                "file": "semester4/operating-systems/labs/3/3 notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2 relational model"
+              "title": "3 notes"
             }
           }
         ]
@@ -169,71 +169,37 @@
       "bases:Create new base": false
     }
   },
-  "floating": {
-    "id": "4f250adff578fea7",
-    "type": "floating",
-    "children": [
-      {
-        "id": "88fedd2e6a1686a6",
-        "type": "window",
-        "children": [
-          {
-            "id": "3723194aceed4504",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "8274ffa872f9d961",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "semester4/intro-to-databases/notes/Week_2_RelModel.pdf"
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "Week_2_RelModel"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 66,
-        "y": 29,
-        "width": 927,
-        "height": 1051,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "778081924f79e9cd",
+  "active": "5076e0a4e34f7d27",
   "lastOpenFiles": [
-    "semester4/intro-to-databases/notes/Week_2_RelModel.pdf",
+    "semester4/operating-systems/labs/3/newproc-posix",
+    "semester4/operating-systems/labs/3/newproc-posix.c",
+    "semester4/operating-systems/labs/3/layout3",
+    "semester4/operating-systems/labs/3/layout3.c",
+    "semester4/operating-systems/labs/3/layout2",
+    "semester4/operating-systems/labs/3/layout2.c",
+    "semester4/operating-systems/labs/3/3 notes.md",
+    "semester4/operating-systems/past-exams/2025.pdf",
+    "semester4/operating-systems/notes/processes-threads.pdf",
+    "semester4/operating-systems/notes/2 processes.md",
+    "semester4/operating-systems/past-exams/2023.pdf",
+    "semester4/operating-systems/operating-systems-concepts.pdf",
+    "semester4/full-stack-development/notes/Password123!.md",
+    "semester4/logic/notes/prolog.md",
+    "semester4/logic/notes/prolog-slides.pdf",
+    "2 relational model.md",
     "semester4/intro-to-databases/notes/2 relational model.md",
     "semester4/intro-to-databases/labs/Lab 1.md",
     "semester4/intro-to-databases/notes/README.md",
-    "2 relational model.md",
     "semester4/OOP/notes/2 java ecosystem.md",
-    "semester4/OOP/slides/2-java-ecosystem.pdf",
     "semester4/OOP/labs/2.1 notes.md",
     "semester4/OOP/notes/1 intro to OOP.md",
-    "semester4/OOP/labs/2.1/Dot3D.py",
-    "semester4/OOP/labs/2.1",
-    "semester4/OOP/labs/Dot3D.py",
     "semester4/full-stack-development/notes/2 Django model intro.md",
     "semester4/full-stack-development/notes/2 Django templates.md",
-    "semester4/OOP/slides",
-    "semester4/operating-systems/notes/2 processes.md",
-    "semester4/operating-systems/notes/processes-threads.pdf",
     "semester4/operating-systems/labs/parallel-processes/solutions and notes.md",
-    "semester4/operating-systems/notes/intro-services-calls-api-abi.pdf",
     "semester4/full-stack-development/notes/1 introduction to Django.md",
     "semester4/full-stack-development/notes/1 intro.md",
-    "semester4/logic/notes/prolog.md",
     "semester4/software-testing/notes/2 Test organisation, planning and estimation.md",
-    "semester4/software-testing/lectures/ISO 29119.pdf",
     "semester4/software-testing/notes/1 intro.md",
-    "semester4/software-testing/past-exams/2022.pdf",
     "semester4/software-testing/notes/1 Fundamentals of Testing.md",
     "semester4/full-stack-development/notes/1 environment setup.md",
     "semester4/intro-to-databases/notes/1 intro and history of databases.md",
@@ -241,8 +207,6 @@
     "semester4/operating-systems/notes/1 intro.md",
     "semester2/operating-systems/notes/1 intro.md",
     "semester3/systems-analysis/week9/Scaling and refining RE.md",
-    "semester3/systems-analysis/week8/Quality models.md",
-    "semester3/systems-analysis/week8/Non-Functional Requirements (NFRs).md",
     "semester3/systems-analysis/week4/vml.png"
   ]
 }

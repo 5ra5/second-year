@@ -105,5 +105,94 @@ first way - use double quotes
 
 second way - use single quotes
 ```
-?- consult('test.pl).
+?- consult('test.pl').
+```
+
+## data objects in prolog
+
+**atoms** = it's a value that's composed of strings of letters, digits, underscore characters, starting with a lower-case character
+-  it is also composed of special characters, but you can't use some sequences like `:-` because it's already reserved by prolog
+-  it is composed of strings enclosed in single quotes
+
+**numbers** = can be integers or floating-point numbers
+
+**a variable** = a string of letters, digits or underscore characters that start with either upper-case character or an underscore
+**anonymous variable** = `_` we use it when a variable is used only once in the script, so it can be replaced
+**scope of a variable** = clause in which it is mentioned, therefore the variable student in two different clauses are not the same variable
+
+**structures** = objects that have several components that are made of other structures or variables
+-  composed of a functor that names the structure and
+-  a set of components
+
+the principle functor here is triangle
+```prolog
+triangle(point(1,2, 3), point(6, 3, 7), (point(4, 5, 8)))
+```
+
+-  a point with 2 arguments is different than a point with 3 arguments
+- **arity** = the number of components/arguments
+- **name** = atom
+
+**principle functor** = the first functor
+
+## declarative meaning
+
+**instantiation** = goals separated by a comma `Q :- R, S, T `
+**disjunction** = goals separated by a semicolon `Q :- R;S`
+
+when expressing disjunction, it is better to use new lines instead of semicolons for a better readability
+```
+Q :- R;S
+
+equivalent to
+
+Q :- R.
+Q :- S.
+```
+
+## procedural meaning
+
+```
+big(bear)
+big(elephant)
+small(cat)
+
+brow(bear)
+black(cat)
+grey(elephant)
+
+dark X is true if black X is true
+dark X is true if brown X is true
+
+dark(X) :- black(X)
+dark(X) :- brown(X)
+```
+
+if we run the query `dark(X), big(X)`:
+-  prolog searches from top to bottom of the code for a clause whose head matches the first goal in the goal list
+-  if there is no such clause, return failure
+-  otherwise rename the variables
+-  it will keep doing this recursively until the goal list is empty, when it returns success
+
+# lists
+
+-  a recursive data structure
+-  the list is the only structure that is built into prolog, unlike trees, graphs etc.
+-  it is a sequence of any number of prolog atoms
+```prolog
+[tom, football, golf, harry, poker]
+```
+
+a linked list has 2 forms:
+-  it is either empty, `[]`, or
+-  it consists of a **head** (first term) and a **tail** (rest of the list)
+
+the head and tail are combined by a special functor
+```prolog
+.(Head, Tail)
+```
+
+this is how prolog internally stores the list from above
+```prolog
+.(tom, .(football, .(golf .(poker, []))))
 ```

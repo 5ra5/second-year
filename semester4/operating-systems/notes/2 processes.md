@@ -107,9 +107,11 @@ now check the result again
 -  the default reaper is pid = 1
 -  you can also have sub-reapers that you can use when you use docker
 
-*stopped at slide 38*
+`Z+` = zombie process (**a process that has completed execution (via the exit system call) but still has an entry in the process table**)
+
 ### processes and trees of processes
 
+```shell
 `echo $$` = get a pid of a current bash instance
 `3878
 `pstree -p | grep 3878 -C 10` = when it finds the line with the particular number, it will print 10 lines before and after it
@@ -155,5 +157,41 @@ if you run `pstree -p | grep 3878 -C 10` again you will be able to see those new
 `systemd` = first daemon to start during boot (after kernel)
 `pstree -p 1` = how to inspect it
 
+## process termination
 
+deallocation = most resources are freed, but the kernel keeps some information like PID and exit status until after the parent calls `wait()`. between `exit()` and `wait()` the process is called a zombie process
+
+if a parent terminates before the child process, the child process continues, some OS configs do not allow child to exist if its parent has terminated. if a process terminates, then all its children must also be terminated. it uses **cascading termination** where children, grandchildren etc. are terminated.
+
+***QUESTION IN THE EXAM***
+***what's the difference between a zombie and an orphan process?***
+
+`killall python` = kill all python processes
+ **killing a process group**
+ ```shell
+ pstree -p | grep python
+ kill -TERM -PID
+ ```
+
+## interprocess communication
+
+-  some processes within a system may be **independent** or **cooperating** with other processes
+-  **cooperating** process can affect or be affected by other processes including sharing data
+-  they need **interprocess communication (IPC)**
+-  2 primary models: shared memory, message passing
+ **remember**: by default processes are isolated and do not share memory
+
+## producer-consumer problem
+
+-  we can use this problem to think about how cooperating processes interact with each other
+-  we have the producer process that produces information that is consumed by a consumer process (and they share a buffer)
+
+two variations:
+-  unbounded buffer: places no practical limit on the size of the buffer
+-  bounded buffer: assumes that there is a fixed buffer size
+
+we can use IPC-shared memory to solve the bounded buffer problem
+-  we only have 2 variables to synchronise processes: in and out
+-  we can use a counter variable if we want to fill all the buffers, as the int counter keeps track of the number of full buffers
+*stopped at slide 55*
 
