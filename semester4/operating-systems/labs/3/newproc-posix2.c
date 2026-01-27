@@ -36,11 +36,7 @@ int main()
 		/* the parent gets the child PID*/
 		/* creates a child process that runs an ls command */
 		printf("I am the child %d\n",pid);
-
-		/* this is a C wrapper to the exec()/execve() system call 
-		it identifies the location of the new process image within the
-		hierachical file system (HFS) */
-		execlp("/bin/ls","ls",NULL);
+		while(1);
 
 		/* this line will not execute because after fork(), in the
 		child process, the process image are replaced, meaning
@@ -54,13 +50,11 @@ int main()
 		/* parent will wait for the child to complete */
 		/* the child PID gets 0 */
 		printf("I am the parent %d\n",pid);
+		while(1);
 		
-		/* the wait system call can be passed a parameter that
-		allows the parent to obtain the exit status of a
-		child process */
-        cpid = wait(&status);
+        cpid = wait(NULL);
 		
-		printf("Child Complete (pid=%d) with status=%d\n", cpid, status);
+		printf("Child Complete!\n");
 	}
     
     return 0;
