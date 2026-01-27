@@ -50,3 +50,43 @@ requirements should be **critically evaluated**
 
 # part 4 - more problems...
 
+1.  quality of individual requirements / users stories
+2.  the quality of a group of software requirements / user stories when considered as a whole
+
+## 1. quality of individual requirements
+
+is each quality requirement:
+-  mandatory
+-  feasible
+-  scalable
+-  unambiguous
+-  verifiable
+-  correct
+-  prioritised
+-  traced to its source?
+
+***THIS MIGHT COME UP IN THE LAB EXAM***
+CHARACTERISTICS OF QUALITY REQUIREMENT STATEMENTS:
+
+-  CORRECT
+-  FEASIBLE
+-  NECESSARY
+-   PRIORITISED
+-  UNAMBIGUOUS - the person that is reading the requirement for the first time should only conclude one thing out of that description
+-  VERIFIABLE - you need to be able to run a test against it
+-  implementing Test Driven Development (TDD) - this is writing the test case before programming
+-  SCALABLE - implementing a large number of procedures and isolation as it might be required operationally
+-  TRACEABLE -  we need to be able to trace where is the requirement coming from, and determine whether the stakeholder is authorised to make that requirement
+
+## 2. quality of collective requirements
+
+-  OVERALL
+-  COMPLETE
+-  CONSISTENT - do not conflict with other software requirements or system and business requirements
+-  MODIFIABLE
+-  TRACEABLE
+
+if we change requirements, or introduce new ones, we need to be aware of how this will impact the rest of requirements
+every requirement should have a number associated with it - we can have parent and child requirements
+traceable requirements are uniquely labelled and are written in a structured, fine-grained way
+
