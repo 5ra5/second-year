@@ -8,27 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7f0a394b6bed572b",
+            "id": "75875ea7c511be8c",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "semester4/OOP/slides/week3.pdf"
+                "file": "semester4/OOP/labs/3.2/Constructor overloading, shallow copy and deep copy, @Override.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "week3"
-            }
-          },
-          {
-            "id": "df023495128613d5",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "semester4/OOP/slides/week3-2.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "week3-2"
+              "icon": "lucide-file",
+              "title": "Constructor overloading, shallow copy and deep copy, @Override"
             }
           }
         ]
@@ -179,10 +169,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "7f0a394b6bed572b",
+  "active": "92b7b9194bd88ebf",
   "lastOpenFiles": [
     "semester4/OOP/slides/week3-2.pdf",
     "semester4/OOP/slides/week3.pdf",
+    "semester4/OOP/labs/3.2/Constructor overloading, shallow copy and deep copy, @Override.md",
+    "semester4/OOP/labs/3.1/Aggregation vs Composition + Encapsulation.md",
+    "semester4/OOP/labs/3.2",
     "semester4/OOP/slides/2-java-ecosystem.pdf",
     "semester4/intro-to-databases/notes/3 relational algebra.md",
     "semester4/intro-to-databases/notes/3 structured query language (sql).md",
@@ -190,7 +183,6 @@
     "semester4/intro-to-databases/notes/week3.pdf",
     "semester4/intro-to-databases/notes/2 relational model.md",
     "semester4/intro-to-databases/notes/1 intro and history of databases.md",
-    "semester4/OOP/labs/3.1/Aggregation vs Composition + Encapsulation.md",
     "semester4/OOP/notes/1 intro to OOP.md",
     "semester4/OOP/labs/3.1",
     "semester4/OOP/notes/2 java ecosystem.md",
@@ -209,8 +201,6 @@
     "semester4/software-testing/notes/1 Fundamentals of Testing.md",
     "semester4/logic/notes/prolog.md",
     "semester4/software-testing/labs/3/Week 3 - Lab Instructions.docx",
-    "semester4/software-testing/labs/3",
-    "semester4/logic/notes/prolog-slides.pdf",
     "semester4/software-testing/notes/3 Testing software requirements.md",
     "semester4/operating-systems/labs/3/3 notes.md",
     "semester4/OOP/labs/2.2/2.2 notes.md",
@@ -219,7 +209,6 @@
     "2 relational model.md",
     "semester4/intro-to-databases/labs/Lab 1.md",
     "semester4/intro-to-databases/notes/README.md",
-    "semester4/OOP/labs/2.1 notes.md",
     "semester3/systems-analysis/week4/vml.png"
   ]
 }
