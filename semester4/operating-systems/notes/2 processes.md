@@ -193,5 +193,11 @@ two variations:
 we can use IPC-shared memory to solve the bounded buffer problem
 -  we only have 2 variables to synchronise processes: in and out
 -  we can use a counter variable if we want to fill all the buffers, as the int counter keeps track of the number of full buffers
-*stopped at slide 55*
+
+a problem with shared memory is the **race condition**
+
+to turn off optimisation when compiling
+```shell
+gcc raceexample.c -o raceexample -O0
+```
 

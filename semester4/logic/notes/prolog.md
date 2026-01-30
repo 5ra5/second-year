@@ -196,3 +196,82 @@ this is how prolog internally stores the list from above
 ```prolog
 .(tom, .(football, .(golf .(poker, []))))
 ```
+
+-  what you get for free in prolog are inverse functions and predicates
+ `true` = prolog can find an answer
+ `false` = prolog can't find an answer
+
+## adding and deleting an element
+
+adding an element
+```prolog
+add(X, L, [X|L]).
+```
+
+```prolog
+add(5, [1, 2], [5, 1, 2]).
+-> true
+```
+
+```prolog
+add(5, [1, 2], [1, 2, 5]).
+-> false
+```
+
+deleting an element has 2 cases:
+-  the item to be deleted is the head of the list
+-  the item to be deleted is the tail
+
+```prolog
+delete(X, [X|L], L).
+```
+
+```prolog
+delete(X, [Y|Tail], [Y|Tail1]) :-
+	delete(X, Tail, Tail1).
+```
+
+**delete is non-deterministic** = there is more than one possible answer
+
+```prolog
+insert(X, List, BiggerList) :-
+	delete(X, BiggerList, List).
+```
+
+## sublist
+
+S is a sublist of L if:
+-  L can be split into two lists L1 and L2
+-  L2 can be split into two lists S and L3.
+
+```prolog
+sublist(S, L) :-
+	conc(L1, L2, L),
+	conc(S, L3, L2).
+```
+
+-  it is helpful to draw diagrams
+
+## permutations
+
+a permutation of a list is a reordering of the elements in the list
+
+-  a relation is true if the second list is a reordering of the firs list and is defined by considering two cases of the first list
+-  base case = if the first list is empty, then the second list must also be empty
+-  recursive case: the first list has the form `[X|L]` then permute L to form a new list L1 and then insert X into L1.
+
+```prolog
+permutation([], []).
+
+permutation([X|L], P) :-
+	permutation(L, L1),
+	insert(X, L1, P).
+```
+
+
+what list that permutated gives you list a, b, c
+the problem here is that insert uses delete and delete is non-deterministic so that means that there is multiple possible answers
+sometimes when you call a non-deterministic predicate, prolog gets lost in the process of trying to find an answer so it will take a long time- this is true for a large list
+```
+(L, [a, b, c])
+```

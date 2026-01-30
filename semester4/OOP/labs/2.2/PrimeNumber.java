@@ -4,38 +4,34 @@ public class PrimeNumber {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
-        long limit = scanner.nextInt();
+        int limit = scanner.nextInt();
 
-        long cnt = 0;
-
-        for (int i = 2; i <= limit; i++){
-            if(isPrime(i) == true){
-                cnt++;
-            }
-        }
+        int cnt = isPrime(limit);
 
         System.out.println(cnt);
     }
 
-    private static boolean isPrime(long num){
+    private static int isPrime(int n){
 
-        if (num == 1) {
-            return false;
+       boolean[] prime = new boolean[n + 1];
+        for (int i = 0; i <= n; i++) {
+            prime[i] = true;
         }
 
-        if (num == 2 || num == 3){
-            return true;
-        }
-
-        if (num % 2 == 0 || num % 3 == 0){
-            return false;
-        }
-
-        for(int i = 5; i <= Math.sqrt(num); i+=6) {
-            if(num % i == 0 || num % (i + 2) == 0) {
-                return false;
+        for (int p = 2; p * p <= n; p++) {
+            if (prime[p]) {
+                for (int i = p * p; i <= n; i += p)
+                    prime[i] = false;
             }
         }
-        return true;
+
+        int count = 0;
+        for (int p = 2; p <= n; p++) {
+            if (prime[p])
+                count++;
+        }
+
+        return count;
+
     }
 }
