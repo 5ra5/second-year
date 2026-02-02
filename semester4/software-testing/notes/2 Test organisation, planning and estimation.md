@@ -32,7 +32,7 @@
 ## Exit criteria
 
 **candidate question for the CA exam**
-  - exit criteria when to stop texting in the context of the testing stage, it doesn't apply to a single test
+  - exit criteria when to stop testing in the context of the testing stage, it doesn't apply to a single test
   -  they consist of thoroughness measures (if you are covering enough of the functionality), cost, estimates of defect density or reliability measures
   -  residual risks such as defects not fixed or lack of test coverage in certain areas
 -  they should be objective and measurable

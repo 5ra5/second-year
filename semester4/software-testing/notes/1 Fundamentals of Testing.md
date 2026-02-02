@@ -20,7 +20,7 @@
 
 -  A failure happens when there is no catastrophic defect and the system fails, but the system doesn't do what user expects it to do
 -  too hard to use or too slow - example of failures
--  system does a wrong this - also a failure
+-  system does a wrong thing - also a failure
 -  also called problem, incident, issue
 
 **Errors** - a human action producing an incorrect result

@@ -25,8 +25,7 @@ GeneratedTemplate = book (T, A, G)
 
 
 ```prolog
-litery(L, book(T, A, G, _)) :- L = ([book(T; A; G; _) | Tail]),
-								G = drama.
+litery(L, book(T, A, G, _)) :- L = ([book(T; A; G; _) | Tail]), G = drama.
 ```
 
 ```prolog
