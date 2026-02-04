@@ -275,3 +275,169 @@ sometimes when you call a non-deterministic predicate, prolog gets lost in the p
 ```
 (L, [a, b, c])
 ```
+
+## operator notation
+
+-  *infix*, a+b
+-  *prefix*, +(a, b)
+-  *postfix*, a b +
+
+`a b c * + = a + (b * c)'
+`a b + c * = (a + b) * c`
+
+prolog internally uses *prefix* notation, but we can make our own operators
+
+prolog has special clauses called *directives*. the **op** directive has the following syntax
+
+```prolog
+:-op(precedence, type, name).
+```
+
+the operator's name is an atom and becomes the **functor** of the operator
+the precedence of the operator is usually between 0 and 1200 (we use the one that goes up to 800)
+
+types of operators:
+-  infix xfx, xfy, yfx
+-  prefix fx, fy
+-  postfix xf, yf
+
+f = operator
+x = argument whose precedence must be less than the precedence of the operator
+y = argument whose precedence is less than or equal to the precedence of the operator
+yfx = left-to-right evaluation
+
+example:
+`a - b - c = (a - b) - c` NOT `a - (b - c)`
+
+we define minus as:
+```prolog
+:- op(500, yfx, -).
+```
+
+very important laws: **DeMorgan's laws**
+
+not(A & B) = not A & not B
+not(A|B) = not A | not B
+
+in prolog:
+```prolog
+equivalence(not(and(A, B)), or(not(A), not(B))).
+
+:− op ( 8 0 0 , x f x , <===>).
+:− op ( 7 0 0 , x f y , v ).
+:− op ( 6 0 0 , x f y , &).
+:− op ( 5 0 0 , f y , ˜ ) 
+```
+
+## arithmetic
+
+prolog is a symbolic language so if you query this
+```prolog
+?- X = 1 + 2.
+```
+
+X will be 1 + 2, not 3
+-  prolog will not evaluate terms unless you force it to
+
+to force
+```prolog
+?- X is 1 + 2.
+X = 3
+```
+
+predefined arithmetic operators:
+`+` addition
+`*` multiplication
+`**` power
+`mod` remained after integer division
+`-` subtraction
+`/` division
+`//` integer division
+
+```prolog
+length1([], 0).
+
+length1([_|Tail], N) :-
+	length1(Tail, N1),
+	N is N1 + 1.
+	
+?- length1([a, b, c, d], N).
+N = 4.
+```
+
+```
+length1([a, b, c, d], N)
+length1([a]|[b, c, d], N)
+	length1([b, c, d], N1)
+	length1([c, d], N2)
+	length1([d], N3)
+	length1([], N4)
+```
+
+```
+N4 = 0
+N3 = N4 + 1 = 1
+N2 = N3 + 1 = 2
+N1 = N2 + 1 = 3
+N = N1 + 1 = 4
+```
+
+`length2` one doesn't use **is**, doesn't enforce evaluation
+```
+length2([], 0).
+
+length2([_|Tail], N) :-
+	length2(Tail, N1),
+	N = N1 + 1.
+	
+?- length2([a, b, c, d], N).
+N = 0+1+1+1+1
+```
+
+### comparison operators
+
+`X = Y` match
+`X == Y` structured equivalence
+`X =:= Y` arithmetic equality (enforces evaluation for us - evaluates X, evaluates Y, and then checks if they are equal)
+
+examples:
+1.  `1 + 2 = 2 + 1` this would be false
+
+2.  `1 + 2 == 2 + 1` this would be false 
+
+3.  internal version of 2. `+(1, 2) == +(2, 1)` this would be false
+
+4.  `1 + 2 =:= 2 + 1` this would be true
+
+## structures
+
+### binary trees
+
+2 cases:
+-  an empty tree
+-  subtree that has its own root, X, and a left subtree, L, and a right subtree, R.
+
+we represent these by an atom `nil` and a functor `bt`
+
+make sure there is no space between `bt` and brackets or else Prolog complains
+```prolog
+bt(L, X, R).
+```
+
+**to test if X is in a binary tree:**
+we pass a value and a binary tree
+```prolog
+
+is X the root of the tree?
+in(X, bt(_, X, _)).
+
+if X is less or equal to the root of the tree, search the left subtree of X
+in(X, bt(L, Y, _) :-
+	X =< Y, in(X, L).
+	
+search the right subtree
+in(X,  bt(_, _, R)) :-
+	in(X, R).
+```
+
+a search of an empty tree will fail

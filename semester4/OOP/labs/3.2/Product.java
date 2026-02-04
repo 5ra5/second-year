@@ -1,6 +1,7 @@
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 public class Product {
    private String productName;
@@ -61,10 +62,8 @@ public class Product {
         return tags;
    }
 
-   public void setTags(List<String> tags){
-          for (String i : tags) {
-               tags.add(i);
-          }
+   public void setTags(List<String> input){
+          this.tags = new ArrayList<>(input);
    }
 
    public void addTag(String tag){
