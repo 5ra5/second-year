@@ -226,3 +226,30 @@ public class Main {
 
 -  the `hobbies` list is copied using `new ArrayList<>(hobbies)`
 -  modifications to the original list do not affect the deep copy since it uses its own independent list
+
+## Product.java
+
+this is a reference to tags, everybody that has an access to this can change tags
+very common security breach
+```java
+public List<Strings> getTags(){
+
+	return this.tags;
+}
+```
+
+returning info without giving access to tags
+```java
+public List<Strings> getTags(){
+
+	return new ArrayList<>(this.tags);
+}
+```
+
+## Network.java
+
+static variables are useful for this task
+
+how to find the closest tower?
+-  you can scan through all of them because the dataset is small
+-  you can also use binary search

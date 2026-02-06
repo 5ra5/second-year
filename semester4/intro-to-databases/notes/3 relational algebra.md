@@ -96,3 +96,50 @@ R ∩ S = ((R ∪ S ) - (R - S )) - (S - R)
 -  It is mostly useful when followed by a selection that matches values of attributes coming from the component relations.
 -  Select all books, loaned to a particular student
 -  Select all staff, who work in a particular branch
+
+
+**Cartesian product vs join** we get the result whenever the combination satisfies the join condition
+
+## theta join
+
+`θ-join` = theta join defines a relation containing tuples satisfying the predicate F from the Cartesian product of R and S.
+```
+R ⋈F S = σF (R × S)
+```
+
+**important**: As with Cartesian product, the degree of a theta join is the sum of the degrees of relations R and S.
+
+## equijoin operation
+
+used to simplify a Cartesian product, likely wont be used along with theta join
+
+## natural join
+
+`R ⋈ S` = The Natural join is an Equijoin of the two relations R and S over all common attributes x.
+
+-  One occurrence of each common attribute is eliminated from the result.
+-  when we do natural join, we are essentially doing a equijoin along all the attributes in the two relations that have the same name
+-  prevents duplicate columns
+-  The degree of a natural join is the sum of the degrees of the relations R and S less the number of attributes in x. 
+-  There is no need to duplicate columns, unlike Cartesian Product with condition
+
+## outer join
+
+`R ⟕ S` = The (left) Outer join is a join in which tuples from R that do not have matching values in the common attributes of S are also included in the result relation.
+
+-  Missing values in the second relation are set to null.
+-  The advantage of an Outer join is that information is preserved.
+-  Outer join preserves tuples that would have been lost by other types of join, e.g. Natural Join.
+-  left (natural) outer join - keeps every tuple in the left-hand relation in the result
+-  right outer join retains every tuple from the right-hand relation in the result
+
+example: Produce a status report on property viewings.
+
+-  A report is required to include all properties and their viewings, even if there were no viewings. 
+-  The advantage of an Outer join is that information is preserved. 
+-  Outer join preserves tuples that would have been lost by other types of join, e.g. Natural Join.
+The target is a relation consisting of the properties that have been viewed with comments and those that have not been viewed.
+
+```
+π propertyNo, street, city(PropertyForRent ) ⟕ Viewing)
+```

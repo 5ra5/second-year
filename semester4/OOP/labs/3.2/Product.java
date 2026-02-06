@@ -84,12 +84,10 @@ public class Product {
 
      public static void main(String[] args){
 
-          
           Product product1 = new Product();
           Product product2 = new Product("Laptop");
           Product product3 = new Product("Tablet", 2900);
           Product product4 = new Product("Case", 30, true);
-          Product product5 = new Product("Charger", 10, true, tags);
 
           
           
