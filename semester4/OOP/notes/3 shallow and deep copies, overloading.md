@@ -66,3 +66,145 @@ public class PrimitiveExample{
 -  the parameter `num` holds the copy of the value
 -  changing `num` inside the method does **not** affect the original number in the main method
 -  **primitive types are passed by value**, meaning changes inside the method are limited to the local copy
+
+## passing references to methods
+
+```java
+public class ReferenceExample {
+	public static void modifyArray(int[] arr) {
+		arr[0] = 100; // Changes the original array
+	}
+	
+	public static void main(String[] args) {
+		int[] numbers = {1, 2, 3};
+		modifyArray(numbers);
+		System.out.println(numbers[0]); // Output: 100
+	}
+}
+```
+
+-  `numbers` variable pointing to an array in memory
+-  a method modifying the same array through its reference
+
+## arrays and arrayLists
+
+**arrays**:
+-  fixed size, reference-type behaviour
+-  modifications within methods affect the original array
+
+```java
+int[] numbers = {1, 2, 3};
+modifyArray(numbers);
+```
+
+```java
+public static void modifyArray(int[] arr)
+{
+	arr[0] = 42;
+}
+```
+
+**arrayLists**:
+-  a resizable version of arrays, also reference types
+-  adding, removing or modifying elements affects the original list
+
+```java
+ArrayList<String> names = new ArrayList<>();
+modifyList(names);
+```
+
+```java
+public static void modifyList(ArrayList<String> list)
+{
+	list.add("Hello");
+}
+```
+
+## shallow copy
+
+-  a copy of the **reference**, not the actual object
+-  both the original and the copied reference point to the **same object** in memory
+-  modifications to the object via one reference affect the other reference because they share the same memory
+
+```java
+Car car1 = new Car("Toyota");
+Car car2 = car1; // Both refer to the same object
+```
+
+```java
+class Person {
+	String name;
+	
+	Person(String name) {
+		this.name = name;
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Person original = new Person("Alice");
+		Person shallowPerson = original; // Shallow copy
+		
+		shallowPerson.name = "Bob"; // Modifies the shared object
+		System.out.println(original.name); // Output: Bob
+	}
+}
+```
+
+both `original.name` and `shallowPerson.name` reflect the same value
+both `original.name` and `shallowPerson.name` reflect the same change
+
+## deep copy
+
+-  a new object is created, and all fields are **manually copied** or copied using a constructor
+-  the original and the copied objects are **completely independent** (no shared memory)
+-  changes to one object do not affect the other
+
+```java
+class Car {
+	String brand;
+	double price;
+	
+	// Constructor
+	public Car(String brand, double price){
+		this.brand = brand;
+		this.price = price;
+	}
+	
+	// Method to create a deep copy of the object
+	public Car copyCar() {
+		return a; // return the new independent object
+	}
+}
+
+public static void main(String[] args) {
+	// original car
+	Car original = new Car("Toyota", 30000.0);
+	
+	// create a deep copy using the copyCar method
+	Car copied = original.copyCar();
+}
+```
+
+```java
+class Car {
+	String brand;
+	double price;
+	
+	// constructor
+	public Car(String brand, double price) {
+		this.brand = brand;
+		this.price = price;
+	}
+	
+	public Car(Car other) {
+		this.brand = other.brand;
+	}
+	
+	// method to create a deep copy of the object
+	public Car copyCar() {
+		Car a = new Car(this.brand, this.price); // use constructor to copy fields
+		return a; // return the new independent object
+	}
+}
+```

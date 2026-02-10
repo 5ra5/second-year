@@ -1,3 +1,6 @@
+***QUESTION IN THE EXAM***
+***what's the difference between a zombie and an orphan process?***
+
 **process** = program in execution
 (program itself is passive entity stored on disk - it becomes a process when an executable file is loaded into memory)
 
@@ -162,9 +165,6 @@ if you run `pstree -p | grep 3878 -C 10` again you will be able to see those new
 deallocation = most resources are freed, but the kernel keeps some information like PID and exit status until after the parent calls `wait()`. between `exit()` and `wait()` the process is called a zombie process
 
 if a parent terminates before the child process, the child process continues, some OS configs do not allow child to exist if its parent has terminated. if a process terminates, then all its children must also be terminated. it uses **cascading termination** where children, grandchildren etc. are terminated.
-
-***QUESTION IN THE EXAM***
-***what's the difference between a zombie and an orphan process?***
 
 `killall python` = kill all python processes
  **killing a process group**
