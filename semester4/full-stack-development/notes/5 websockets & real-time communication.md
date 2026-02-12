@@ -3,6 +3,8 @@
 -  communication is always happening, and we are just waiting for an event to happen
 -  done by web socket protocol
 -  avoiding asking for updates every so often
+-  ideal: phone constantly sending its location to the server to be tracked
+-  disadvantage: you have to define your own protocol, hard to spot errors because we spot them in runtime
 
 ## real time chat app
 
