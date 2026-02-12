@@ -1,3 +1,11 @@
+things to know for the exam:
+-  environment
+-  urls, url patterns
+-  views - reading data in/out (GET v POST)
+-  models - data types correct, validation max, min, default values
+-  templates - context `{'book : all_books} - {{all_books}}`
+-  forms & serializers
+
 **Question 3**
 Which file should you add to .gitignore for a Django project, explain why this file should be ignored.
 -  The file db.sqlite should not be included in a git repo as it is a local development database, each developer should have their own copy of db.sqlite automatically created and managed by Django.
