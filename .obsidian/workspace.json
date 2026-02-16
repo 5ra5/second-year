@@ -4,37 +4,38 @@
     "type": "split",
     "children": [
       {
-        "id": "5dff450ed2498180",
+        "id": "de7ffc5a6546aae2",
         "type": "tabs",
         "children": [
           {
-            "id": "4780d4463a218c52",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "semester4/OOP/slides/week5.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "week5"
-            }
-          },
-          {
-            "id": "479eb0f6867ff26d",
+            "id": "5835f54fcb86a32e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "semester4/OOP/notes/5 polymorphism.md",
+                "file": "semester4/operating-systems/notes/5 CPU scheduling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5 polymorphism"
+              "title": "5 CPU scheduling"
+            }
+          },
+          {
+            "id": "50d2e1ec4cbd8d30",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "semester4/operating-systems/notes/6 synchronisation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6 synchronisation"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -182,8 +183,24 @@
       "bases:Create new base": false
     }
   },
-  "active": "479eb0f6867ff26d",
+  "active": "92b7b9194bd88ebf",
   "lastOpenFiles": [
+    "semester4/operating-systems/notes/6 synchronisation.md",
+    "semester4/operating-systems/notes/5 CPU scheduling.md",
+    "semester4/operating-systems/slides/synchorization.pdf",
+    "semester4/full-stack-development/notes/5 gRPC - a third way to communicate.md",
+    "semester4/full-stack-development/notes/5 MCP.md",
+    "semester4/full-stack-development/notes/5 websockets & real-time communication.md",
+    "semester4/full-stack-development/notes/1 intro.md",
+    "semester4/operating-systems/notes/1 intro.md",
+    "semester4/operating-systems/notes/1 system calls.md",
+    "semester4/operating-systems/notes/2 processes.md",
+    "semester4/operating-systems/notes/4 signal handling.md",
+    "semester4/operating-systems/notes/4 threads.md",
+    "semester4/full-stack-development/notes/4 Django REST framework.md",
+    "semester4/full-stack-development/notes/4 APIs.md",
+    "semester4/full-stack-development/notes/practice exam.md",
+    "semester4/full-stack-development/notes/1 environment setup.md",
     "semester4/OOP/slides/week5.pdf",
     "semester4/OOP/notes/5 polymorphism.md",
     "semester4/OOP/notes/4 inheritance, overriding.md",
@@ -199,25 +216,10 @@
     "semester4/OOP/slides/week3.pdf",
     "semester4/OOP/notes/4 memento.md",
     "semester4/intro-to-databases/notes/mock quiz 1.md",
-    "semester4/operating-systems/notes/5 CPU scheduling.md",
     "semester4/operating-systems/slides/scheduling.pdf",
-    "semester4/operating-systems/past-exams/2024.pdf",
-    "semester4/full-stack-development/notes/practice exam.md",
     "semester4/full-stack-development/notes/general.md",
-    "semester4/full-stack-development/notes/5 MCP.md",
-    "semester4/full-stack-development/notes/5 gRPC - a third way to communicate.md",
-    "semester4/full-stack-development/notes/5 websockets & real-time communication.md",
     "semester4/software-testing/notes/5 psychology of testing.md",
     "semester4/software-testing/notes/5 software development models.md",
-    "semester4/intro-to-databases/notes/2 relational model.md",
-    "semester4/intro-to-databases/notes/3 relational algebra.md",
-    "semester4/intro-to-databases/notes/1 intro and history of databases.md",
-    "semester4/full-stack-development/notes/1 introduction to Django.md",
-    "semester4/OOP/labs/3.2/Constructor overloading, shallow copy and deep copy, @Override.md",
-    "semester4/OOP/notes/3 static.md",
-    "semester4/OOP/notes/2 java ecosystem.md",
-    "semester4/operating-systems/notes/4 threads.md",
-    "semester4/operating-systems/notes/2 processes.md",
     "Pasted image 20260129093015.png",
     "Pasted image 20260129092750.png",
     "Screenshot from 2026-01-13 12-20-39.png",
