@@ -1,8 +1,3 @@
-**quiz next week**
-relational models and relational algebra
-15 questions, 20 minutes
-starts 11:05
-
 **essential for CA2** - you will mostly use binary relationships, sometimes ternary (there is a way to simplify from ternary to binary)
 
 # introduction
