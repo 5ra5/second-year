@@ -1,4 +1,4 @@
-***not coming up in the exam setting*** 
+***not coming up in the exam*** 
 - model context protocol
 -  allows you to write functions and introduce them to LLM so it can run them for you
 -  they can do anything you program
