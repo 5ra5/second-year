@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3a4edd493462bfc3",
+        "id": "0ed312975ff64cfe",
         "type": "tabs",
         "children": [
           {
-            "id": "21160f09be520bce",
+            "id": "a17a01e504ccdc73",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "semester4/operating-systems/notes/6 synchronisation.md",
+                "file": "semester4/OOP/notes/6 optimisation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "6 synchronisation"
+              "title": "6 optimisation"
             }
           }
         ]
@@ -169,11 +169,23 @@
       "bases:Create new base": false
     }
   },
-  "active": "21160f09be520bce",
+  "active": "a17a01e504ccdc73",
   "lastOpenFiles": [
+    "semester4/OOP/notes/6 optimisation.md",
+    "semester4/logic/notes/prolog.md",
+    "semester4/logic/past-exams/2019.pdf",
+    "semester4/OOP/notes/6 design of solutions.md",
+    "semester4/intro-to-databases/notes/3 structured query language (sql).md",
+    "semester4/intro-to-databases/notes/1 intro and history of databases.md",
+    "semester4/intro-to-databases/slides/Week4_ERModel.pdf",
+    "semester4/intro-to-databases/notes/6 functional dependencies.md",
+    "semester4/intro-to-databases/slides/sql_tut_notes.pdf",
+    "semester4/intro-to-databases/slides/week3.pdf",
+    "semester4/intro-to-databases/slides/6-functional-dependencies.pdf",
+    "semester4/intro-to-databases/slides/ER_Mapping.pdf",
+    "semester4/operating-systems/notes/6 synchronisation.md",
     "semester4/operating-systems/slides/synchronisation.pdf",
     "semester4/operating-systems/notes/5 CPU scheduling.md",
-    "semester4/operating-systems/notes/6 synchronisation.md",
     "semester4/full-stack-development/notes/6 JavaScript in the Browser.md",
     "semester4/full-stack-development/notes/4 APIs.md",
     "semester4/full-stack-development/notes/5 MCP.md",
@@ -186,16 +198,8 @@
     "semester4/software-testing/notes/6 Pair Programming.md",
     "semester4/logic/past-exams/2023.pdf",
     "semester4/logic/book/1 Introduction to Prolog.md",
-    "semester4/logic/prolog-book-exercises/family-tree.pl",
-    "semester4/logic/prolog-book-exercises",
-    "semester4/logic/book/family-tree.pl",
-    "semester4/logic/book",
-    "semester4/prolog-book-exercises",
     "a-family-tree.png.png",
-    "semester4/logic/notes/prolog.md",
     "semester4/intro-to-databases/CA2/notes.md",
-    "semester4/intro-to-databases/slides/Week4_ERModel.pdf",
-    "semester4/intro-to-databases/slides/sql_tut_notes.pdf",
     "semester4/software-testing/notes/5 Software Development Models.md",
     "semester4/software-testing/notes/5 Psychology of Testing.md",
     "semester4/intro-to-databases/notes/4 ER modelling.md",
@@ -204,10 +208,6 @@
     "semester4/full-stack-development/notes/5 gRPC - a third way to communicate.md",
     "semester4/full-stack-development/notes/1 intro.md",
     "semester4/operating-systems/notes/1 intro.md",
-    "semester4/operating-systems/notes/1 system calls.md",
-    "semester4/operating-systems/notes/2 processes.md",
-    "semester4/operating-systems/notes/4 signal handling.md",
-    "semester4/operating-systems/notes/4 threads.md",
     "Pasted image 20260129093015.png",
     "Pasted image 20260129092750.png",
     "Screenshot from 2026-01-13 12-20-39.png",

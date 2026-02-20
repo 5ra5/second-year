@@ -11,9 +11,9 @@
 -  Normalization
 
 -  100% CA
--  CA1 6th Feb - MCQ LAB EXAM (15%) in **week 4** - negative marking
--  CA2 27th Feb- pair project report (20%) in **week 7 (reading week)**
--  CA3 13th March-  MCQ lab exam (25%) in **week 9** - no negative marking
+-  CA1 13th February - MCQ LAB EXAM (15%) in **week 5** - negative marking
+-  CA2 6th March- pair project report (20%) in **week 8**
+-  CA3 20th March-  MCQ lab exam (25%) in **week 10** - no negative marking
 -  CA4 10th April- lab exam (40%) in  **week 13** - whatever we are doing in second half of the lectures and labs (it will be similar)
 
 ## Evolution of databases

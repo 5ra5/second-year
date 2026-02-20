@@ -150,3 +150,52 @@ SELECT propertyNo, type, rooms, rent
 FROM PropertyForRent
 ORDER BY type, rent DESC;
 ```
+
+# multi-table queries
+
+## ANY and ALL
+
+-  may be used in subqueries to produce one column of numbers
+
+subquery empty:
+-  ALL returns true
+-  ANY returns false
+## join
+
+join operation = combining columns from several tables into a result table
+-  combines information from two tables by forming pairs of related rows from the two tables
+
+example from the lab in week 6:
+
+8.  return the name of the countries where English is the official language, the form of government is republic and life expectancy is 
+-  ***similar difficulty to exam questions***
+
+steps:
+-  country code is in both city and country
+```sql
+select * from city;
+select * from country;
+```
+
+you can put aliases for names of tables and include the alias to their respective attributes
+identify the columns which have different names but hold same values
+```sql
+select l.CountryCode, l.IsOfficial, l.Language, c.Code, c.lifeExpectancy, c.GovernmentForm from countrylanguage l, country c
+where
+c.Code = l.CountryCode
+and c.GovernmentForm = "Republic"
+and c.lifeExpectancy > 70
+and l.Language = "English"
+and l.isOfficial = 'T';
+```
+
+you can remove redundant parts now - `l.CountryCode`
+```sql
+select l.IsOfficial, l.Language, c.Code, c.lifeExpectancy, c.GovernmentForm from countrylanguage l, country c
+where
+c.Code = l.CountryCode
+and c.GovernmentForm = "Republic"
+and c.lifeExpectancy > 70
+and l.Language = "English"
+and l.isOfficial = 'T';
+```
