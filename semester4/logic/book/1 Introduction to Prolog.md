@@ -133,40 +133,6 @@ false.
 X = bob
 ```
 
-### exercises
-
-1.1
-```prolog
-12 ?- parent(jim, X).
-false.
-
-13 ?- parent(X, jim).
-X = pat.
-
-14 ?- parent(pam, X), parent(X, pat).
-X = bob.
-
-15 ?- parent(pam, X), parent(X, Y), parent(Y, jim).
-X = bob,
-Y = pat.
-```
-
-1.2
-(a) who is pat's parent?
-```prolog
-?- parent(X, pat).
-```
-
-(b) does liz have a child?
-```prolog
-?- parent(liz, X).
-```
-
-(c) who is pat's grandparent?
-```prolog
-?- parent(X, pat), parent(Y, X).
-```
-
 ## 1.2 Defining relations by rules
 
 unary relations - one place
@@ -220,3 +186,200 @@ they have:
 -  head = a conclusion part (the left-hand side of the rule)
 
 rules are general because they are applicable to any X and Y
+
+mother rule:
+```prolog
+mother(X, Y) :- parent(X, Y), female(X).
+```
+-  a comma between two conditions indicated the conjunction of the conditions, meaning that both conditions have to be true
+
+grandparent rule:
+```prolog
+grandparent(X, Z) :- parent(X, Y), parent(Y, Z).
+```
+
+sister rule:
+For any X and Y,
+	X is a sister of Y if
+	(1) both X and Y have the same parent, and
+	(2) X is a female.
+
+```prolog
+sister(X, Y) :-
+	parent(Z, X),
+	parent(Z, Y),
+	female(X).
+```
+-  some Z must be a parent of X and this same Z must be a parent of Y
+
+problem: if we ask "who is the sister of pat", we will get pat herself as the answer along with her sister
+solution: add a rule that states that X and Y must be different
+```prolog
+different(X, Y).
+```
+
+-  Facts are clauses that have a head and the empty body. Questions only have the body. Rules have the head and the (non-empty) body.
+
+## 1.3 Recursive rules
+
+predecessor rule:
+
+-  direct predecessor
+```
+for all X and Z,
+	X is a predecessor of Z if
+	X is a parent of Z.
+	
+predecessor(X, Z) :-
+	parent(X, Z).
+```
+
+-  indirect predecessor
+```
+predecessor(X, Z) :-
+	predecessor(X, Y),
+	parent(Y, Z).
+```
+
+combined
+```
+For all X and Z,
+	X is a predecessor of Z if
+	there is a Y such that
+	(1) X is a parent of Y and
+	(2) Y is a predecessor of Z.
+
+% rule pr1
+predecessor(X, Z) :-
+	parent(X, Z).
+	
+% rule pr2
+predecessor(X, Z) :-
+	parent(X, Y),
+	predecessor(Y, Z).
+```
+
+-  the predecessor relation is defined by two clauses
+-  we say that these two clauses are about the predecessor relation
+**procedure** = set of clauses about the same relation
+
+how to comment in prolog:
+```
+/*This is a comment*/
+% This is also a comment
+```
+
+## 1.4 How Prolog answers questions
+
+a question to prolog is always a sequence of one or more goals
+to answer a question, prolog tries to satisfy all the goals
+satisfy a goal = demonstrate that the goal is true, assuming that the relations in the program are true
+-  demonstrate that the goal locally follows from the facts and rules in the program
+
+if the question contains variables, prolog has to find what are the particular objects (in place of variables) for which the goals are satisfied
+-  if it does not find them, the answer will be false
+
+example:
+All men are fallible.
+Socrates is a man.
+
+it is logical to say that Socrates is fallible.
+can be rewritten as for all X, if X is a man then X is fallible
+
+```prolog
+fallible(X) :- man(X). % All men are fallible
+man(socrates)          % Socrates is a man
+?- fallible(socrates). % Socrates is fallible?
+yes
+```
+
+more complicated example: proof sequence
+```prolog
+?- predecessor(tom, pat).
+```
+
+`parent(bob, pat)` is a fact
+-  using this fact and rule `pr1` we can conclude that `predecessor(bob, pat)`
+
+**derived fact** = cannot be found explicitly in our program, but it can be derived from facts and rules in the program
+
+inference step such as this can be written in a more compact form
+```
+parent(bob, pat) => predecessor(bob, pat)
+```
+-  read as: from `parent(bob, pat)` it follows that `predecessor(bob, pat)` by rule `pr1`
+
+`parent(tom, bob)` is a fact
+-  using this fact and the derived fact `predecessor(bob, pat)` we conclude `predecessor(tom, pat)` by rule `pr2`
+
+```
+parent(bob, pat) => predecessor(bob, pat)
+parent(tom, bob) and predecessor(bob, pat) => predecessor(tom, pat)
+```
+
+**how does prolog conclude all of this?**
+
+-  uses inverse order of the above example
+-  starts with the goals and, using rules, substitutes the current goals with new goals, until new goals happen to be simple facts
+
+```prolog
+?- predecessor(tom, pat).
+```
+
+to satisfy this goal prolog will try to find a clause in the program from which the above goal could immediately follow (`pr1` and `pr2`)
+-  heads of these rules match the goal
+-  prolog first tries that clause which appears first in the program
+
+this goal fails because there is no clause in the program whose head matches the goal `parent(tom, pat)`
+```
+predecessor(X, Z) :- parent(X, Z).
+
+X = tom, Z = pat
+predecessor(tom, pat)
+parent(tom, pat)
+```
+
+prolog tries rule 2
+```
+predecessor(X, Z) :-
+	parent(X, Y),
+	predecessor(Y, Z).
+	
+X = tom, Z = pat
+parent(tom, Y)
+predecessor(Y, pat)
+```
+
+after prolog finds variables to use for X and Z, and is faced with two goals, it tries to satisfy them in the order in which they are written
+the first goal is satisfied
+```
+X = tom, Z = pat, Y = bob
+parent(tom, bob)
+```
+
+remaining goal - to satisfy it, prolog uses `pr1` again
+immediately satisfied because we have it as a fact in the program
+```
+predecessor(bob, pat)
+
+parent(bob, pat)
+```
+
+
+## 1.5 Declarative and procedural meaning of programs
+
+declarative = concerned only with the relations defined by the program
+-  determines what will be the output of the program
+
+procedural = concerned with how the relations are actually evaluated by the prolog system
+-  determines how this output is obtained
+
+## Summary
+
+-  Prolog programming consists of defining relations and querying about relations
+-  A program consists of clauses. These are of three types: facts, rules and questions
+-  A relation can be specified by facts, simply starting the n-tuples of objects that satisfy the relation, or by stating rules about the relation.
+-  A procedure is a set of clauses about the same relation.
+-  Querying about relations, by means of questions, resembles querying a database.
+-  In Prolog, to establish whether an object satisfies a query is often a complicated process that involves logical inference, exploring among alternatives and possibly backtracking. All this is done automatically by the Prolog system and is, in principle, hidden from the user.
+-  Two types of meaning of Prolog programs are distinguished: declarative and procedural. The declarative view is advantageous from the programming point of view. Nevertheless, the procedural details often have to be considered by the programmer as well.
