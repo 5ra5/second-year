@@ -26,8 +26,8 @@ grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
 % X is a sister of Y if X is female and X and Y have the same parent and X and Y are different 
 sister(X, Y) :- female(X), parent(Z, X), parent(Z, Y).
 
-happy(X) :- parent(X, Y).
-hastwochildren(X) :- parent(X, Y), sister(Z, Y).
+happy(X) :- parent(X, _).
+hastwochildren(X) :- parent(X, Y), sister(_, Y).
 
 grandchild(X, Y) :- parent(Y, Z), parent(Z, X).
 
