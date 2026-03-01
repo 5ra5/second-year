@@ -1,4 +1,5 @@
 https://github.com/kyrilkhaletsky/CA208-Logic/tree/master/Prolog
+https://github.com/VincentAchukwu/CollegeWork/tree/master/Year2/CA208_Prolog
 ## overview
 
 -  declarative programming language that is suited to symbolic, non-numeric computations
