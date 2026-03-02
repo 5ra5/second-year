@@ -48,7 +48,6 @@ we need:
 -  works on much older hardware
 -  **warning to not try to implement your own solutions because they are not good solutions in the modern time for modern hardware**
 
-
 -  2 processes with entry and exit sections for the critical section
 -  variables are shared between processes so they know who's turn it is to enter the critical section
 -  this can be an array and a regular int variable
@@ -118,3 +117,104 @@ we need to be able to show up to date variables to each thread
 
 we use **memory barrier** to ensure that Peterson's solution works correctly
 -  memory models = memory guarantees a computer architecture makes to application programs
+-  memory barrier = enforces ordering constraints on memory operations and prevents certain loads/stores from being reordered across it
+
+full memory fence = system ensures that all loads and stores are completed before any subsequent load or store operations are performed
+
+instructions make a memory barrier and do not allow processes to cross it and run earlier or later than they should
+
+## hardware instructions
+
+-  instructions change between architectures
+
+### `test_and_set`
+
+atomic instructions: when we run them, they run to completion
+
+this is just to show how it works, it's not executed in C
+```c
+boolean test_and_set(boolean *target)
+{
+	boolean rv = *target;
+	*targer = true;
+	return rv;
+}
+```
+
+target = indicates if the barrier is up
+
+lock = shared boolean variable, initialised to false
+spin-lock = constantly checking the value
+-  just allows us to change a boolean value
+```c
+do {
+	while(test_and_set(&lock));
+	// do nothing
+		// critical section here
+	lock = false;
+		// remainder section here
+} while (true);
+```
+
+### `compare_and_swap`
+
+executed atomically as well, can't be interrupted
+-  returns the original value of passed parameter value
+-  set the variable value the value of the passed parameter `new_value` but only if `*value == expected` is true
+-  the swap takes place only under this condition
+```c
+int compare_and_swap(int *value, int expected, int new_value)
+{
+	int temp = *value;
+	if (*value == expected)
+		*value = new_value;
+	return temp;
+}
+```
+
+shared integer lock initialised to 0
+
+```c
+while (true){
+	while (compare_and_swap(&lock, 0, 1) != 0)
+		// do nothing
+		
+	// critical section
+	lock = 0;
+	
+	// remainder section
+}
+```
+
+## atomic variables
+
+-  provide atomic updates on basic data types such as integers and booleans
+`<stdatomic.h>` = library to use them in C
+
+example:
+-  `sequence` = atomic variable
+-  `increment()` = operation on the atomic variable `sequence`
+the command:
+-  `increment(&sequence);` = ensures `sequence` is incremented without interruption
+
+increment function
+```c
+void increment(atomic_int *v)
+{
+	int temp;
+	do {
+		temp = *v;
+	}
+	while (temp != (compare_and_swap(v,temp,temp+1));
+}
+```
+
+```c
+int compare_and_swap(int *value, int expected, int new_value)
+{
+	int t = *value;
+	if (*value == expected)
+		*value = new_value;
+	return t;
+}
+```
