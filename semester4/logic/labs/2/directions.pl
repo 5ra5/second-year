@@ -32,21 +32,32 @@ directlyWest(q, r).
 directlyWest(r, s).
 directlyWest(s, t).
 
-% rules
-% all rules contain base case(one step) and recursion (multiple steps)
-
+% rules - direct ways have both a base case and a recursive case
 north(X, Y) :- directlyNorth(X, Y).
 north(X, Y) :-
-    directlyNorth(X, Z),
-    north(Z, Y).
+    directlyNorth(Z, Y),
+    north(X, Z).
+
+south(X, Y) :- directlyNorth(Y, X).
+south(X, Y) :-
+    directlyNorth(Y, Z),
+    south(X, Z).
 
 west(X, Y) :- directlyWest(X, Y).
 west(X, Y) :-
-    directlyWest(X, Z),
-    west(Z, Y).
+    directlyWest(Z, Y),
+    west(X, Z).
 
-northWest(X, Y) :- directlyNorth(Z, Y), directlyWest(X, Z).
-northWest(X, Y) :-
-    directlyNorth(Z, Y),
-    directlyWest(W, Z),
-    northWest(X, W).
+east(X, Y) :- directlyWest(Y, X).
+east(X, Y) :-
+    directlyWest(Z, Y),
+    east(X, Z).
+
+% rules - diagonal ways use recursive cases of direct rules
+northWest(X, Y) :- north(Z, Y), west(X, Z).
+
+southWest(X, Y) :- south(Z, Y), west(X, Z).
+
+southEast(X, Y) :- south(Z, Y), east(X, Z).
+
+northEast(X, Y) :- north(Z, Y), east(X, Z).
