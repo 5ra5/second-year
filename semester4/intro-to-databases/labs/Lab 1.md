@@ -1,4 +1,4 @@
-## Section 2: Query Practice#
+## Section 2: Query Practice
 
 **Q1.**
 query:
@@ -7,7 +7,7 @@ SELECT * FROM sakila.actor where first_name = "michael";
 ```
 
 output:
-Error: #1142 - SELECT command denied to user sartorp2db'@'136.206.218.24 for table 'sakila'.'actor'
+
 
 **Q2.**
 query:

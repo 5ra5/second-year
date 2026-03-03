@@ -1,4 +1,4 @@
-
+***alpha vs beta testing coming up on the exam***
 -  two people performing one programming task concurrently, while seated together at one computer
 
 official definition from the Agile Alliance:
