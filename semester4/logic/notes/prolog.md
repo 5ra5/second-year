@@ -442,4 +442,181 @@ in(X,  bt(_, _, R)) :-
 	in(X, R).
 ```
 
-a search of an empty tree will fail
+# input/output
+
+prolog communicates with input and output devices via streams
+-  you read from files, not from keyboard
+-  you need to manually switch to reading from a file and writing to it
+
+at any time
+-  one input stream active
+-  one output stream active
+-  user terminal, user = both of these streams
+
+change the current input stream to filename
+```prolog
+see(filename).
+```
+
+change the current output stream to filename
+```prolog
+tell(filename).
+```
+
+`seen` and `told` used to close the current input and output streams
+-  whenever you open a file, always close it
+-  if there is any buffered info, flush it out into the file itself
+-  OS usually does this for us if we don't
+
+read a term from the current input stream
+```prolog
+read(X).
+```
+this causes:
+-  next term T to be read and matched against X
+-  if the matching succeeds, X will be instantiated as T
+
+read is deterministic, so if the matching fails, there is no backtracking
+each term in the input must be followed by 
+-  space,
+-  carriage,
+-  return or
+-  period
+
+write a term to the current input stream
+```prolog
+write(X).
+```
+-  X will be displayed in standard syntactic form
+
+format the output
+```prolog
+tab(N).
+```
+
+write N spaces to the current output stream
+```prolog
+nl.
+```
+-  starts a new line in the current output stream
+
+example:
+```prolog
+cube :-
+	write('Next_item:_'),
+	read(X),
+	process(X).
+	
+process(stop) :- !.
+
+process(N) :-
+	C is N*N*N,
+	write('Cube_of_'), write(N),
+	write('_is_'), write(C), nl/
+```
+
+example: processing files
+-  `treat(X)` performs the required processing on X
+note: this code shows bad practice because it does not return back to user, it leaves the file open
+```prolog
+..., see(F), processfile, see(user),...
+
+processfile :-
+	read(X),
+	process(X).
+	
+process(X) :-
+	treat(X),
+	processfile.
+```
+
+output the character whose ASCII value corresponds to C
+```prolog
+put(C).
+```
+
+read a single character from the input stream and instantiate C to its ASCII value
+```prolog
+get0(C).
+```
+
+similar to `get0` but skip over all non-printable characters
+```prolog
+get(C).
+```
+
+## constructing and decomposing atoms
+
+scenario: if you need to put new facts in a program, but each file has different facts
+-  I/O useful to put all the facts into a separate file and get program to read those facts and process them
+-  compose atoms out of characters read in from the input stream
+-  decompose an atom into a sequence of characters
+
+we can do it like this
+-  true if CL is the list of ASCII codes corresponding to the characters in the atom A
+```prolog
+name(A, CL)
+```
+
+example
+```prolog
+name(david, CL).
+```
+
+instantiate CL as
+```
+[101, 97, 118, 105, 101]
+```
+
+instantiate A as `[dog]`
+```prolog
+name(A,[101, 111, 104]).
+```
+
+## testing terms
+
+`var(X)` =  true if X is an uninstantiated variable.
+`nonvar(X)` =  true is X is not a variable or if it is an already instantiated variable.
+`atom(X)` = true if X represents an atom.
+`integer(X)` =  true if X represents an integer.
+`float(X)` =  true if X represents a floating point number.
+`number(X)` =  true if X represents a number.
+`atomic(X)` =  true if X represents a number or an atom.
+`compound(X)` =  true if X represents a compound term (i.e. a structure).
+
+example: count the number of occurrences of an atom in a list
+-  important to use B as a variable instead of using A and anonymous variables
+-  instantiate B and compare it to A
+-  is A an atom? if it is not stop backtracking using cut
+```prolog
+count(_, [], 0).
+
+count(A, [B|L], N) :-
+	atom(B), A = B, !, % is B the atom A?
+	count(A, L, N1),   % count occurrences of A in tail
+	N is N1 + 1.
+	;
+	count(A, L, N).    % else count occurences of A in tail
+```
+
+## constructing and decomposing terms
+
+true if L is a list that contains the principal functor of Term followed by its arguments
+```prolog
+Term = .. L
+```
+
+```prolog
+?- f(a, b) = .. L.
+L = [f, a, b].
+
+% reverse direction
+?- T = .. [rectangle, 3, 5].
+T = rectangle(3, 5).
+```
+
+manipulate an expression by substituting all occurrences of one subterm of another subterm
+```prolog
+?- substitute(sin(x), 2*sin(x)*f(sin(x)), t, F).
+F = 2*t*f(t)
+```

@@ -52,3 +52,23 @@ cousin(X, Y) :- parent(Z, Y), uncle(Z, X).
 parentalgrandmother(X, Y) :- mother(X, Z), father(Z, Y).
 
 % Q3
+sum_odd(0, []).
+sum_odd(X, [Head|Tail]) :-
+    1 is Head mod 2,
+    sum_odd(XS, Tail),
+    X is XS + Head.
+
+sum_odd(X, [Head|Tail]) :-
+    0 is Head mod 2,
+    sum_odd(X, Tail).
+
+maximum(0, []).
+maximum(X, [Head|Tail]) :-
+    maximum(XS, Tail),
+    Head > XS,
+    X = Head.
+
+maximum(X, [Head|Tail]) :-
+    maximum(XS, Tail),
+    Head =< XS,
+    X = XS.

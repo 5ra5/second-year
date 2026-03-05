@@ -29,13 +29,13 @@ sum(X, [Head|Tail]) :-
     sum(XS, Tail),
     X is XS + Head.
 
-max(X, Y, X) :-
-    X > Y.
+max(0, []).
+max(X, [Head|Tail]) :-
+    max(XS, Tail),
+    Head > XS,
+    X = Head.
 
-max(X, Y, Y) :-
-    Y > X.
-
-maximum(0, []).
-maximum(X, [Head1, Head2|Tail]) :-
-    maximum(XS, [Head2|Tail]),
-    max(Head1, XS, Tail).
+max(X, [Head|Tail]) :-
+    max(XS, Tail),
+    Head =< XS,
+    X = XS.
