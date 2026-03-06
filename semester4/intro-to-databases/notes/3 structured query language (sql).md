@@ -1,3 +1,6 @@
+***union not showing up in the exam***
+***database updates - only one or two questions on it***
+***LIMIT SHOWING UP IN THE EXAM BUT IT IS NOT IN SLIDES***
 # simple queries
 
 -  SQL is a declarative language where the user specifies what the result is to be and **not** how to compute it
@@ -198,4 +201,13 @@ and c.GovernmentForm = "Republic"
 and c.lifeExpectancy > 70
 and l.Language = "English"
 and l.isOfficial = 'T';
+```
+## limit
+
+get the first 5 rows of the relation
+-  does not compute anything, just has to do with formatting output
+```SQL
+SELECT CL.Language
+FROM countrylanguage CL
+LIMIT 5;
 ```
