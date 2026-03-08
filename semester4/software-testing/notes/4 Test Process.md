@@ -1,102 +1,144 @@
-**test** = a controlled exercise involving:
+# Fundamental Test Process
+
+## What is a test?
+
+A test is a controlled exercise involving:
 -  an object under test
 -  a definition of the environment
 -  a definition of the inputs
--  a definition of expected outputs or result (need to be defined before testing in requirements)
+-  a definition of expected outputs or result
 
-after a test is performed you get
+When a test is performed you get
 -  an actual output or result
--  a determination whether the result is correct
+-  a determination whether the result is correct.
 
-expected output can be based from requirements document, technical specification document etc.
-when we run a test, we must have an expected result derived from the baseline
+## Expected results
 
-## test process
+When we run a test, we must have an expected result derived from the baseline
 
+An actual result either matches or does not match the expected result
+
+If there is a difference, there may be a fault in the software and we should investigate.
+
+## The Test Process
+
+The fundamental test process consists of the following main activities:
 -  test planning
 -  test control
 -  test analysis
 -  test design
--  test implementation (preparation)
+-  test implementation (aka preparation)
 -  test execution and recording
--  evaluation exit criteria and reporting
+-  evaluating exit criteria and reporting
 -  test closure activities
 
-in real life, these phases will overlap as the test process can get messy
-there are things we can do concurrently 
+Although logically sequential, the activities in the process may overlap or take place concurrently.
 
-## test planning
+By the way, the object under test need not be machine executable. That is, reviews and inspections have a similar process. This might seem like it is stretching.
 
-planning determines how the test strategy will be implemented:
+The other key point to be made here is that testing, as defined in this course, covers all activities for static and dynamic testing. We include inspections, reviews
+
+## Test planning
+
+Planning determines how the test strategy will be implemented:
 -  what will not be done according to the strategy
 -  what will be done according to the strategy
 -  what will be adapted
-test planning identifies, at a high level, the scope, approach and dependencies
-test planning has major tasks:
--  determining scope and risks, identifying objectives of testing
--  determining test approach (techniques, test items, coverage etc.)
--  determining required test resources
--  implementing the test policy and/or the test strategy
--  scheduling test analysis and design tasks
--  scheduling test implementation, execution and evaluation
--  **important**: determining the exit criteria
 
-## test control
+Test planning identifies, at a high level, the scope, approach and dependencies:
+-  the software component(s) to be tested
+-  additional infrastructure to test the component
+-  the approach to test design
+-  the test completion criteria
 
-you need to determine whether you are hitting your exit criteria
-if you are behind the schedule, maybe you need more testers, or you need to leave out some tests, but this is all determined during test control
+Test planning has the following major tasks:
+-  Determining the scope and risks, and identifying the objectives of testing
+-  Determining the test approach (techniques, test items, coverage, identifying and interfacing the teams involved in testing, testware)
+-  Determining the required test resources (e.g. people, test environment, PCs)
+-  Implementing the test policy and/or the test strategy
+-  Scheduling test analysis and design tasks
+-  Scheduling test implementation, execution and evaluation
+-  Determining the exit criteria.
+
+## Test control
 
 Test control has the following major tasks:
 -  measuring and analysing results
 -  monitoring and documenting progress, test coverage and exit criteria
--  initiation of corrective actions
+-  initiation or corrective actions
 -  deciding what to do next.
 
-## test analysis
+## Test analysis
 
--  we need to figure out what our test conditions are going to look like
--  if we find a requirements document or a requirement within that is untestable, we know that the requirement is not good enough and you can send it back to the owner (the requirement needs to be traceable to find the owner)
+Test analysis is the activity where tangible test conditions and test design are derived from the baseline documents.
 
-## test design
+Firstly, the test basis (the baselines, such as requirements, architecture, design, interfaces) are reviewed.
 
--  designing the test environment set-up and identifying any required infrastructure and tools
--  preparing test inventory ( features to be tested, logical test cases, test case prioritisation)
--  we can start writing test cases
+If the baseline is testable, test conditions (or test requirements) are defined
+But what if a requirements document is untestable?
 
-## test implementation (preparation)
+## Test design
 
--  actually writing test cases and sometimes fake data to test with
--  we are looking at the requirement catalogue, and writing that information to test against the software
--  considering making automated tests
--  we group tests into suites for efficient test execution (tends to be automated and useful for regression testing)
--  a regression test suite grows over time as it should be constantly updated and maintained
+Designing the test environment set-up and identifying any required infrastructure and tools.
 
-## test execution and recording
+A test inventory is prepared
+-  the features to be tested
+-  logical test cases to be exercised
+-  test case prioritisation, where necessary
 
--  executing tests
--  perform "pre-flight checks" = make sure that the testing environment is appropriate and working
--  you run everything you designed in previous steps
--  you just look for expected and actual results not matching with every step
--  you log progress as you go along
+When test design is complete, detailed scripts, test data and expected results can be prepared - this is called implementation.
 
-## raising incidents, re-testing and regression testing
+## Test implementation (preparation)
 
--  helping developers understand what is going on with the defect - you need to explain the environment you were in, the input and output, include screenshots etc.
--  we report test failures or discrepancies as incidents and analyse them in order to establish their cause
--  we repeat test activities as result of action taken for each failure which could be re-tests (confirmation tests) and regression tests
+Test implementation is where test conditions are transformed into test cases and testware, and the environment is set up
 
-## exit criteria
+From the test cases, we can then identify and create test data, write test procedures, prepare expected results and, optionally, automate the tests
 
--  evaluating exit criteria = activity where test execution is assessed against the defined objectives
--  this should be done for every test, regardless of phase
--  under time pressure some faults may be acceptable (for this release) and some test may not be run at all
--  very unlikely: if there are not tests left, but there is still time we run additional tests
--  sometimes there may be instances in which the software is released but testing is continued
+We group tests into suites for efficient test execution
 
-## test closure activities
+## Test execution and recording
 
--  tends to be neglected - tying the whole project up
--  test summary report is written for stakeholders at the end of a test phase
--  the summary provides stakeholders the evidence they need to make a decision (to release, postpone, or in extreme circumstances, to cancel)
--  the test team usually have a contribution to make to post implementation reviews, where lessons are learned for future releases and projects
--  this saves time for next projects or testing phases
+Perform your "Pre-flight checks"
+
+Tests follows the scripts, as defined
+
+Test cases are run either manually or by using test execution tools, according to the planned sequence
+
+We verify that actual results meet expected results and raise incident reports if they don't
+
+As we do progress through the tests, we log progress.
+
+## Raising incidents, re-testing and regression testing
+
+We report test failures of discrepancies as incidents and analyse them in order to establish their cause
+
+We repeat test activities as result of action taken for each failure which could be:
+-  re-tests (confirmation tests)
+-  regression tests
+
+## Evaluating exit criteria
+
+Evaluating exit criteria is the activity where test execution is assessed against the defined objectives
+
+This should be done for every test, regardless of phase
+-  We check test logs against the exit criteria specified in test planning
+-  We asses whether more tests are needed or if the exit criteria specified should be changed.
+
+Under time pressure...
+-  some faults may be acceptable (for this release)
+-  some tests may not be run at all
+
+If there are not tests left but there is still time
+-  maybe some additional tests could be run
+
+You may decide to release the software now, but testing could continue.
+
+## Test closure activities
+
+Usually, a test summary report must be written for stakeholders at the end of a test phase
+
+The summary provides stakeholders the evidence they need to make a decision (to release, to postpone, or in extreme circumstances, to cancel)
+-  status of deliverables and documentation
+-  aligned with sign-off and handover
+
+The test team usually have a contribution to make to post implementation reviews, where lessons are learned for future releases and projects.
