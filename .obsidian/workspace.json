@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d83e666dbe3115bb",
+        "id": "15652a10c1387442",
         "type": "tabs",
         "children": [
           {
-            "id": "9b0f947b4003ccbc",
+            "id": "72ef3e4233f28337",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5 Software Development Lifecycles and Testing.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "5 Software Development Lifecycles and Testing"
+              "title": "New tab"
             }
           }
         ]
@@ -169,13 +165,24 @@
       "bases:Create new base": false
     }
   },
-  "active": "9b0f947b4003ccbc",
+  "active": "72ef3e4233f28337",
   "lastOpenFiles": [
-    "5 Software Development Lifecycles and Testing.md",
+    "semester3/linear-algebra/practice/quiz2Sample.pdf",
+    "semester3/linear-algebra/additional resources.md",
+    "semester3/linear-algebra/topics.md",
+    "semester4/operating-systems/notes/6 synchronisation.md",
+    "semester4/operating-systems/notes/1 system calls.md",
+    "semester4/operating-systems/notes/1 intro.md",
+    "semester4/operating-systems/notes/2 processes.md",
+    "semester4/operating-systems/notes/4 signal handling.md",
+    "semester4/operating-systems/notes/4 threads.md",
+    "semester4/operating-systems/notes/5 CPU scheduling.md",
+    "semester4/software-testing/notes/5 Software Development Lifecycles and Testing.md",
     "semester4/software-testing/notes/4 Test Process.md",
     "semester4/software-testing/notes/5 Psychology of Testing.md",
     "semester4/software-testing/notes/4 Test Principles.md",
     "semester4/software-testing/notes/4 Baselines Exit Criteria.md",
+    "semester4/software-testing/notes/6 Decomposition, Test Levels, Stubs, Drivers.md",
     "semester4/software-testing/notes/3 Testing software requirements.md",
     "semester4/software-testing/notes/2 Test organisation, planning and estimation.md",
     "semester4/software-testing/notes/1 intro.md",
@@ -186,17 +193,8 @@
     "semester4/OOP/notes/8 observer design pattern.md",
     "semester4/OOP/notes/8 questions about labs.md",
     "semester4/OOP/notes/8 UML.md",
-    "semester4/OOP/notes/5 polymorphism.md",
-    "semester4/OOP/labs/5/Abstract Classes, Interfaces, and Overriding.md",
     "semester4/intro-to-databases/past-exams/2025.pdf",
-    "semester4/intro-to-databases/notes/3 structured query language (sql).md",
-    "semester4/intro-to-databases/notes/8 normalisation.md",
     "semester4/intro-to-databases/past-exams",
-    "semester4/intro-to-databases/notes/6 functional dependencies.md",
-    "semester4/intro-to-databases/notes/4 ER modelling.md",
-    "semester4/intro-to-databases/notes/3 relational algebra.md",
-    "semester4/intro-to-databases/notes/2 relational model.md",
-    "semester4/intro-to-databases/notes/mock quiz 1.md",
     "semester4/intro-to-databases/slides/8 Normalisation.pdf",
     "semester4/intro-to-databases/CA2/CA2 Assignment - 23100952 - 23324986.pdf",
     "semester4/intro-to-databases/CA2/CA2 Instructions.pdf",
@@ -204,8 +202,6 @@
     "semester4/OOP/labs/5/Vehicles.java",
     "semester4/OOP/labs/5/Shapes.java",
     "semester4/OOP/labs/5",
-    "semester4/logic/notes/prolog.md",
-    "semester4/software-testing/notes/8 Intro to Test Design Techniques.md",
     "semester4/logic/past-exams/2024.pl",
     "Pasted image 20260227182507.png",
     "Pasted image 20260227182209.png",

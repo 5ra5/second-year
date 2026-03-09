@@ -75,7 +75,6 @@ Test analysis is the activity where tangible test conditions and test design are
 Firstly, the test basis (the baselines, such as requirements, architecture, design, interfaces) are reviewed.
 
 If the baseline is testable, test conditions (or test requirements) are defined
-But what if a requirements document is untestable?
 
 ## Test design
 

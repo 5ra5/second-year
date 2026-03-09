@@ -1,4 +1,5 @@
 # race condition
+
 non-atomic variable: processes are interleaving
 -  two threads can execute a piece of code at the same time
 -  they modify the same variable at the same time
