@@ -137,4 +137,4 @@ Boundary value analysis: -1, 0, 1, 99, 100, 101
 
 BV subsumes EP where the partitions are ranges of values
 If you have covered all boundary values you automatically get EP coverage
-You might have chosen different EP values, but since all values in a partition ARE equivalent any test value – even extreme ones - will do it.
+You might have chosen different EP values, but since all values in a partition ARE equivalent any test value – even extreme ones - will do it
