@@ -92,6 +92,8 @@ function App() {
 
 each component stores a state - a variable
 -  it can see if the value ever changes, and it it does it automatically updates itself
+-  components are functions, that have all of the functionality split between them in smaller functionalities
+-  we typically split each component into their own file
 
 inputName.jsx - page automatically says whatever you're typing in the input box
 -  input

@@ -7,7 +7,7 @@ interface Player {
     void sendMessage(String message);
     void receiveMessage(String message);
     String getPlayerType();
-    String getPlayerName();
+    String getName(); // changed from getPlayerName
 }
 
 abstract class AbstractPlayer implements Player {
@@ -30,7 +30,7 @@ abstract class AbstractPlayer implements Player {
     }
 
     @Override
-    public String getPlayerName() {
+    public String getName() {  // changed here
         return name;
     }
 
@@ -101,6 +101,31 @@ class Spectator extends AbstractPlayer {
     }
 }
 
+class AdminPlayer extends AbstractPlayer {
+    public AdminPlayer(String name, GameLobby lobby) {
+        super(name, lobby);
+    }
+
+    @Override
+    public String getPlayerType() {
+        return "AdminPlayer";
+    }
+
+    @Override
+    public void joinGame() {
+        lobby.registerPlayer(this);
+    }
+
+    @Override
+    public void leaveGame() {
+        lobby.removePlayer(this);
+    }
+
+    public void kickPlayer(String name) {
+        lobby.kickPlayer(name, this);
+    }
+}
+
 class GameLobby {
     private List<Player> players;
 
@@ -110,12 +135,12 @@ class GameLobby {
 
     void registerPlayer(Player player) {
         players.add(player);
-        System.out.printf("[GameLobby] %s %s has joined the lobby.%n", player.getPlayerType(), player.getPlayerName());
+        System.out.printf("[GameLobby] %s %s has joined the lobby.%n", player.getPlayerType(), player.getName());
     }
 
     void removePlayer(Player player) {
         players.remove(player);
-        System.out.printf("[GameLobby] %s %s has left the lobby.%n", player.getPlayerType(), player.getPlayerName());
+        System.out.printf("[GameLobby] %s %s has left the lobby.%n", player.getPlayerType(), player.getName());
     }
 
     void sendMessage(String message, Player sender) {
@@ -124,8 +149,8 @@ class GameLobby {
             return;
         }
 
-        System.out.printf("[%s] sends: \"%s\"%n", sender.getPlayerName(), message);
-        System.out.printf("[GameLobby] Message from %s: \"%s\"%n", sender.getPlayerName(), message);
+        System.out.printf("[%s] sends: \"%s\"%n", sender.getName(), message);
+        System.out.printf("[GameLobby] Message from %s: \"%s\"%n", sender.getName(), message);
 
         for (Player p : players) {
             if (p != sender) {
@@ -148,11 +173,50 @@ class GameLobby {
             return;
         }
 
-        System.out.print("[GameLobby] Starting game with players: ");
+        // Build the player list string
+        StringBuilder playerList = new StringBuilder();
         for (int i = 0; i < matchPlayers.size(); i++) {
-            System.out.print(matchPlayers.get(i).getPlayerName());
-            if (i != matchPlayers.size() - 1) System.out.print(", ");
+            playerList.append(matchPlayers.get(i).getName());
+            if (i != matchPlayers.size() - 1) playerList.append(", ");
         }
-        System.out.println();
+
+        // Print the final line in one go
+        System.out.println("[GameLobby] Starting game with players: " + playerList);
+    }
+
+    void kickPlayer(String name, AdminPlayer admin) {
+        Player target = null;
+
+        for (Player p : players) {
+            if (p.getName().equals(name) && !p.getPlayerType().equals("AdminPlayer")) {
+                target = p;
+                break;
+            }
+        }
+
+        if (target != null) {
+            System.out.printf("[GameLobby] Admin %s kicked %s %s from the lobby.%n", admin.getName(), target.getPlayerType(), target.getName());
+            removePlayer(target);
+        } else {
+            System.out.printf("[GameLobby] Player %s not found.%n", name);
+        }
+    }
+}
+
+class PlayerFactory {
+    public static Player createPlayer(String type, String name, GameLobby lobby) {
+        switch (type.toLowerCase()) {
+            case "human":
+                return new HumanPlayer(name, lobby);
+            case "ai":
+                return new AIPlayer(name, lobby);
+            case "spectator":
+                return new Spectator(name, lobby);
+            case "admin":
+                return new AdminPlayer(name, lobby);
+            default:
+                // Return a Spectator as a safe default
+                return new Spectator(name, lobby);
+        }
     }
 }

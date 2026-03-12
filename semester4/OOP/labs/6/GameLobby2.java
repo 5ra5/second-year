@@ -101,6 +101,31 @@ class Spectator extends AbstractPlayer {
     }
 }
 
+class AdminPlayer extends AbstractPlayer {
+    public AdminPlayer(String name, GameLobby lobby){
+        super(name, lobby);
+    }
+
+    @Override
+    public String getPlayerType() {
+        return "AdminPlayer";
+    }
+
+     @Override
+    public void joinGame() {
+        lobby.registerPlayer(this);
+    }
+
+    @Override
+    public void leaveGame() {
+        lobby.removePlayer(this);
+    }
+
+    public void kickPlayer(String name){
+        lobby.kickPlayer(name, this);
+    }
+}
+
 class GameLobby {
     private List<Player> players;
 
@@ -154,5 +179,23 @@ class GameLobby {
             if (i != matchPlayers.size() - 1) System.out.print(", ");
         }
         System.out.println();
+    }
+
+    void kickPlayer(String name, AdminPlayer admin){
+        Player target = null;
+
+        for (Player p : players) {
+            if (p.getPlayerName().equals(name) && !p.getPlayerType().equals("AdminPlayer")){
+                target = p;
+                break;
+            }
+        }
+
+        if(target != null) {
+            System.out.printf("[GameLobby] Admin %s kicked %s %s from the lobby.\n",admin.getPlayerName(), target.getPlayerType(), target.getPlayerName());
+            removePlayer(target);
+        } else {
+            System.out.printf("[GameLobby] Player %s not found./n",name);
+        }
     }
 }

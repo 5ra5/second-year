@@ -23,3 +23,7 @@ In the V-Model, requirements are exhaustively elaborated upfront and tested befo
 verification is essential. In CSE, requirements aren't fully elaborated
 before coding, so the focus shifts to unit, integration and regression testing to
 ensure continuous quality. This suits a website being continuously evolved and extended
+
+
+**What is configuration management and why is it important for testing?**
+Configuration management ensures that all items of testware are identified, version controlled, tracked for changes, and related to each other and to development items. It is important for testing because it ensures all documents and software items are referenced unambiguously in test documentation, allows teams to reproduce previous builds, trace which customers have which versions, and avoid defects reappearing due to lost changes.
