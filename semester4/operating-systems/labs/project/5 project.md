@@ -1,75 +1,47 @@
+### I/O Redirection - Stage 2
 
-1. Add your files relating to the manual/help command to the `manual` directory.
-2. Your `makefile` should build the binary and place it in the `bin` directory.
+The shell must support i/o-redirection on either or both stdin and/or stdout. i.e. the command line:
 
-The Shell or Command Line Interpreter is the fundamental User interface to an Operating System. For this assignment you will write a simple shell in the C programming language - simpleshell - that has the following functionality:
-The shell must support the following internal commands:
+**programname arg1 arg2 < inputfile > outputfile**
 
-- **cd**  - change the current default directory. If the argument is not present, report the current directory. If the directory does not exist an appropriate error should be reported. This command should also change the PWD environment variable.
-    
-- **clr** - clear the screen (via _clear_ command).
-    
-- **dir**  - list the contents of directory (via _ls -al <directory>)_
-    
-- **environ** - list all the environment strings
-    
-- **echo**  - echo  on the display followed by a new line (multiple spaces/tabs may be reduced to a single space)
-    
-- **help** - display a basic user manual using the ‘more’ filter.  
-    
-- **pause** - pause operation of the shell until 'Enter' is pressed
-    
-- **quit** - quit the shell
-    
+will execute the program programname with arguments arg1 and arg2, the stdin FILE stream replaced by inputfile and the stdout FILE stream replaced by outputfile.
 
-The shell environment should contain shell= /simpleshell where /simpleshell is the full path for the shell executable (not a hardwired path back to your directory, but the one from which it was executed).
+stdout redirection should also be possible for the internal commands: dir, environ, echo, and help.
 
-### Batch Mode - Stage 1
+With output redirection, if the redirection character is > then the outputfile is created if it does not exist and truncated if it does. If the redirection token is >> then outputfile is created if it does not exist and appended to if it does.
 
-The shell must be able to take its command line input from a file. i.e. if the shell is invoked with a command line argument:
+### Background Execution - Stage 2
 
-./simpleshell batchfile
+The shell must support background execution of programs. This does not need to be implemented for internal commands but it should be implemented for "Other Commands". An ampersand , or & character, at the end of the command line indicates that the shell should return to the command line prompt immediately after launching that program whilst it continues to run in the background.
 
-then batchfile is assumed to contain a set of command lines for the shell to process. When the end-of -file is reached, the shell should exit. Obviously, if the shell is invoked without a command line argument it solicits input from the user via a prompt on the display.
+### Miscellaneous
 
-Design a simple command line shell that satisfies the above criteria and implement it such that it runs on Linux on the lab computers. I am aware that some of you program in Windows, however your programs will, under no circumstances, be compiled or tested on Windows. If you only have Windows at your convenient disposal, then the WSL or Cygwin might be the way to go. Alternatively you could set up a Linux Virtual machine, or develop using the  [School of Computing Termcast](https://termcast.computing.dcu.ie/). Mileage may vary with these alternative options, so it is important you test your program successfully compiles and runs on the lab computers (under Linux).
+The command line prompt must contain the pathname of the current directory. Note: you can assume that all command line arguments including the redirection symbols, <, > and >> and the background execution symbol, & will be delimited from other command line arguments by white space - one or more spaces and/or tabs (see the command line above). We should just have to type make to build your shell. There should be evidence in your code that you have attempted to handle errors. For example, if using fopen, freopen, etc you should check the return status and indicate if an error has occurred, and take appropriate action.
 
-The source code MUST be extensively commented and appropriately structured i.e. to an extent that would allow your peers to understand and easily maintain the code. Properly commented and laid out code is much easier to interpret and it is in your interests to ensure that the person marking your project is able to understand your code without having to perform mental gymnastics. You should also use multiple files to manage your code. Submissions which only contain one C program file will lose marks.
+This stage represents getting more advanced functionality working. 
 
-The code submission should contain only source code file(s), include file(s), and a makefile (all lower case please) unless otherwise stated. No executable program should be included. We will be automatically rebuilding your shell program from the source code provided. If the submitted code does not compile it will only receive the marks awarded for style and code quality
+**Extend the code base you developed in Stage 1** to include the following functionality:
 
-The makefile (all lower case please) MUST generate the binary file simpleshell (all lower case please). A sample makefile would be:
+> External Commands: Forking and execing for external command execution, with the environment variable parent set accordingly.
 
-# Joe Citizen, s1234567 - Operating Systems Project 1  
-# CSC1021/simpleshell  
-  
-simpleshell: simpleshell.c utility.c simpleshell.h  
-    gcc -Wall simpleshell.c utility.c -o simpleshell
+> Background Execution: Support for background process execution using the & symbol.
 
-The program simpleshell is then generated by just typing _make_ at the command line prompt. Note: the fifth line in the above makefile MUST begin with a tab. After I clone your repository, I should be able to change directory to Stage2 or Stage3, run the _**make**_ command in either directory, where a binary will be generated in the bin directory named _**simpleshell**_.
+> I/O Redirection: Implementation of input (<) and output (>, >>) redirection for both internal and external commands.
 
-In the example shown above, the files in the submitted directory would be:
 
-1. makefile
-2. simpleshell.c
-3. utility.c
-4. simpleshell.h
+External command functionality (10 marks)  
+I/O redirection (15 marks)  
+Background execution (15 marks)  
+A extended readme file (5 marks) - see “user manual” section for requirements for Stage 2.
 
-### **A user Manual**
+```
+/*Name: Petra Sartori
 
-You must write a simple manual describing how to use the shell. The manual should contain enough detail for a beginner to UNIX to use it. For example, in Stage 1 this will contain a basic description of the internal commands. For Stage 2, this will be extended to explain how i/o redirection works in your simpleshell, the program environment (like environment variables), and background program execution (background vs foreground execution). This readme.txt file should be found in your repo at Stage1/manual/readme.txt and Stage2/manual/readme.txt (ensure the name is exact and lowercase, and at this location).
+Student ID: 23324986
 
-### Submission Staging
+I acknowledge DCU Academic Integrity Policy while working on this project.
 
-This project will be submitted in 3 separate stages, each building upon the previous stage. 
+My work is my work only and is a result of research, practice and design which I did on my own.
 
-Stage 1:
-This stage represents getting basic functionality working.
--  A working shell executable that displays the current directory as its prompt. Implementation of internal commands: cd, clr, dir, environ, echo, help, pause, and quit.
-- Basic error handling and environment variable setup (i.e., setting shell to the executable’s full path).
-- Batch Mode: Ability for the shell to process command lines from a file if a batch file is provided
-- Submit source code files (e.g., simpleshell.c, utility.c, simpleshell.h) with inline comments into the folder “Stage1”.|
-
-Performance of internal commands and aliases (15 marks)  
-Batch file support (5 marks)  
-A basic readme file that explains the key commands (5 marks) - see “user manual” section for requirements for Stage 1.
+This project does not contain any plagiarised content.*/
+```
