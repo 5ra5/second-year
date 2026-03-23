@@ -1,0 +1,6 @@
+- [ ]  27th March = OOP class quiz (5%)
+- [ ]  31st March =  Operating Systems Lab Exam (10%)
+- [ ]  2nd April = Operating Systems simpleshell Stage 3 due
+- [ ]  12th April  = Logic Prolog assignment due (25%)
+- [ ]  10th April = OOP UML assignment due (15%)
+- [ ]  28th April = OOP final exam
