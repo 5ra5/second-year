@@ -333,3 +333,92 @@ Provide a convenient environment for program development and execution
 -  Others provide detailed performance, logging, and debugging information (**`dmesg`**)
 -  Typically, these programs format and print the output to the terminal or other output devices
 -  Some systems implement a **registry** - used to store and retrieve configuration information (**`linux ... /etc/`**)
+
+**File modification**
+-  Text editors to create and modify files (**`nano, vim, emacs`**)
+-  Special commands to search contents of files or perform transformations of the text (**`sed, gawk, ...`**)
+
+**Programming-language support** - Compilers, assemblers, debuggers and interpreters sometimes provided (**`gcc, python, nasm, ...`**)
+
+**Program loading and execution** - Absolute loaders, relocatable loaders, linkage editors, and overlay-loaders, debugging systems for higher-level and machine language
+
+**Communications** - Provide the mechanism for creating virtual connections among processes, users, and computer systems
+-  Allow users to send messages to one another’s screens, browse web pages, send electronic-mail messages, log in remotely, transfer files from one machine to another (**`ssh, sshd, netcat, ...`**)
+
+**Background Services**
+-  Launch at boot time
+	-  Some for system startup, then terminate
+	-  Some from system boot to shutdown
+-  Provide facilities like disk checking, process scheduling, error logging, printing
+-  Run in user context not kernel context
+-  Known as **services**, **subsystems**, **daemons**
+-  **Look in `/etc/init.d` (to get an idea)**
+
+**Application programs**
+-  Don’t pertain to system
+-  Run by users
+-  Not typically considered part of OS
+-  Launched by command line, mouse click, finger poke
+
+## Design and Implementation
+
+-  Design and Implementation of OS is not “solvable”, but some **approaches have proven successful**
+-  Internal structure of different Operating Systems can vary widely
+-  Start the design by defining goals and specifications
+-  Affected by choice of hardware, type of system
+-  **User** goals and **System** goals
+-  Specifying and designing an OS is highly **creative task** of **software engineering**
+
+## Implementation
+
+Much variation
+-  Early OSes in assembly language
+-  Then system programming languages like Algol, PL/1
+-  Now C, C++
+Actually usually a mix of languages
+-  Lowest levels in assembly
+-  Main body in C
+-  Systems programs in C, C++, scripting languages like PERL, Python, shell scripts
+More high-level language easier to **port** to other hardware
+-  But slower
+**Emulation** can allow an OS to run on non-native hardware
+
+## Linux System Structure
+
+Monolithic plus modular design
+
+## Building and Booting Linux
+
+Download Linux source code (http://www.kernel.org)
+Configure kernel via “`make menuconfig`”
+Compile the kernel using “`make`”
+-  Produces `vmlinuz`, the kernel image
+-  Compile kernel modules via “`make modules`”
+-  Install kernel modules into `vmlinuz` via “`make modules_install`”
+-  Install new kernel on the system via “`make install`”
+
+## System Boot
+
+When power initialised on system, execution starts at a fixed memory location
+Operating system must be made available to hardware so hardware can start it
+-  Small piece of code – **bootstrap loader**, **BIOS**, stored in **ROM** or **EEPROM** locates the kernel, loads it into memory, and starts it
+-  Sometimes two-step process where **boot block** at fixed location loaded by ROM code, which loads bootstrap loader from disk
+-  Modern systems replace BIOS with **Unified Extensible Firmware Interface** (**UEFI**)
+
+Common bootstrap loader, **GRUB**, allows selection of kernel from multiple disks, versions, kernel options
+Kernel loads and system is then **running**
+Boot loaders frequently allow various boot states, such as single user mode
+
+## Tracing
+
+Collects data for a specific event, such as steps involved in a system call invocation
+
+Tools include:
+-  `strace` – trace system calls invoked by a process
+-  `gdb` – source-level debugger
+-  `perf` – collection of Linux performance tools
+-  `tcpdump` – collects network packets
+-  ....
+
+# Lecture notes
+

@@ -1,6 +1,8 @@
 - [ ]  27th March = OOP class quiz (5%)
 - [ ]  31st March =  Operating Systems Lab Exam (10%)
-- [ ]  2nd April = Operating Systems simpleshell Stage 3 due
-- [ ]  12th April  = Logic Prolog assignment due (25%)
+- [ ]  2nd April = Operating Systems simpleshell Stage 3 due (20%)
+- [ ]  8th April = Software Testing lab exam (30%)
+- [ ]  10th April = Databases SQL lab exam (40%)
 - [ ]  10th April = OOP UML assignment due (15%)
+- [ ]  12th April  = Logic Prolog assignment due (25%)
 - [ ]  28th April = OOP final exam

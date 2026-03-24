@@ -4,21 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "23161294dc428d94",
+        "id": "0f0cce2603c47f75",
         "type": "tabs",
         "children": [
           {
-            "id": "8d2b9f1e39fbc470",
+            "id": "7818725548e38ab3",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "semester4/software-testing/lectures/11 Unit Testing - Theory.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "11 Unit Testing - Theory"
+            }
+          },
+          {
+            "id": "cf5eff30724a99e7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "semester4/operating-systems/notes/1 Introduction, System Services, System Calls, API and ABI.md",
+                "file": "semester4/software-testing/notes/11 Data Flow Analysis, Control Flow Graphs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1 Introduction, System Services, System Calls, API and ABI"
+              "title": "11 Data Flow Analysis, Control Flow Graphs"
             }
           }
         ]
@@ -78,7 +90,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "dfc7084715d4ce63",
@@ -169,44 +182,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "8d2b9f1e39fbc470",
+  "active": "7818725548e38ab3",
   "lastOpenFiles": [
-    "semester4/operating-systems/notes/1 system calls.md",
-    "semester4/operating-systems/notes/4 signal handling.md",
-    "semester4/operating-systems/notes/2 processes.md",
-    "semester4/operating-systems/notes/1 Introduction, System Services, System Calls, API and ABI.md",
+    "semester4/software-testing/lectures/11 DFA and CFG.pdf",
+    "semester4/software-testing/notes/11 Data Flow Analysis, Control Flow Graphs.md",
+    "semester4/software-testing/labs/3/Lab Week 3 Answers.pdf",
+    "semester4/software-testing/labs/3/lu8865vm8y.tmp",
+    "semester4/software-testing/labs/3/Week 3 - Lab Instructions.pdf",
+    "semester4/software-testing/labs/3/lu8795txqf.tmp",
+    "semester4/software-testing/lectures/1 FundamentalsOfTesting Updated 25.pdf",
+    "semester4/software-testing/lectures/lu8550sxdk.tmp",
+    "semester4/software-testing/lectures/1 Intro.pdf",
+    "semester4/software-testing/lectures/lu8437smlq.tmp",
+    "semester4/software-testing/lectures/2 Test Org, Plan Est and Control.pdf",
+    "semester4/operating-systems/notes/2 Processes and Threads.md",
+    "semester4/full-stack-development/notes/11 React & Django - Edit and Delete.md",
+    "semester4/full-stack-development/notes/8 React component lifecycle.md",
+    "semester4/full-stack-development/notes/5 gRPC - a third way to communicate.md",
     "exams & assignments.md",
-    "Untitled.md",
-    "Untitled.base",
+    "semester4/full-stack-development/notes/8 Introduction to React.md",
+    "semester4/operating-systems/notes/2 processes.md",
+    "semester4/operating-systems/notes/1 system calls lecture.md",
+    "semester4/operating-systems/notes/1 Introduction, System Services, System Calls, API and ABI.md",
     "semester4/operating-systems/notes/1 intro.md",
+    "semester4/operating-systems/sample lab exam.md",
+    "semester4/intro-to-databases/notes/1 intro and history of databases.md",
+    "semester4/software-testing/notes/1 intro.md",
+    "semester4/operating-systems/notes/5 Main Memory.md",
+    "semester4/operating-systems/notes/4 signal handling.md",
     "semester4/operating-systems/labs/project/5 project.md",
     "semester4/OOP/notes/9 Design Pattern - Template Method.md",
     "semester4/OOP/notes/10 Generics.md",
     "semester4/OOP/notes/Untitled.md",
-    "semester4/logic/past-exams/2013.pdf",
     "semester4/OOP/project/notes.md",
-    "semester4/operating-systems/past-exams/2023.pdf",
-    "semester4/operating-systems/past-exams/2024.pdf",
-    "semester4/operating-systems/past-exams/2025.pdf",
     "semester4/OOP/project/10 Java Collections Framework.md",
-    "semester4/intro-to-databases/CA3/CA3_question.pdf",
-    "semester4/intro-to-databases/CA3/CA3_23324986.docx",
     "semester4/intro-to-databases/CA3/CA3 practice.md",
-    "semester4/intro-to-databases/CA3",
     "semester4/intro-to-databases/CA3 practice.md",
-    "semester4/OOP/project/CA.pdf",
-    "semester4/OOP/project",
     "semester4/intro-to-databases/past-exams/2023 - practice.md",
-    "semester4/intro-to-databases/past-exams/2024 - practice.md",
-    "semester4/intro-to-databases/notes/1 intro and history of databases.md",
-    "semester4/intro-to-databases/notes/CA3 practice.md",
-    "semester4/intro-to-databases/notes/8 Normalisation.md",
-    "semester4/intro-to-databases/past-exams/2025 - practice.md",
-    "semester4/intro-to-databases/notes/mock quiz 1.md",
-    "semester4/intro-to-databases/notes/6 Functional Dependencies.md",
-    "semester4/OOP/notes/9 Adapter Pattern.md",
-    "semester4/intro-to-databases/notes/8 SQL.md",
-    "semester4/full-stack-development/notes/6 Introduction to JavaScript.md",
     "Pasted image 20260315130213.png",
     "Pasted image 20260227182507.png",
     "Pasted image 20260227182209.png",
