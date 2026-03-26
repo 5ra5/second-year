@@ -136,3 +136,26 @@ Use **`<?>`** when:
 **extends** = Java is protecting you from putting something too general into a more specific type
 
 **super** = Java is protecting you from assuming a specific return type from a more general container
+
+| WIldcard Syntax   | When to Use                                | Example Use Case                                                  |
+| ----------------- | ------------------------------------------ | ----------------------------------------------------------------- |
+| `<? extrends T>`  | **Read-only** - you consume values         | Iterating or printing from a list                                 |
+| `<? super T>`     | **Write-only** - you add values            | Adding elements to a collection                                   |
+| `<?>` (unbounded) | **Read-only & general use** - unknown type | Iterating, printing, size checks when the element type is unknown |
+## Limitations of Generics
+
+***Type erasure***
+At runtime, generic type information is erased
+All `List<String>`, `List<Integer>`, etc, become just List
+```java
+List<String> a = new ArrayList<>();
+List<Integer> b = new ArrayList<>();
+
+System.out.println(a.getClass() == b.getClass()); // true
+```
+
+## Best Practices with Generics
+
+**Don't Overcomplicate!**
+Generics should make code cleaner, not harder to read
+If you're nesting multiple type parameters and confusing yourself - **refactor**

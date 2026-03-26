@@ -1,5 +1,6 @@
 ***in exam multiple choice questions: match the anomaly to the definition (you will get data with one of three anomalies)
-text questions: translate a control flow diagram to test sequence***
+text questions: translate a control flow diagram to test sequence
+PyUnit multiple choice: match assert statement with what it does***
 ## Static testing & Compilers
 
 Modern compilers are useful static analysis tools that can detect defects such as:
