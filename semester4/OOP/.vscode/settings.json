@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": [
+        "labs/11and12",
+        "labs/4",
+        "labs/5",
+        "labs/6",
+        "labs/8",
+        "labs/9",
+        "labs/study"
+    ],
+    "java.project.referencedLibraries": []
+}
