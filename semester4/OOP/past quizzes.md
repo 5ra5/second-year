@@ -162,3 +162,56 @@ a. Two classes can interact **only through inheritance**.
 b. If a class **has an instance of another class as a field**, it is an example of **composition**.
 c. A class **cannot** have a reference to an instance of another class.
 d. A class can only interact with another class if they are **static**.
+
+# Quiz 3
+
+Q1. Which of these statements about Java Lists are true? (one or more)
+a. `LinkedList` maintains insertion order.
+b. `List<?> list = new ArrayList<String>()` is valid.
+c. `List` is an interface.
+d. `ArrayList` allows duplicates.
+
+Q2. Which of the following statements about the Observer Pattern are true? (one or more)
+a. The Observer Pattern promotes **loose coupling** because the subject does not need to know the concrete implementations of its observers.
+b. Real-world examples of the Observer Pattern include **event-driven programming**, such as GUI event listeners and the **Publish-Subscribe** model in messaging systems.
+c. The Observer Pattern is a **behavioural pattern** that allows an object to notify multiple dependent objects when its state changes.
+d. Unlike the Mediator Pattern, where objects communicate **indirectly** through a central mediator, the Observer Pattern allows **direct** communication between the subject and its observers.
+
+Q3. Which data structures support random access in Java? (one or more)
+a. String
+b. HashMap
+c. Array
+d. ArrayList
+
+Q4. What can a node in a chain of responsibility do? (one or more)
+a. Do nothing
+b. Throw an exception
+c. Handle the request
+d. Pass the request along
+
+Q5. A developer wants to inject a DatabaseConnection dependency into a Repository class. Which type of Dependency Injection is used in this case? (one)
+```java
+class Repository {
+	private DatabaseConnection db;
+	public Repository(DatabaseConnection db) {
+		this.db = db;
+	}
+}
+```
+
+a. Constructor Injection
+b. Local injection
+c. There is no name for such thing
+d. Setter injection
+
+Q6. Which of the following will compile in Java? (one or more)
+a. `List<?> integers = new ArrayList<Double>();`
+b. `List<Boolean> bool = new LinkedList<Short>();`
+c. `List<Object> strings = new ArrayList<Double>();`
+d. `List<? extends Number> nums = new ArrayList<Integer>();`
+
+Q7. Which of these patterns reduces coupling between components? (one or more)
+a. Chain of Responsibility
+b. Decorator
+c. Mediator
+d. Factory Method

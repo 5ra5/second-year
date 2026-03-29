@@ -1,4 +1,4 @@
-- [ ]  27th March = OOP class quiz (5%)
+- [x]  27th March = OOP class quiz (5%)
 - [ ]  31st March =  Operating Systems Lab Exam (10%)
 - [ ]  2nd April = Operating Systems simpleshell Stage 3 due (20%)
 - [ ]  8th April = Software Testing lab exam (30%)
