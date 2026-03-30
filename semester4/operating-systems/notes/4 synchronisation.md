@@ -16,9 +16,6 @@ non-atomic variable: processes are interleaving
 if P0 and P1 are creating child processes using `fork()` race condition on kernel variable `next_available_pid` which represent the next available process identifier (pid)
 
 ## critical section problem
-
-[](https://github.com/5ra5/second-year/blob/master/semester4/operating-systems/notes/6%20synchronisation.md#critical-section-problem)
-
 **problem:**
 
 - n processes
