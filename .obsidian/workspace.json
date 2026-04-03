@@ -4,33 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ad1b15b4e99beb8a",
+        "id": "6e5b9fa962365123",
         "type": "tabs",
         "children": [
           {
-            "id": "159917495502d498",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "semester4/operating-systems/slides/CSC1021_05.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "CSC1021_05"
-            }
-          },
-          {
-            "id": "f24be189ddb778af",
+            "id": "7a0f0213417b3544",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "semester4/operating-systems/notes/banker's algorithm.md",
+                "file": "semester4/operating-systems/labs/project/5 project.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "banker's algorithm"
+              "title": "5 project"
             }
           }
         ]
@@ -181,48 +169,12 @@
       "bases:Create new base": false
     }
   },
-  "floating": {
-    "id": "7c0838a5773953bd",
-    "type": "floating",
-    "children": [
-      {
-        "id": "74019eedc93b6c4a",
-        "type": "window",
-        "children": [
-          {
-            "id": "cac1e79504018f31",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "ae8fc975a7c467e1",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "semester4/operating-systems/slides/CSC1021_04.pdf"
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "CSC1021_04"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 66,
-        "y": 29,
-        "width": 927,
-        "height": 1051,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "159917495502d498",
+  "active": "7a0f0213417b3544",
   "lastOpenFiles": [
-    "semester4/operating-systems/past-exams/2024.pdf",
-    "semester4/operating-systems/slides/CSC1021_04.pdf",
     "semester4/operating-systems/notes/banker's algorithm.md",
+    "semester4/operating-systems/slides/CSC1021_05.pdf",
+    "semester4/operating-systems/slides/CSC1021_04.pdf",
+    "semester4/operating-systems/past-exams/2024.pdf",
     "semester4/operating-systems/notes/4 synchronisation.md",
     "semester4/operating-systems/notes/POSIX synchornisation.md",
     "semester4/operating-systems/notes/dining philosophers problem.md",
@@ -242,7 +194,6 @@
     "semester3/devops/week6/Git merge rebase and bisect.md",
     "semester4/OOP/past quizzes.md",
     "exams & assignments.md",
-    "semester4/OOP/slides/week11.pdf",
     "semester4/OOP/notes/exam info.md",
     "semester4/OOP/notes/1 intro to OOP.md",
     "semester4/OOP/notes/3 static.md",
