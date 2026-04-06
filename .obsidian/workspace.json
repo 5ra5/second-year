@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "6e5b9fa962365123",
+        "id": "6520f8bb16a9a1dc",
         "type": "tabs",
         "children": [
           {
-            "id": "7a0f0213417b3544",
+            "id": "f0dc22d95e50517b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "semester4/operating-systems/labs/project/5 project.md",
-                "mode": "source",
-                "source": false
+                "file": "semester4/intro-to-databases/slides/sql_tut_notes.pdf"
               },
-              "icon": "lucide-file",
-              "title": "5 project"
+              "icon": "lucide-file-text",
+              "title": "sql_tut_notes"
             }
           }
         ]
@@ -169,12 +167,32 @@
       "bases:Create new base": false
     }
   },
-  "active": "7a0f0213417b3544",
+  "active": "f0dc22d95e50517b",
   "lastOpenFiles": [
+    "semester4/intro-to-databases/labs/7/Lab7_DDL.pdf",
+    "semester4/intro-to-databases/labs/7/Lab07_SQL_Practice and DDL Soln.pdf",
+    "exams & assignments.md",
+    "semester4/intro-to-databases/slides/sql_tut_notes.pdf",
+    "semester4/intro-to-databases/labs/4/Lab 4 - Nested SQL and Group By.md",
+    "semester4/intro-to-databases/labs/3/Lab 3 - SQL Basics.md",
+    "semester4/intro-to-databases/labs/1/Lab 1 -  Getting Started.md",
+    "semester4/intro-to-databases/labs/5/Lab 5 - SQL Joins and ANY-ALL.md",
+    "semester4/intro-to-databases/notes/8 Normalisation.md",
+    "semester4/intro-to-databases/notes/8 SQL.md",
+    "semester4/intro-to-databases/labs/6/Lab06_SQL_Practice_Soln.pdf",
+    "semester4/intro-to-databases/labs/6/Lab6_Practice.pdf",
+    "semester4/intro-to-databases/labs/5/Lab05_SQL_Joins_Soln.pdf",
+    "semester4/intro-to-databases/labs/5/Lab5_SQL.pdf",
+    "semester4/intro-to-databases/labs/mock/SQL Mock.pdf",
+    "semester4/intro-to-databases/labs/4/Lab04_Nested_SQL_Soln.pdf",
+    "semester4/intro-to-databases/labs/4/Lab04_Nested_SQL.pdf",
+    "semester4/intro-to-databases/labs/2/Untitled.md",
+    "semester4/software-testing/notes/11 Data Flow Analysis, Control Flow Graphs.md",
+    "semester4/software-testing/notes/Possible exam questions.md",
+    "semester4/software-testing/notes/8 Path Testing.md",
+    "semester4/software-testing/notes/Written Questions practice.md",
+    "semester4/operating-systems/labs/project/5 project.md",
     "semester4/operating-systems/notes/banker's algorithm.md",
-    "semester4/operating-systems/slides/CSC1021_05.pdf",
-    "semester4/operating-systems/slides/CSC1021_04.pdf",
-    "semester4/operating-systems/past-exams/2024.pdf",
     "semester4/operating-systems/notes/4 synchronisation.md",
     "semester4/operating-systems/notes/POSIX synchornisation.md",
     "semester4/operating-systems/notes/dining philosophers problem.md",
@@ -182,30 +200,10 @@
     "semester4/operating-systems/notes/producer consumer problem.md",
     "semester4/operating-systems/notes/semaphore implementation.md",
     "semester4/operating-systems/notes/2 processes.md",
-    "semester4/operating-systems/slides/CSC1021_03.pdf",
-    "semester4/operating-systems/slides/CSC1021_02.pdf",
-    "semester4/operating-systems/slides/CSC1021_01.pdf",
-    "semester4/operating-systems/slides/processes-threads.pdf",
-    "semester4/operating-systems/slides/intro-services-calls-api-abi.pdf",
-    "semester4/operating-systems/operating-systems-concepts.pdf",
-    "semester3/devops/progit.pdf",
     "semester3/devops/week5/remotes.md",
     "semester3/devops/week9/Docker.md",
     "semester3/devops/week6/Git merge rebase and bisect.md",
     "semester4/OOP/past quizzes.md",
-    "exams & assignments.md",
-    "semester4/OOP/notes/exam info.md",
-    "semester4/OOP/notes/1 intro to OOP.md",
-    "semester4/OOP/notes/3 static.md",
-    "semester4/OOP/notes/4 inheritance, overriding.md",
-    "semester4/OOP/notes/4 Memento.md",
-    "semester4/intro-to-databases/notes/1 intro and history of databases.md",
-    "semester4/OOP/notes/10 Generics.md",
-    "semester4/OOP/notes/study.md",
-    "semester4/OOP/notes/Assignment.md",
-    "semester4/OOP/notes/8 questions about labs.md",
-    "semester4/OOP/notes/9 Package.md",
-    "semester4/OOP/notes/9 java frameworks.md",
     "Pasted image 20260315130213.png",
     "Pasted image 20260227182507.png",
     "Pasted image 20260227182209.png",
