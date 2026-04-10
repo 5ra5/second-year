@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5f90cea692e9fa2d",
+        "id": "0e46cf8f137a22b2",
         "type": "tabs",
         "children": [
           {
-            "id": "842c471566b4f755",
+            "id": "9d7c94a586a836f6",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "semester4/intro-to-databases/labs/5/Lab5_SQL.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Lab5_SQL"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -167,22 +165,22 @@
       "bases:Create new base": false
     }
   },
-  "active": "842c471566b4f755",
+  "active": "92b7b9194bd88ebf",
   "lastOpenFiles": [
-    "semester4/intro-to-databases/labs/5/Lab05_SQL_Joins_Soln.pdf",
+    "semester4/intro-to-databases/labs/6/Lab06_SQL_Practice_Soln.pdf",
+    "semester4/intro-to-databases/labs/6/Lab6_Practice.pdf",
+    "semester4/intro-to-databases/labs/7/Lab7_DDL.pdf",
+    "semester4/intro-to-databases/labs/mock/SQL Mock.pdf",
     "semester4/intro-to-databases/labs/5/Lab5_SQL.pdf",
     "semester4/intro-to-databases/labs/5/Lab 5 - SQL Joins and ANY-ALL.md",
+    "semester4/intro-to-databases/labs/5/Lab05_SQL_Joins_Soln.pdf",
     "semester4/intro-to-databases/labs/4/Lab04_Nested_SQL_Soln.pdf",
     "semester4/intro-to-databases/labs/4/Lab04_Nested_SQL.pdf",
     "semester4/intro-to-databases/labs/4/Lab 4 - Nested SQL and Group By.md",
-    "semester4/intro-to-databases/labs/mock/SQL Mock.pdf",
     "semester4/logic/CA2/schedule.pl",
-    "semester4/intro-to-databases/labs/7/Lab7_DDL.pdf",
     "exams & assignments.md",
     "semester4/operating-systems/past-exams/2024.pdf",
     "semester4/operating-systems/slides/CSC1021_02.pdf",
-    "semester4/operating-systems/past-exams/2025-resit.pdf",
-    "semester4/operating-systems/past-exams/2025.pdf",
     "semester4/software-testing/labs/12/Week 11 Lab Answers.md",
     "semester4/intro-to-databases/labs/3/Lab 3 - SQL Basics.md",
     "semester4/intro-to-databases/labs/1/Lab 1 -  Getting Started.md",
