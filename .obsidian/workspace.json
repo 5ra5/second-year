@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "0e46cf8f137a22b2",
+        "id": "421407fb3964ce22",
         "type": "tabs",
         "children": [
           {
-            "id": "9d7c94a586a836f6",
+            "id": "b668055c99ed6d41",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "exams & assignments.md",
-                "mode": "source",
-                "source": false
+                "file": "semester4/logic/slides/propositional-logic.pdf"
               },
-              "icon": "lucide-file",
-              "title": "exams & assignments"
+              "icon": "lucide-file-text",
+              "title": "propositional-logic"
             }
           }
         ]
@@ -169,22 +167,32 @@
       "bases:Create new base": false
     }
   },
-  "active": "9d7c94a586a836f6",
+  "active": "b668055c99ed6d41",
   "lastOpenFiles": [
-    "semester4/intro-to-databases/labs/6/Lab06_SQL_Practice_Soln.pdf",
-    "semester4/intro-to-databases/labs/6/Lab6_Practice.pdf",
-    "semester4/intro-to-databases/labs/7/Lab7_DDL.pdf",
-    "semester4/intro-to-databases/labs/mock/SQL Mock.pdf",
-    "semester4/intro-to-databases/labs/5/Lab5_SQL.pdf",
-    "semester4/intro-to-databases/labs/5/Lab 5 - SQL Joins and ANY-ALL.md",
-    "semester4/intro-to-databases/labs/5/Lab05_SQL_Joins_Soln.pdf",
-    "semester4/intro-to-databases/labs/4/Lab04_Nested_SQL_Soln.pdf",
-    "semester4/intro-to-databases/labs/4/Lab04_Nested_SQL.pdf",
-    "semester4/intro-to-databases/labs/4/Lab 4 - Nested SQL and Group By.md",
-    "semester4/logic/CA2/schedule.pl",
+    "semester4/logic/past-exams/2023.pdf",
+    "semester4/full-stack-development/notes/react study.md",
+    "semester4/full-stack-development/notes/react sample exam.md",
+    "semester4/full-stack-development/notes/11 React & Django - Edit and Delete.md",
+    "semester4/full-stack-development/notes/Password123!.md",
+    "semester4/full-stack-development/notes/JS practice exam.md",
+    "semester4/full-stack-development/notes/django practice exam.md",
+    "semester4/logic/slides/propositional-logic.pdf",
+    "semester4/logic/exam-prep/prolog questions.md",
+    "semester4/logic/past-exams/2024.pdf",
+    "semester4/logic/past-exams/2025.pdf",
+    "semester4/logic/past-exams/2025-resit.pdf",
+    "semester4/logic/exam-prep/cut.md",
+    "semester4/logic/exam-prep/procedural meaning.md",
+    "semester4/logic/slides/prolog.pdf",
+    "semester4/logic/notes/prolog.md",
+    "semester4/logic/exam-prep/prolog exam prep.md",
+    "semester4/logic/slides/predicate-logic.pdf",
+    "semester4/logic/slides/predicate-reasoning.pdf",
+    "semester4/logic/past-exams/2013.pdf",
+    "semester4/logic/past-exams/2021.pdf",
     "exams & assignments.md",
-    "semester4/operating-systems/past-exams/2024.pdf",
-    "semester4/operating-systems/slides/CSC1021_02.pdf",
+    "semester4/intro-to-databases/labs/5/Lab 5 - SQL Joins and ANY-ALL.md",
+    "semester4/intro-to-databases/labs/4/Lab 4 - Nested SQL and Group By.md",
     "semester4/software-testing/labs/12/Week 11 Lab Answers.md",
     "semester4/intro-to-databases/labs/3/Lab 3 - SQL Basics.md",
     "semester4/intro-to-databases/labs/1/Lab 1 -  Getting Started.md",
@@ -196,17 +204,6 @@
     "semester4/software-testing/notes/8 Path Testing.md",
     "semester4/software-testing/notes/Written Questions practice.md",
     "semester4/operating-systems/labs/project/5 project.md",
-    "semester4/operating-systems/notes/banker's algorithm.md",
-    "semester4/operating-systems/notes/4 synchronisation.md",
-    "semester4/operating-systems/notes/POSIX synchornisation.md",
-    "semester4/operating-systems/notes/dining philosophers problem.md",
-    "semester4/operating-systems/notes/readers-writers problem.md",
-    "semester4/operating-systems/notes/producer consumer problem.md",
-    "semester4/operating-systems/notes/semaphore implementation.md",
-    "semester4/operating-systems/notes/2 processes.md",
-    "semester3/devops/week5/remotes.md",
-    "semester3/devops/week9/Docker.md",
-    "semester3/devops/week6/Git merge rebase and bisect.md",
     "Pasted image 20260315130213.png",
     "Pasted image 20260227182507.png",
     "Pasted image 20260227182209.png",

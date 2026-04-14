@@ -1,6 +1,10 @@
+%% I declare that this material, which I now submit for assessment, is entirely my own work and has not been taken from the work of others save and to
+%% the extent that such work has been cited and acknowledged within the text of my work.
+
 %% CLP(FD) - Constraint Logic Programming over Finite Domains
 %% used to solve combinatorial problems - scheduling task
 :- use_module(library(clpfd)).
+:- use_module(library(random)).
 
 %% FACTS: teams division into groups - 5 teams in 6 groups
 group(g1, [t1, t2, t3, t4, t5]).
@@ -10,10 +14,6 @@ group(g4, [t16, t17, t18, t19, t20]).
 group(g5, [t21, t22, t23, t24, t25]).
 group(g6, [t26, t27, t28, t29, t30]).
 
-%% choose the first team A
-%% choose some team B
-%% make the pair (A, B)
-%% recurse on the tail
 games([], []). %% base case - no teams no games
 games([Team|TeamTail], Games) :-
     pair(Team, TeamTail, Games1),
@@ -52,8 +52,10 @@ schedule(Games) :-
     three_daily(Days),
     rest_days(Games),
     home_away(Games),
-    append(Days, Homes, Vars),
-    labeling([], Vars).
+    random_permutation(Days, RandomDays),
+    random_permutation(Homes, RandomHomes),
+    labeling([], RandomDays),
+    labeling([], RandomHomes).
 
 % constraint implementation 1: there are no more than three matches on any day
 % in the list of day variables, each day number occurs at most 3 times
@@ -80,17 +82,12 @@ three_max([_-Count|Tail]) :-
 %% collect the days of all games that involve a given team into a new list
 team_days(_, [], []).
 
-%% case 1: encountered a game in which the target team is either A or B
-%% keep the Day in a new list
 team_days(Team, [game(A, B, Day, _)|GamesTail], [Day|DaysTail]) :-
-    (Team = A ; Team = B),
+    memberchk(Team, [A, B]),
+    !,
     team_days(Team, GamesTail, DaysTail).
 
-%% case 2: encountered a game that does not involve a target team
-%% ignore it and move on
-team_days(Team, [game(A, B, _, _)|GamesTail], DaysTail) :-
-    Team \= A,
-    Team \= B,
+team_days(Team, [_|GamesTail], DaysTail) :-
     team_days(Team, GamesTail, DaysTail).
 
 %% constraint implementation 2: there are at least 4 rest days inbetween every teams match
@@ -131,20 +128,20 @@ rest_days(Games) :-
 home_flags(_, [], []).
 %% case 1: target team is team A - Home is 0
 home_flags(Team, [game(A, _, _, Home)|GamesTail], [Flag|FlagsTail]) :-
-    Team = A,
+    Team == A,
+    !,
     Flag #= 1 - Home,
     home_flags(Team, GamesTail, FlagsTail).
 
 %% case 2: target team is team B - Home is 1
 home_flags(Team, [game(_, B, _, Home)|GamesTail], [Flag|FlagsTail]) :-
-    Team = B,
+    Team == B,
+    !,
     Flag #= Home,
     home_flags(Team, GamesTail, FlagsTail).
 
-%% case 3: target team not in this game
-home_flags(Team, [game(A, B, _, _)|GamesTail], FlagsTail) :-
-    Team \= A,
-    Team \= B,
+%% case 3: target team not in this game - keep traversing
+home_flags(Team, [_|GamesTail], FlagsTail) :-
     home_flags(Team, GamesTail, FlagsTail).
 
 %% using clpfd to ensure there are 2 home matches per team
