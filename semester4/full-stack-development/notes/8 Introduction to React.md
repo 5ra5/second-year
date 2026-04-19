@@ -177,3 +177,359 @@ function DiceHistory({history}){
 
 export default DiceHistory;
 ```
+
+## JSX Rules
+
+1.  You must return a single root element
+```jsx
+// This will error - two root elements
+return (
+	<h1>Hello</h1>
+	<p>World</p>
+)
+
+// Wrap in div
+return (
+	<div>
+		<h1>Hello</h1>
+		<p>World</p>
+	</div>
+)
+
+// Or use a Fragment - renders no extra DOM element
+return (
+	<>
+	<h1>Hello</h1>
+	<p>World</p>
+	</>
+)
+```
+
+2.  Use `className` instead of `class`
+```jsx
+// HTML attribute - wrong in JSX
+<div class="card">
+
+// JSX attribute
+<div className="card">
+```
+
+3.  Embed JavaScript expressions with `{}`
+```jsx
+const name = 'Alice';
+const score = 42;
+
+return (
+	<p>{name} scored {score * 2} points</p>
+)
+
+// renders: <p>Alice scored 84 points</p>
+```
+
+4. All tags must be closed
+```jsx
+// Valid HTML, invalid JSX
+<br>
+<input type="text">
+
+// valid JSX
+<br />
+<input type="text" />
+```
+
+## JSX vs Vanilla JS DOM Creation
+
+```js
+function createWelcomeCard(name) {
+	const div = document.createElement('div');
+	div.className = 'card';
+	
+	const h2 = document.createElement('h2');
+	h2.textContent = `Welcome, ${name}`;
+
+	const p = document.createElement('p');
+	p.textContent = 'Glad to have you here.';
+
+	div.appendChild(h2);
+	div.appendChild(p);
+	return div;
+}
+```
+
+same thing in JSX:
+```jsx
+function WelcomeCard({ name }) {
+	return(
+		<div className="card">
+			<h2>Welcome, {name}</h2>
+			<p>Glad to have you here.</p>
+		</div>
+	)
+}
+```
+
+## Components
+
+-  JavaScript function that returns JSX
+
+the simplest possible one:
+```jsx
+function Greeting() {
+	return <h1>Hello, World</h1>;
+}
+```
+
+to use it, write it like and HTML tag:
+```jsx
+function App() {
+	return (
+		<div>
+			<Greeting />
+		</div>
+	);
+}
+```
+## Props
+
+passed in JSX the same way you write HTML attributes:
+```jsx
+<PageTitle text="Welcome to the Dice Roller" />
+<PageTitle text="About This App" />
+```
+
+destructure props directly in the function signature
+```jsx
+function PageTitle({ text }) {
+	return <h1>{text}</h1>;
+}
+```
+
+you can pass any JS value as a prop
+-  string values use quotes
+-  everything else uses {}
+```jsx
+<ScoreDisplay score{42} isWinner={true} rolls={[3, 6, 1]} />
+```
+
+## passing functions as props
+
+```jsx
+function RollButton({ onRoll }) {
+	return <button onClick={onRoll}>Roll</button>;
+}
+
+function App() {
+	function handleRoll() {
+		console.log('rolled!');
+	}
+	
+	return <RollButton onRoll={handleRoll} />;
+}
+```
+## handling events
+
+in vanilla JS - event listeners attached imperatively
+```js
+const button = document.getElementById('roll-btn');
+button.addEventListener('click', handleRoll);
+```
+
+example in JSX
+```jsx
+function RollButton() {
+	function handleClick() {
+		console.log('Button clicked!');
+	}
+	
+	return <button onClick={handleClock}>Roll the dice</button>;
+}
+```
+
+example with inline handler
+```jsx
+<button onClick={() => console.log('clicked')}>Roll</button>
+```
+
+## the event object
+```jsx
+function SearchBox() {
+	function handleChange(event) {
+		console.log(event.target.value); // current value of the input
+	}
+	
+	return <input type="text" onChange={handleChange} />;
+}
+```
+
+## preventing default behaviour
+
+```jsx
+function LoginForm() {
+	function handleSubmit(event) {
+		event.preventDefault();
+		console.log("Form submitted - handling it ourselves");
+	}
+	
+	return (
+		<form onSubmit={handleSubmit}>
+			<button type="submit">Log in</button>
+		</form>
+	);
+}
+```
+
+## state & the render cycle
+
+```jsx
+function Counter() {
+	let count = 0;
+	
+	function handleClick() {
+		count = count + 1;
+		console.log(count); // increments correctly in the console...
+	}
+	
+	return (
+		<div>
+			<p>{count}</p> {/* ... but this never changes */}
+			<button onClick={handleClick}>Increment</button>
+		<div>
+	);
+}
+```
+
+-  react renders a component by calling the function
+-  it runs `Counter()`
+-  it captures the JSX it returns and builds the DOM from it
+
+-  changing a local variable does not tell react anything happened
+-  react never re-runs the function, so the UI stays frozen at its initial render
+-  the variable and the UI are out of sync
+-  to make react re-render a component when data changes, the data needs to be state
+
+use - `useState`
+```jsx
+import { useState } from 'react';
+
+function Counter() {
+	const [count, setCount] = useState(0);
+	
+	function handleClick() {
+		setCount(count + 1);
+	}
+	
+	return (
+		<div>
+			<p>{count}</p>
+			<button onClick={handleClick}>Increment</button>
+		<div>
+	);
+}
+```
+
+`useState(0)` returns an array of exactly two things, which you destructure:
+-  `count` - the current value (starts at 0)
+-  `setCount` - the function you call to update it
+
+when you call `setCount(count + 1)`, two things happen in sequence:
+1.  react stores the new value
+2.  react re-runs the `Counter` function - re-rendering the component with the updated count
+
+**never mutate state directly**
+```jsx
+// wrong - react does not know this happened
+count = count + 1;
+
+// correct - triggers a re-render
+setCount(count + 1);
+```
+
+## multiple state values
+
+calling either setter triggers a re-render
+-  multiple state updates made in the same event handler batched into a single re-render
+-  `setResult` and `setTotalRolls` cause only one pass through the render cycle
+```jsx
+function DiceRoller() {
+	const [result, setResult] = useState(null);
+	const [totalRolls, setTotalRolls] = useState(0);
+	
+	function handleRoll() {
+		setResult(Math.ceil(Math.random() * 6));
+		setTotalRolls(totalRolls + 1);
+	}
+	
+	return (
+		<div>
+			<p>Result: {result ?? '--'}</p>
+			<p>Total rolls: {totalRolls}</p>
+			<nutton onClick={handleRoll}>Roll</button>
+		</div>
+	);
+}
+```
+
+## `useEffect`
+
+a hook that lets you run side effects
+side effects = anything that is not "return JSX"
+-  setting the document title
+-  starting a timer
+-  listening to a WebSocket
+-  reading from `localStorage`
+
+basic shape:
+```jsx
+import { useEffect } from 'react';
+
+useEffect(() => {
+	// side effect code runs here
+});
+```
+
+running on mount - `[]`
+"run once when the component first appears" = something only needs to happen once
+```jsx
+function DiceRoller() {
+	useEffect(() => {
+		document.title = 'Dice Roller';
+	}, []);
+	
+	return <div>...</div>
+}
+```
+
+running when state changes - `[value]`
+list the values the effect depends on, react re-runs the effect whenever any of them change
+```jsx
+function DiceRolller() {
+	const [totalRolls, setTotalRolls] = useState(0);
+	
+	useEffect(() => {
+		document.title = `Dice Roller - ${totalRolls} rolls`;
+	}, [totalRolls]);
+	
+	// ...
+}
+```
+
+## cleanup function
+
+without cleanup - interval keeps running and trying to update state on a component that no longer exists
+-  common source of memory leaks and React warnings
+```jsx
+function CountdownTimer() {
+	const[seconds, setSeconds] = useState(60);
+	
+	useEffect(() => {
+		const interval = setInterval(() =>
+			setSeconds(s => s - 1);
+		}, 1000);
+	
+		// cleanup - runs when component unmounts
+		return () => clearInterval(interval);
+	}, []); // start once on mount
+	
+	return <p>Time remaining: {seconds}s</p>;
+}
+```

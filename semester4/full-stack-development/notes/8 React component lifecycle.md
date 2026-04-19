@@ -155,3 +155,136 @@ function App() {
 
 export default App
 ```
+
+## two ways to write the same fetch
+
+```jsx
+// .then() chains
+useEffect(() => {
+	fetch('http://localhost/api/v2/pokemon/pikachu')
+		.then(response => response.json())
+		.then(data => setPokemon(data));
+}, []);
+```
+
+```jsx
+// async/await
+useEffect(() => {
+	async function fetchPokemon() {
+		const response = await fetch('http://localhost/api/v2/pokemon/pikachu')
+		const data = await response.json();
+		setPokemon(data);
+	}
+	
+	fetchPokemon();
+}, []);
+```
+
+## complete Pokedex example
+
+```jsx
+import { useState, useEffect } from 'react';
+import SearchBox from './SearchBox';
+import PokemonCard from './PokemonCard';
+
+function Pokedex() {
+	const [query, setQuery] = useState('');
+	const [results, setResults] = useState([]);
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
+	
+	useEffect(() => {
+		if (!query) {
+			setResults([]);
+			return;
+		}
+		
+		async function search() {
+			setLoading(true);
+			setError(null);
+			
+			const response = await fetch(`http://localhost/api/v2/pokemon/?=${query}`);
+			
+			if (!response.ok) {
+				setError('Search failed');
+				setLoading(false);
+				return;
+			}
+			
+			const data = await response.json();
+			setResults(data.results);
+			setLoading(false);
+		}
+		
+		search();
+	}, [query]);
+	
+	return (
+		<div>
+			<SearchBox value={query} onSearch={setQuery} />
+			
+			{loading && <p>Searching...</p>}
+			{error && <p>Error: {error}</p>}
+			
+			<div>
+				{results.map(result => (
+					<PokemonCard key={result.name} name={result.name} />
+				))}
+			</div>
+		</div>
+	);
+}
+```
+
+## `AbortController`
+
+```jsx
+const controller = new AbortionController();
+
+fetch('http://localhost/api/v2/pokemon/?=bul', {signal: controller.signal });
+
+// Later - cancel the request:
+controller.abort();
+```
+
+## the cleanup function
+
+```jsx
+useEffect(() => {
+	if (!query) {
+		setResults([]);
+		return;
+	}
+	
+	const controller = new AbortionController(); // create a controller for this request
+	
+	async function search() {
+		setLoading(true);
+		setError(null);
+		
+		try {
+			const response = await fetch(
+				`http://localhost/api/v2/pokemon/?q=${query}`,
+				{ signal: controller.signal } // attach the signal
+			);
+			
+			if (!response.ok) {
+				setError('Search failed');
+				setLoading(false);
+				return;
+			}
+			
+			const data = await response.json();
+			setResults(data.results);
+			setLoading(false);
+		} catch (err) {
+			if (err.name === 'AbortError') return; // request was cancelled - ignore
+			setError('Something went wrong');
+			setLoading(false);
+		}
+	}
+	search();
+	
+	return () => controller.abort(); // cleanup: cancel the request if query changes
+}[query]);
+```
