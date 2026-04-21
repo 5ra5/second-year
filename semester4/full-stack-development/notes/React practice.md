@@ -819,3 +819,14 @@ export default Data;
 -  no export default
 -  api is not imported at the top
 
+### `api.js`
+
+```js
+const BASE_URL = 'http://localhost:8000';
+
+async function api(path, options = {}) {
+	const response = await fetch(`${BASE_URL}${path}`), {
+		...options
+	}
+}
+```
