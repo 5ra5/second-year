@@ -5,7 +5,7 @@
 - [x]  10th April = Databases SQL lab exam (40%)
 - [x]  10th April = OOP UML assignment due (15%)
 - [x]  12th April  = Logic Prolog assignment due (25%)
-- [ ]  20th April = Full Stack React exam (40%)
+- [x]  20th April = Full Stack React exam (40%)
 - [ ]  28th April = OOP final exam (50%)
 - [ ]  29th April = Logic final exam (50%)
 - [ ]  30th April = Operating Systems final exam (70%)
