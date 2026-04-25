@@ -3,6 +3,10 @@ static inner classes
 
 **coming up**
 template method pattern
+factory + container pattern
+MCQ on java collections framework - know importance of each one and why we use them
+MCQ on package
+
 
 120 minutes = 2 hours
 partial marks awarded
