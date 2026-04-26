@@ -1,6 +1,10 @@
 ***QUESTION IN THE EXAM***
 ***what's the difference between a zombie and an orphan process?***
 
+An **orphan process** is a child process whose parent has terminated while the child is still running. The orphan is adopted by another process, usually `init`/`systemd`, which becomes its new parent.
+
+A **zombie process** is a process that has terminated, but its parent has not yet called `wait()` to collect its exit status. It remains in the process table until the parent reaps it.
+
 **process** = program in execution
 (program itself is passive entity stored on disk - it becomes a process when an executable file is loaded into memory)
 

@@ -1,5 +1,6 @@
 **not coming up**
 static inner classes
+library vs framework
 
 **coming up**
 template method pattern
