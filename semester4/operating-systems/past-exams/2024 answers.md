@@ -145,3 +145,15 @@ This system is in an unsafe state. If T3 requests R2, the system will fall into 
 (a) What does the term internal fragmentation mean in the context of memory management? Use an example as part of your answer. (7 marks)
 
 Internal fragmentation happens when there is an extra unused memory left in a page that holds a process which is smaller than the page. This usually happens when multiple pages are used for one process, so the size of the process does not perfectly match the page size after it has been split up between pages. For example, if the page size if 4KB and a process needs 10KB, it must be allocated 3 pages, which means that we would have 2KB wasted.
+
+(b) In the context of a filesystem, briefly explain what an inode is. (6 marks)
+
+The inode is a data structure in a Unix-style file system that describes a file-system object such as a file or a directory. Each inode stores the attributes and disk block locations of the object's data.
+
+(c) In paging memory management, pages may be shared between multiple processes. Explain a situation where this is beneficial. (6 marks)
+
+Shared pages are beneficial in situations where we need inter-process communication when sharing of read-write pages is allowed, or when one copy of read-only code is shared among different processes (for example text editors, compilers and window systems), which saves memory and avoids code duplication.
+
+(d) Explain what is meant by the term DMA (Direct Memory Access). In your answer, explain why DMA would be used instead of programmed I/O. (6 marks)
+
+Direct Memory Access allows a DMA controller or an I/O device to handle transferring of data instead of the CPU. The CPU sets up the transfer, and the controller does the rest of the transferring work. This would be used instead of programmed I/O because the programmed I/O requires CPU to transfer data on its own, byte by byte, which wastes CPU cycles and time. If DMA is used, CPU can do other tasks which improves overall performance of the system, especially during large data transfers.
